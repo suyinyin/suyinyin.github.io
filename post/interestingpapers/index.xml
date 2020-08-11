@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inspired papers | Yinyin</title>
+    <link>/post/interestingpapers/</link>
+      <atom:link href="/post/interestingpapers/index.xml" rel="self" type="application/rss+xml" />
+    <description>Inspired papers</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Tue, 11 Aug 2020 16:17:50 +0800</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Inspired papers</title>
+      <link>/post/interestingpapers/</link>
+    </image>
+    
+    <item>
+      <title>Paper_1</title>
+      <link>/post/interestingpapers/paper_1/</link>
+      <pubDate>Tue, 11 Aug 2020 16:17:50 +0800</pubDate>
+      <guid>/post/interestingpapers/paper_1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yinyin</title>
+    <link>/</link>
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <description>Yinyin</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Tue, 11 Aug 2020 16:18:34 +0800</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Yinyin</title>
+      <link>/</link>
+    </image>
+    
+    <item>
+      <title>Alogorithm</title>
+      <link>/post/controlandoptimization/alogorithm/</link>
+      <pubDate>Tue, 11 Aug 2020 16:18:34 +0800</pubDate>
+      <guid>/post/controlandoptimization/alogorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paper_1</title>
+      <link>/post/interestingpapers/paper_1/</link>
+      <pubDate>Tue, 11 Aug 2020 16:17:50 +0800</pubDate>
+      <guid>/post/interestingpapers/paper_1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Some useful commands for ROS in Ubuntu</title>
+      <link>/post/rosubuntu/someusefulcommandinros/</link>
+      <pubDate>Tue, 11 Aug 2020 15:34:21 +0800</pubDate>
+      <guid>/post/rosubuntu/someusefulcommandinros/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ROS&lt;/strong&gt; is an open-source, meta-operating system for your robot. Some advantages are as follows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed computation&lt;/li&gt;
+&lt;li&gt;Software resure&lt;/li&gt;
+&lt;li&gt;Rapid testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;packages&#34;&gt;Packages&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rospack list
+# You can obtain a list of all of the installed ROS packages.
+rospack find package-name
+# find the directory of a single package
+rosls package-name
+# view all files in the package directory
+roscd package-name
+# go to the package directory directly
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nodes&#34;&gt;Nodes&lt;/h3&gt;
+&lt;p&gt;ROS node communication network
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-ros-node-communication-network&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    ROS node communication network
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rosrun package-name executable-name
+# Starting a node
+rosnode list
+#listing nodes
+rosnode info node-name
+# get some information abour a particular node.
+rosnode kill node-name
+# Killing a node.
+rosnode cleanup
+#remove the dead nodes from the list.
+rqt_graph
+# veiwing the graph
+rosmsg show message-type-name
+#inspecting a message type.
+rostopic pub -r rate-in-hz topic-name message-type message-content
+# publishing messages from the command line.
+rosrun turtlesim turtlesim_node __name:=A
+rosrun turtlesim turtlesim_node __name:=B
+# run the same node with different name, as ROS master does not allow multiple nodes with the same name.
+roswtf
+# perform a broad variety of sanity checks.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;creating-a-workplace-and-a-package&#34;&gt;Creating a workplace and a package&lt;/h3&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The file structure of workplace
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;user@hostname$ mkdir -p ~/catkin_ws/src
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_init_workspace
+user@hostname$ source devel/setup.bash
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_create_pkg my_package_name
+# creating two default versions of these two configuration files: package.xml and CMakeLists.txt.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;the-first-program-hello-world-in-ros&#34;&gt;The first program &amp;lsquo;hello world&amp;rsquo; in ROS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1: Write the &lt;code&gt;helle world&lt;/code&gt; program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// This is a ROS version fo the standard &amp;quot;hello world&amp;quot; program
+// This header defines the standard ROS classes.
+#include &amp;lt;ros/ros.h&amp;gt;
+int main(int agrc, char** agrv){
+//Initialize the ROS system.
+ros::init(argc, argv, &amp;quot;hello_ros&amp;quot;);
+// Establish this program as a ROS node
+ros::NodeHandle nh;
+//Send some output as a log message.
+ROS_INFO_STREAM(&amp;quot;Hello, ROS!&amp;quot;);
+return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 2: Compiling the &lt;code&gt;hello world&lt;/code&gt; program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Declaring dependencies&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;CMakeLists.txt
+&lt;code&gt;find_package(catkin REQUIRED COMPONENTS package-names)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;package.xml
+&lt;code&gt;&amp;lt;build_depend&amp;gt;package-name&amp;lt;/build_depend&amp;gt;&lt;/code&gt;
+&lt;code&gt;&amp;lt;run_depend&amp;gt;package-name&amp;lt;/run_depend&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Declaring an executable&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;CMakeLists.txt
+&lt;code&gt;add_executable(executable-name source-files1 source-files2 ...)&lt;/code&gt;
+&lt;code&gt;target_link_libraries(executable-name ${catkin_LIBRARIES})&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Building the workplace&lt;/strong&gt;
+&lt;code&gt;catkin_make&lt;/code&gt;
+&lt;code&gt;source devel/setup.bash&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;write-a-publisher-node-and-a-subscriber-node&#34;&gt;Write a publisher node and a subscriber node&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Be mindful of the lifetime of your &lt;strong&gt;ros::Publisher&lt;/strong&gt; objects. Creating the publisher is an expensive operation, so it&amp;rsquo;s a usually a bad idea to creat a new &lt;strong&gt;ros::Publisher&lt;/strong&gt; object each time you want to publish a message.&lt;/li&gt;
+&lt;li&gt;Refer the 
+&lt;a href=&#34;http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&amp;#43;&amp;#43;%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ROS wiki Publisher&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// This program publishes randomly-generated velocity messages for turtlesim.
+#include&amp;lt;ros/ros.h&amp;gt;
+// incldue message type declaration
+#include&amp;lt;geometry_msgs/Twist.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+
+int main(int agrc, char** agrv){
+//Initialize the ROS system and become a node
+ros::init(agrc, agrv, &amp;quot;publish_velocity&amp;quot;);
+ros::NodeHandle nh;
+//creat a publisher object
+// ros::Publisher pub = node_handle.advertise&amp;lt;message_type&amp;gt;(topic_name, queue_size);
+// queue size is an integer representing the size of the message queue for publisher. In most case, a reasonablly large value, say 1000, is suitable.
+ros::Publisher pub = nh.advertise&amp;lt;geometry_msgs::Twist&amp;gt;(&amp;quot;turtle1/cmd_vel&amp;quot;, 1000);
+
+//send the random number generator.
+srand(time(0));
+
+//loop at 2 Hz until the node is shut down.
+ros::Rate rate(2);
+// ros::ok() function is used to check for node shutdown.
+while(ros::ok()){
+// creat and fill in the message. The other four fields, which are ignored by turtlesim, default to 0.
+geometry_msgs::Twist msg;
+msg.linear.x = double(rand())/double(RAND_MAX);
+msg.linear.z = 2*double(rand())/double(RAND_MAX) - 1;
+//Publish the message.
+pub.publish(msg);
+//send a message to rosout with the details.
+ROS_INFO_STREAM(&amp;quot;Sending random velocity command: &amp;quot;&amp;lt;&amp;lt; &amp;quot; linear=&amp;quot; &amp;lt;&amp;lt; msg.linear.x &amp;lt;&amp;lt; &amp;quot; angular=&amp;quot; &amp;lt;&amp;lt; msg.angular.z);
+
+//Wait until it&#39;s time for another iteration.
+rate.sleep();
+}
+return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Refer to 
+&lt;a href=&#34;http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&amp;#43;&amp;#43;%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ROS wiki Subscriber&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//This program subscribes to turtle 1 /pose and show its message on the sreen.
+#include&amp;lt;ros/ros.h&amp;gt;
+#include&amp;lt;turtlesim/ Pose.h&amp;gt;
+#include&amp;lt;iomanip&amp;gt;
+// for std::setprecision and std::fixed
+
+//A callback function. Excuted each time a new pose
+// message arrives.
+void poseMessageReceived(const turtlesim::Pose&amp;amp; msg){
+ROS_INFO_STREAM(std::setprecision(2) &amp;lt;&amp;lt; std::fixed &amp;lt;&amp;lt; &amp;quot;position =(&amp;quot; &amp;lt;&amp;lt; msg.x &amp;lt;&amp;lt; &amp;quot;, &amp;quot; &amp;lt;&amp;lt; msg.y &amp;lt;&amp;lt; &amp;quot;)&amp;quot; &amp;lt;&amp;lt; &amp;quot; direction=&amp;quot; &amp;lt;&amp;lt; msg.theta);
+
+int main(int agrc, char** agrv){
+// Initialize the ROS system and become a node.
+ros::init(agrc, agrv, &amp;quot;subscribe_to_pose&amp;quot;);
+ros::NodeHandle nh;
+//creat a subcriber object
+// ros::Subscriber sub = node_handle.subscribe(topic_name, queue_size, pointer_to_callback_function);
+//Most of parameters have analogues in the declaration of a ros::Publisher object.
+ros::Subscriber sub = nh.subscribe(&amp;quot;turtle1/pose&amp;quot;. 1000, &amp;amp;poseMessageReceived);
+//let ROS take over.
+ros::spin();
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://wiki.ros.org/roscpp/Overview/Callbacks%20and%20Spinning&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The relationship between &lt;strong&gt;ros::spin()&lt;/strong&gt; and &lt;strong&gt;ros::spinonce()&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;ROS will only execute our callback function when we give it explicit permission to do so by using &lt;strong&gt;ros::spin()&lt;/strong&gt; or &lt;strong&gt;ros::spinonce()&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ros::spin()&lt;/strong&gt; will be called all the time, while &lt;strong&gt;ros::spinonce()&lt;/strong&gt; is called only one time. Hence, the main process will block when you use &lt;strong&gt;ros::spin()&lt;/strong&gt; function until the the node shutdown.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ros::spin()&lt;/strong&gt; equals to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;while(ros::ok()){
+ ros::spinonce();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;If you want to subscribe and publish message using the same node, you can refer to this 
+&lt;a href=&#34;https://gist.github.com/PrieureDeSion/77c109a074573ce9d13da244e5f82c4d#file-sim-cpp-L56&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;example&lt;/a&gt; by Dhruv Ilesh Shah.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiences</title>
+      <link>/experience/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>/publication/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
