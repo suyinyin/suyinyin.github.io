@@ -8,12 +8,27 @@
   </url>
   
   <url>
+    <loc>/tag/control/</loc>
+    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/optimization/</loc>
+    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
     <lastmod>2020-08-11T16:18:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/controlandoptimization/</loc>
+    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2020-08-11T16:18:34+08:00</lastmod>
   </url>
   
@@ -33,12 +48,22 @@
   </url>
   
   <url>
+    <loc>/tag/ros/</loc>
+    <lastmod>2020-08-11T15:34:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/rosubuntu/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/rosubuntu/someusefulcommandinros/</loc>
+    <lastmod>2020-08-11T15:34:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/ubuntu/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
   </url>
   
@@ -76,10 +101,6 @@
   
   <url>
     <loc>/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
   <url>
