@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proprioception | Yinyin</title>
+    <link>/tag/proprioception/</link>
+      <atom:link href="/tag/proprioception/index.xml" rel="self" type="application/rss+xml" />
+    <description>proprioception</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 12 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>proprioception</title>
+      <link>/tag/proprioception/</link>
+    </image>
+    
+    <item>
+      <title>A High-Payload Proprioceptive Hybrid Robotic Gripper With Soft Origamic Actuators</title>
+      <link>/publication/journal-article-1/</link>
+      <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article-1/</guid>
+      <description>&lt;!-- 
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/publication/journal-article-1/featured_hucba7d8539824db1e9b63a6f527739320_1261874_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+
+
+  &lt;img data-src=&#34;/publication/journal-article-1/featured_hucba7d8539824db1e9b63a6f527739320_1261874_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1804&#34; height=&#34;826&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The file structure of workplace
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+ --&gt;
+&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+ --&gt;
+&lt;!-- Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
