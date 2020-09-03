@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Some interesting control and optimization algorithm. | Yinyin</title>
-    <link>/post/controlandoptimization/</link>
-      <atom:link href="/post/controlandoptimization/index.xml" rel="self" type="application/rss+xml" />
-    <description>Some interesting control and optimization algorithm.</description>
+    <title>Preceptron | Yinyin</title>
+    <link>/tag/preceptron/</link>
+      <atom:link href="/tag/preceptron/index.xml" rel="self" type="application/rss+xml" />
+    <description>Preceptron</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Thu, 03 Sep 2020 20:30:09 +0800</lastBuildDate>
     <image>
-      <url>/post/controlandoptimization/featured.png</url>
-      <title>Some interesting control and optimization algorithm.</title>
-      <link>/post/controlandoptimization/</link>
+      <url>/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_512x512_fill_lanczos_center_2.png</url>
+      <title>Preceptron</title>
+      <link>/tag/preceptron/</link>
     </image>
     
     <item>
@@ -71,14 +71,6 @@ where $\omega$ and $b$ are the weight and bias for the above function respective
 &lt;/figure&gt;
 
 </description>
-    </item>
-    
-    <item>
-      <title>Alogorithm</title>
-      <link>/post/controlandoptimization/alogorithm/</link>
-      <pubDate>Tue, 11 Aug 2020 16:18:34 +0800</pubDate>
-      <guid>/post/controlandoptimization/alogorithm/</guid>
-      <description></description>
     </item>
     
   </channel>

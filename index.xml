@@ -5,12 +5,73 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Yinyin</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Tue, 11 Aug 2020 16:18:34 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Thu, 03 Sep 2020 20:30:09 +0800</lastBuildDate>
     <image>
       <url>/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_512x512_fill_lanczos_center_2.png</url>
       <title>Yinyin</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Preceptron algorithm</title>
+      <link>/post/controlandoptimization/preceptron/</link>
+      <pubDate>Thu, 03 Sep 2020 20:30:09 +0800</pubDate>
+      <guid>/post/controlandoptimization/preceptron/</guid>
+      <description>&lt;p&gt;In machine learning, the &lt;strong&gt;perceptron&lt;/strong&gt; is an algorithm for supervised learning of binary classfiers. The 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Perceptron&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;perceptron algorithm&lt;/a&gt; was invented 1958 at the Cornell Aeronautical lab by Frank Rosenblatt.&lt;/p&gt;
+&lt;h3 id=&#34;perceptron-model&#34;&gt;Perceptron model&lt;/h3&gt;
+&lt;p&gt;For input space (featured space) $\mathcal{X} = {{\mathbf{R}}^{n}}$ and  output space $\mathcal{Y} =\{-1,  +1\}$, the perceptron model can be built by:
+$$f(x) = sign(\omega \centerdot x+b)$$
+$$sign(x) =
+\begin{cases}
++1 &amp;amp; \text{if } x \ge 0,\\&lt;br&gt;
+-1 &amp;amp; \text{if } x &amp;lt; 0.
+\end{cases}$$
+where $\omega$ and $b$ are the weight and bias for the above function respectively. Through being trained by the give training data $T = \{ (x_0, y_0), (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)\}$, where $x_i \in \mathcal{X} =  {{\mathbf{R}}^{n}}$ and $y_i \in \mathcal{Y}=\{-1, +1\}$, $i = 1, 2, \cdots, N$. The parameters $\omega$ and $b$ can be leanned through the mentioned data set.  The learned linear hyperplane can divide the training data into two parts labelling +1 and -1.  The schematic diagram is shown as follows.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-schematic-diagram-of-perceptron&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The schematic diagram of perceptron
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
     
     <item>
       <title>Alogorithm</title>
