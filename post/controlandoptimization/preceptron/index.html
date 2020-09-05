@@ -851,53 +851,12 @@ if __name__ == &quot;__main__&quot;:
     plt.ylabel('$x_2$')
     plt.title('Preceptron algorithm learning precess')
     w_set, b_set = PrecessingPreceptron(traning_data, learning_rate)
-    anim = FuncAnimation(fig, DrawFigure, fargs=(w_set, b_set, 50), interval=300, blit=True)
-    anim.save('preceptron.gif', writer='imagemagick', fps=3)
+    anim = FuncAnimation(fig, DrawFigure,frames=np.arange(0, 15), fargs=(w_set, b_set, 50), interval=300, blit=True)
+    anim.save('preceptron.gif', writer='imagemagick')
     plt.show()
 </code></pre>
 <p><strong>Results:</strong>
-
-
-
-
-
-
-  
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure id="figure-perceptron-algorithm-learning-precedure">
-
-
-  <a data-fancybox="" href="/post/controlandoptimization/preceptron/preceptron_hudc51c604bbd7d739a733fe7df96eedcb_902367_2000x2000_fit_lanczos.gif" data-caption="Perceptron algorithm learning precedure">
-
-
-  <img data-src="/post/controlandoptimization/preceptron/preceptron_hudc51c604bbd7d739a733fe7df96eedcb_902367_2000x2000_fit_lanczos.gif" class="lazyload" alt="" width="640" height="480">
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figure " data-post=":" class="numbered">
-    Perceptron algorithm learning precedure
-  </figcaption>
-
-
-</figure>
-</p>
+<img src="preceptron.gif" alt="Alt Text"></p>
 
     </div>
 
