@@ -168,6 +168,13 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;
 &lt;img src=&#34;preceptron.gif&#34; alt=&#34;Alt Text&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;It can be testified that the perceptron algorithm could converge at last within the limited steps of iterations.&lt;/li&gt;
+&lt;li&gt;The original algorithm have multiple solutions coming from: 1. The initial parameters $\omega_0, b_0$; 2. the selection order of misclassficated point in the learning process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
