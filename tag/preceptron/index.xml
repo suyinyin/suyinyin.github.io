@@ -83,7 +83,8 @@ $$\begin{align}
 &amp;amp; b\leftarrow b+\eta {{y}_{i}} \&lt;br&gt;
 \end{align}$$
 where $\eta$ is a learning rate hyperparameter set by user.&lt;/p&gt;
-&lt;p&gt;Based on the aforementioned discussion, the perceptron algorithm can be derived:&lt;/p&gt;
+&lt;p&gt;Based on the aforementioned discussion, the perceptron algorithm can be derived:
+$\omega$, $b$&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Preceptron algorithm&lt;/strong&gt;&lt;/li&gt;
