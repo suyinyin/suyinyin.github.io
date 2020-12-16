@@ -14,9 +14,9 @@
     
     <item>
       <title>Some useful commands for ROS in Ubuntu</title>
-      <link>/post/rosubuntu/someusefulcommandinros/</link>
+      <link>/post/someusefulcommandinros/</link>
       <pubDate>Tue, 11 Aug 2020 15:34:21 +0800</pubDate>
-      <guid>/post/rosubuntu/someusefulcommandinros/</guid>
+      <guid>/post/someusefulcommandinros/</guid>
       <description>&lt;p&gt;&lt;strong&gt;ROS&lt;/strong&gt; is an open-source, meta-operating system for your robot. Some advantages are as follows.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Distributed computation&lt;/li&gt;
@@ -61,10 +61,10 @@ roscd package-name
 &lt;figure id=&#34;figure-ros-node-communication-network&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
+  &lt;img data-src=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
 &lt;/a&gt;
 
 
@@ -126,10 +126,10 @@ roswtf
 &lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
+  &lt;img data-src=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
 &lt;/a&gt;
 
 

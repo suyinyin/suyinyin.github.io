@@ -14,9 +14,9 @@
     
     <item>
       <title>Preceptron algorithm</title>
-      <link>/post/controlandoptimization/preceptron/</link>
+      <link>/post/preceptron/</link>
       <pubDate>Thu, 03 Sep 2020 20:30:09 +0800</pubDate>
-      <guid>/post/controlandoptimization/preceptron/</guid>
+      <guid>/post/preceptron/</guid>
       <description>&lt;p&gt;In machine learning, the &lt;strong&gt;perceptron&lt;/strong&gt; is an algorithm for supervised learning of binary classfiers. The 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Perceptron&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;perceptron algorithm&lt;/a&gt; was invented 1958 at the Cornell Aeronautical lab by Frank Rosenblatt.&lt;/p&gt;
 &lt;h3 id=&#34;perceptron-model&#34;&gt;Perceptron model&lt;/h3&gt;
@@ -54,10 +54,10 @@ where $\omega$ and $b$ are the weight and bias for the above function respective
 &lt;figure id=&#34;figure-the-schematic-diagram-of-perceptron&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
+  &lt;img data-src=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
 &lt;/a&gt;
 
 

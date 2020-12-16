@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>/post/controlandoptimization/t-sne/</loc>
+    <loc>/post/t-sne/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
   </url>
   
@@ -24,11 +24,6 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-10-22T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/controlandoptimization/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
   </url>
   
@@ -58,33 +53,8 @@
   </url>
   
   <url>
-    <loc>/post/controlandoptimization/preceptron/</loc>
+    <loc>/post/preceptron/</loc>
     <lastmod>2020-09-03T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/controlandoptimization/alogorithm/</loc>
-    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/control/</loc>
-    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/optimization/</loc>
-    <lastmod>2020-08-11T16:18:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/interestingpapers/</loc>
-    <lastmod>2020-08-11T16:17:50+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/interestingpapers/paper_1/</loc>
-    <lastmod>2020-08-11T16:17:50+08:00</lastmod>
   </url>
   
   <url>
@@ -93,12 +63,7 @@
   </url>
   
   <url>
-    <loc>/post/rosubuntu/</loc>
-    <lastmod>2020-08-11T15:34:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/rosubuntu/someusefulcommandinros/</loc>
+    <loc>/post/someusefulcommandinros/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
   </url>
   

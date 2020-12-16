@@ -1,0 +1,1567 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yinyin SU">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/t-sne/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/t-sne/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Yinyin">
+  <meta property="og:url" content="/post/t-sne/">
+  <meta property="og:title" content="Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE | Yinyin">
+  <meta property="og:description" content="Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature."><meta property="og:image" content="/post/t-sne/featured.png">
+  <meta property="twitter:image" content="/post/t-sne/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-10-22T20:30:09&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-10-22T20:30:09&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/t-sne/"
+  },
+  "headline": "Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE",
+  
+  "image": [
+    "/post/t-sne/featured.png"
+  ],
+  
+  "datePublished": "2020-10-22T20:30:09+08:00",
+  "dateModified": "2020-10-22T20:30:09+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yinyin SU"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yinyin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Principal Component Analysis (PCA) and t-Distributed Stochastic Neighbor Embedding (t-SNE) are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE | Yinyin</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/experience/"><span>Experiences</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/contact/"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>Resume</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/yinyin-su/">Yinyin SU</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 22, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    12 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/t-sne/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><strong>Principal Component Analysis (PCA)</strong> and <strong>t-Distributed Stochastic Neighbor Embedding (t-SNE)</strong> are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature. Futhermore, the low-dimensional data can be visualized in frame, can feel by human. Hence, In this post, I simply summarized some mathematics model for PCA and t-SNE algorithms, implemented these methods repectively, and presented some advangtages and disadvantages of these alogorithms. At the end, some important hyperparameters that effect the performance of t-SNE are described to remind readers to choose the proper parameters. Some other demension reduction methods were summarized as follows:</p>
+<blockquote>
+<ol>
+<li>PCA (linear);</li>
+<li>t-SNE (non-parametric/ nonlinear);</li>
+<li>Sammon mapping (nonlinear);</li>
+<li>Isomap (nonlinear);</li>
+<li>LLE (nonlinear);</li>
+<li>CCA (nonlinear);</li>
+<li>SNE (nonlinear);</li>
+<li>MVU (nonlinear);</li>
+<li>Laplacian Eigenmaps (nonlinear),</li>
+</ol>
+</blockquote>
+<p>and their attributes were shown in the below figure.
+<img src="./DimensionReduction.png" alt="Alt text"></p>
+<h3 id="1-pca">1. PCA</h3>
+<p><strong>Principal Component Analysis (PCA)</strong>  is a  
+<a href="https://en.wikipedia.org/wiki/Principal_component_analysis" target="_blank" rel="noopener">process of  computing principal components using  the first few principal component and ignoring the rest</a>. The goals of PCA are  to</p>
+<blockquote>
+<ol>
+<li>extract the most important information from the data table;</li>
+<li>compress the size of the data set by keeping only this important information;</li>
+<li>simplify the description of the data set; and</li>
+<li>analyze the structure of the observations and the variables.</li>
+</ol>
+</blockquote>
+<p>The PCA can be defined commonly by two methods, resulting in the same algorithme. As shown in the following figure, principal component analysis seeks a space of lower dimensionality, known as the principal subspace and denoted by the magenta line, such that the orthogonal projection of the data points (red dots) onto this subspace maximizes the variance of the projected points (green dots). An alternative definition of PCA is based on minimizing the sum-of-squares of the projection errors, indicated by the blue lines.
+<img src="./PCA2.png" alt="Alt text"></p>
+<h4 id="11-maxiunum-variance-formulation">1.1 Maxiunum variance formulation</h4>
+<p>Consider a data set of observations $\left\{\mathbf{x}_{n}\right\}$
+where $n = 1, \cdots, N$ and the dimensionality of $\mathbf{x}_{n}$  is $D$. The PCA can project the data on to lower dimensional space with dimensionality $M &lt; D$  while maximizing the variance of the projected data.
+We define unit vector ${{w}_{1}}$, which is column vector,  as the first principal direction and each data point $\mathbf{x}_{n}$ is then projected onto a scalar value ${{z}_{1}^n} = \mathbf{{w}_{1}^{T}}{{{x}}_{n}}$.  Based on the above definition, we preject all data points onto $\mathbf{w_1}$ direction, maximizing the variance along $\mathbf{w_1}$ direction,
+$$\max Var\left( {{\mathbf{z}}_{1}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{1}}-{{{\mathbf{\bar{z}}}}_{1}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{1}} \right||}_{2}}=1, $$
+<img src="./PCA.png" alt="Alt text">
+where $\mathbf{z}_{1}$ is $[z_1^{1}, z_2^{1}, \cdots, z_N^{1}]$, and ${{{\mathbf{\bar{z}}}}_{1}}$ is sample set mean, given by ${{\mathbf{\bar{z}}}_{1}}=\frac{1}{N}\sum\limits_{i=1}^{N}{z_{i}^{1}}$. The above formulation is also used in other principal direction like $\mathbf{w_2}$, so the variance of data set  $\mathbf{z_2}$ can be derived by
+$$\max Var\left( {{\mathbf{z}}_{2}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{2}}-{{{\mathbf{\bar{z}}}}_{2}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{2}} \right||}_{2}}=1$$
+As a result, the low-dimensional data points
+$$\mathbf{z}=W\mathbf{x}, $$</p>
+<p>where $W$ is  $\left[ \begin{matrix} {{\mathbf{w}}_{1}} &amp; {{\mathbf{w}}_{2}} &amp; {{\mathbf{w}}_{3}} &amp; \cdots  \end{matrix} \right]$, and it is a orthogonal matrix.
+The variance of data set $\mathbf{z_1}$ can be derived</p>
+<p>\begin{align}
+Var\left( {{{\mathbf{{z}}}}_{1}} \right) &amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( z_{i}^{1}-{{{\bar{z}}}^{1}} \right)}}^{2}} \nonumber \\<br>
+&amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( \mathbf{w}_{1}^{\text{T}}x_{i}^{1}-\mathbf{w}_{1}^{\text{T}}{{{\bar{x}}}^{1}} \right)}}^{2}}  \nonumber\\<br>
+&amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}}^{2}}=\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)} \nonumber\\<br>
+&amp; =\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}^{\text{T}}} \nonumber\\<br>
+&amp; =\mathbf{w}_{1}^{\text{T}}\left[ \frac{1}{N}\sum\limits_{i=1}^{N}{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}^{\text{T}}} \right]{{\mathbf{w}}_{1}} \nonumber\\<br>
+&amp; = \mathbf{w}_{1}^{\text{T}} cov\left( \mathbf x\right) \mathbf{w}_{1}\nonumber\\<br>
+\end{align}</p>
+<p>where $S = cov\left( \mathbf x\right)$ is covariance matrix of data set $\left\{\mathbf{x}_{n}\right\}$, and it is a sysmetric and semidefinite matrix. Eventually, if we want to obtain the principal vector $\mathbf{w_1}$, the optimization equation is</p>
+<p>\begin{align}
+\underset{{{\mathbf{w}}_{1}}}{\mathop{\max }},\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}},\\<br>
+s.t.\quad \mathbf{w}_{1}^{\text{T}}{{\mathbf{w}}_{1}} = 1.
+\end{align}</p>
+<p>Using the Langrange multiplier,
+$$g\left( {{\mathbf{w}}_{1}} \right)=\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}}+\alpha \left( 1-\mathbf{w}_{1}^{\text{T}}{{\mathbf{w}}_{1}} \right), $$</p>
+<p>let $\frac{\partial g\left( {{\mathbf{w}}_{1}} \right)}{\partial {{\mathbf{w}}_{1}}}=0$, the following equation can be obtianed
+$$\frac{\partial g\left( {{\mathbf{w}}_{1}} \right)}{\partial {{\mathbf{w}}_{1}}}=S{{\mathbf{w}}_{1}}-\alpha{{\mathbf{w}}_{1}} =0$$
+Hence, the ${{\mathbf{w}}_{1}}$ and $\alpha$ are the eigenvector and the corresponding eigenvalue of covariance matrix $S$. Moreover, $\alpha$ is the first largest eigenvalue. Also, the ${{\mathbf{w}}_{2}}$ is the corresponding eigenvetor related to the second largest eigenvalue of $S$.</p>
+<h3 id="2-t-sne">2. t-SNE</h3>
+<p><strong>t-SNE</strong> 
+<a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding" target="_blank" rel="noopener">is a mechine learning algorithm for visualazation developed by Sam Roweis and Geoggrey Hinton</a>, well suitied for embedding high-dimensiontal data for visualization in a low-dimensional space of two or three dimension observed directly by human. It is extensively applied in image processing, NLP, genomic data and speech processing. The t-SNE puts emphasis on (1) <strong>modeling dissimilar datapoints by means of large pairwise distances</strong>, and (2) <strong>modeling similar datapoints by means of small pairwise distances</strong>. To keep things simple, here’s a brief overview of working of t-SNE:</p>
+<blockquote>
+<ul>
+<li>The algorithms starts by calculating the probability of similarity of points in high-dimensional space and calculating the probability of similarity of points in the corresponding low-dimensional space. The similarity of points is calculated as the conditional probability that a point A would choose point B as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian (normal distribution) centered at A.</li>
+<li>It then tries to minimize the difference between these conditional probabilities (or similarities) in higher-dimensional and lower-dimensional space for a perfect representation of data points in lower-dimensional space.</li>
+<li>To measure the minimization of the sum of difference of conditional probability t-SNE minimizes the sum of 
+<a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence" target="_blank" rel="noopener">Kullback-Leibler divergence</a> of overall data points using a gradient descent method.</li>
+</ul>
+</blockquote>
+<h4 id="21-mathematics-model">2.1 Mathematics model</h4>
+<h5 id="step-1-define-similarity-in-high-dimensional-space">Step 1: Define similarity in high-dimensional space</h5>
+<p>t-SNE uses Stochastic Neighbour Embedding (SNE) method to convert the high-dimensional Euclidean distances between data points into conditional probablities that represent their similiarities.  The conditional probability ${{p}_{j|i}}$  is defined to represent the similarity, $x_i$ would choose $x_j$ as its neighhour if neighours are chosen in proportion to their probablity density under a Guassian with center at $x_i$.  The nearer the data points are, the higher value of  ${{p}_{j|i}}$  is. Mathematically, ${{p}_{j|i}}$  can be defined by
+$${\displaystyle p_{j\mid i}={\frac {\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{j}\rVert ^{2}/2\sigma _{i}^{2})}{\sum _{k\neq i}\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{k}\rVert ^{2}/2\sigma _{i}^{2})}}}, $$
+where $\sigma_i$ is the variance of the Guassian distribution with the mean being $x_i$. Morever $p_{ij} $is defined by
+$${\displaystyle p_{ij}={\frac {p_{j\mid i}+p_{i\mid j}}{2N}}}$$
+where   $p_{ii} = 0$ and $p_{ij} = p_{ji}$.</p>
+<h5 id="step-2-define-similarity-in-low-dimensional-space">Step 2: Define similarity in low-dimensional space</h5>
+<p>For the low-dimensional counterparts $y_i$ and $y_j$ of the high-dimensional data points $x_i$ and $x_j$. It is possible to define a similar conditional probability, donoted by $q_{ij}$
+$${\displaystyle q_{ij}={\frac {(1+\lVert \mathbf {y} _{i}-\mathbf {y} _{j}\rVert ^{2})^{-1}}{\sum _{k}\sum _{l\neq k}(1+\lVert \mathbf {y} _{k}-\mathbf {y} _{l}\rVert ^{2})^{-1}}}}, $$
+where $q_{ii} = 0$.</p>
+<h5 id="step-3-define-cost-function-to-compute-q_ij">Step 3: Define cost function to compute $q_{ij}$</h5>
+<p>If the map points $y_i$ and $y_j$ correctly model the similarity between the high-dimensional datapoints $x_i$ and $x_j$, the conditional probabilities $p_{j|i}$ and $q_{j|i}$ will be equal. Motivated by this observation, SNE aims to find a low-dimensional data representation that minimizes the mismatch between $p_{j|i}$ and $q_{j|i}$.  A natural measure of the faithfulness with which $q_{j|i}$ models $p_{j|i}$ is the 
+<a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence" target="_blank" rel="noopener">Kullback-Leibler divergence</a>  (which is in this case equal to the cross-entropy up to an additive constant). SNE minimizes the sum of Kullback-Leibler divergences over all datapoints using a gradient descent method. The cost function C is given by
+$$C= \sum_{}{\displaystyle \mathrm {KL} \left(P\parallel Q\right)=\sum _{i\neq j}p_{ij}\log {\frac {p_{ij}}{q_{ij}}}}$$
+in which $P$ represents the conditional probability distribution over all other datapoints given datapoint $x$, and $Q$ represents the conditional probability distribution over all other map points given map point $y$. The defination of $p_{ij}$ and $q_{ij}$ solves the 
+<a href="https://medium.com/@layog/i-do-not-understand-t-sne-part-2-b2f997d177e3" target="_blank" rel="noopener">crowding problem</a> for SNE from Laurens van der Maaten in 
+<a href="https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf" target="_blank" rel="noopener">Visualizing Data using t-SNE</a>.
+The gradient of the Kullback-Leibler divergence $C$ is derived (the detailed derived procedure was presented in 
+<a href="https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf" target="_blank" rel="noopener">Visualizing Data using t-SNE</a>)
+$$\frac{\delta C}{\delta {{y}_{i}}}=4\sum\limits_{j}{\left( {{p}_{ij}}-{{q}_{ij}} \right)}\left( {{y}_{i}}-{{y}_{j}} \right){{\left( 1+{{\left| {{y}_{i}}-{{y}_{j}} \right|}^{2}} \right)}^{-1}}$$</p>
+<h4 id="22-implementing-pca-in-python3">2.2 Implementing PCA in python3</h4>
+<pre><code class="language-python">## Inherited from personal page of Laurens van der Maaten
+## https://lvdmaaten.github.io/tsne/
+import numpy as np
+import matplotlib.pyplot as plt
+
+def Hbeta(D=np.array([]), beta=1.0):
+    &quot;&quot;&quot;
+        Compute the perplexity and the P-row for a specific value of the
+        precision of a Gaussian distribution.
+    &quot;&quot;&quot;
+
+    # Compute P-row and corresponding perplexity
+    P = np.exp(-D.copy() * beta)
+    sumP = sum(P)
+    H = np.log(sumP) + beta * np.sum(D * P) / sumP
+    P = P / sumP
+    return H, P
+
+
+def x2p(X=np.array([]), tol=1e-5, perplexity=30.0):
+    &quot;&quot;&quot;
+        Performs a binary search to get P-values in such a way that each
+        conditional Gaussian has the same perplexity.
+    &quot;&quot;&quot;
+
+    # Initialize some variables
+    print(&quot;Computing pairwise distances...&quot;)
+    (n, d) = X.shape
+    sum_X = np.sum(np.square(X), 1)
+    D = np.add(np.add(-2 * np.dot(X, X.T), sum_X).T, sum_X)
+    P = np.zeros((n, n))
+    beta = np.ones((n, 1))
+    logU = np.log(perplexity)
+
+    # Loop over all datapoints
+    for i in range(n):
+
+        # Print progress
+        if i % 500 == 0:
+            print(&quot;Computing P-values for point %d of %d...&quot; % (i, n))
+
+        # Compute the Gaussian kernel and entropy for the current precision
+        betamin = -np.inf
+        betamax = np.inf
+        Di = D[i, np.concatenate((np.r_[0:i], np.r_[i+1:n]))]
+        (H, thisP) = Hbeta(Di, beta[i])
+
+        # Evaluate whether the perplexity is within tolerance
+        Hdiff = H - logU
+        tries = 0
+        while np.abs(Hdiff) &gt; tol and tries &lt; 50:
+
+            # If not, increase or decrease precision
+            if Hdiff &gt; 0:
+                betamin = beta[i].copy()
+                if betamax == np.inf or betamax == -np.inf:
+                    beta[i] = beta[i] * 2.
+                else:
+                    beta[i] = (beta[i] + betamax) / 2.
+            else:
+                betamax = beta[i].copy()
+                if betamin == np.inf or betamin == -np.inf:
+                    beta[i] = beta[i] / 2.
+                else:
+                    beta[i] = (beta[i] + betamin) / 2.
+
+            # Recompute the values
+            (H, thisP) = Hbeta(Di, beta[i])
+            Hdiff = H - logU
+            tries += 1
+
+        # Set the final row of P
+        P[i, np.concatenate((np.r_[0:i], np.r_[i+1:n]))] = thisP
+
+    # Return final P-matrix
+    print(&quot;Mean value of sigma: %f&quot; % np.mean(np.sqrt(1 / beta)))
+    return P
+
+def pca(X=np.array([]), no_dims=50):
+    &quot;&quot;&quot;
+        Runs PCA on the NxD array X in order to reduce its dimensionality to
+        no_dims dimensions.
+    &quot;&quot;&quot;
+
+    print(&quot;Preprocessing the data using PCA...&quot;)
+    (n, d) = X.shape
+    X = X - np.tile(np.mean(X, 0), (n, 1))
+    (l, M) = np.linalg.eig(np.dot(X.T, X))
+    Y = np.dot(X, M[:, 0:no_dims])
+    return Y
+
+def tsne(X=np.array([]), no_dims=2, initial_dims=50, perplexity=30.0):
+  &quot;&quot;&quot;
+      Runs t-SNE on the dataset in the NxD array X to reduce its
+      dimensionality to no_dims dimensions. The syntaxis of the function is
+      `Y = tsne.tsne(X, no_dims, perplexity), where X is an NxD NumPy array.
+      Notation of the input parameters:
+      no_dims: Show the dimensional datapoints in 2-dimension space.
+      initial_dims: The PCA is introduced to pre-reduce the initial dimension. After the process, Dimension become 50 from 784.
+      perplexity: It is, in a sense, a guess about the number of close neighbors each point has. Its recommended value (5-50).
+  &quot;&quot;&quot;
+
+  # Check inputs
+  if isinstance(no_dims, float):
+      print(&quot;Error: array X should have type float.&quot;)
+      return -1
+  if round(no_dims) != no_dims:
+      print(&quot;Error: number of dimensions should be an integer.&quot;)
+      return -1
+
+  # Initialize variables
+  X = pca(X, initial_dims).real
+  (n, d) = X.shape
+  max_iter = 1000
+  initial_momentum = 0.5
+  final_momentum = 0.8
+  eta = 500
+  min_gain = 0.01
+  Y = np.random.randn(n, no_dims)
+  dY = np.zeros((n, no_dims))
+  iY = np.zeros((n, no_dims))
+  gains = np.ones((n, no_dims))
+
+  # Compute P-values
+  P = x2p(X, 1e-5, perplexity)
+  P = P + np.transpose(P)
+  P = P / np.sum(P)
+  P = P * 4.									# early exaggeration
+  P = np.maximum(P, 1e-12)
+
+  # Run iterations
+  for iter in range(max_iter):
+      # Compute pairwise affinities
+      sum_Y = np.sum(np.square(Y), 1)
+      num = -2. * np.dot(Y, Y.T)
+      num = 1. / (1. + np.add(np.add(num, sum_Y).T, sum_Y))
+      num[range(n), range(n)] = 0.
+      Q = num / np.sum(num)
+      Q = np.maximum(Q, 1e-12)
+
+      # Compute gradient
+      PQ = P - Q
+      for i in range(n):
+          dY[i, :] = np.sum(np.tile(PQ[:, i] * num[:, i], (no_dims, 1)).T * (Y[i, :] - Y), 0)
+
+      # Perform the update
+      if iter &lt; 20:
+          momentum = initial_momentum
+      else:
+          momentum = final_momentum
+      gains = (gains + 0.2) * ((dY &gt; 0.) != (iY &gt; 0.)) + \
+              (gains * 0.8) * ((dY &gt; 0.) == (iY &gt; 0.))
+      gains[gains &lt; min_gain] = min_gain
+      iY = momentum * iY - eta * (gains * dY)
+      Y = Y + iY
+      Y = Y - np.tile(np.mean(Y, 0), (n, 1))
+
+      # Compute current value of cost function
+      if (iter + 1) % 10 == 0:
+          C = np.sum(P * np.log(P / Q))
+          print(&quot;Iteration %d: error is %f&quot; % (iter + 1, C))
+
+      # Stop lying about P-values
+      if iter == 100:
+          P = P / 4.
+  # Return solution
+  return Y
+
+if __name__ == &quot;__main__&quot;:
+    print(&quot;Run Y = tsne.tsne(X, no_dims, perplexity) to perform t-SNE on your dataset.&quot;)
+    print(&quot;Running example on 2,500 MNIST digits...&quot;)
+    X = np.loadtxt(&quot;mnist2500_X.txt&quot;)
+    labels = np.loadtxt(&quot;mnist2500_labels.txt&quot;)
+    Y = tsne(X, 2, 50, 20.0)
+    np.savetxt(&quot;myfile.txt&quot;, Y)
+    # data_to_show = np.loadtxt(&quot;myfile.txt&quot;)
+    data_to_show = Y
+    fig, ax = plt.subplots()
+    scatter = plt.scatter(data_to_show[:, 0], data_to_show[:, 1], 50, labels, alpha=0.4)
+    for i, txt in enumerate(labels[0:40]):
+        ax.annotate(txt, (data_to_show[i, 0], data_to_show[i, 1]))
+    legend1 = ax.legend(*scatter.legend_elements(),
+                        loc=&quot;upper left&quot;, title=&quot;Digit&quot;)
+    ax.add_artist(legend1)
+    ax.set_title('Visualize high-dimensional data points \n in 2-dimensional plot by t-SNE', fontsize=16)
+    ax.set_xlabel('Dimension 1')
+    ax.set_ylabel('Dimension 2')
+    plt.savefig('t-SNE.png')
+    plt.show()
+</code></pre>
+<p>As can be seen in the following figure, the visualized high-dimensional 
+<a href="https://lvdmaaten.github.io/tsne/code/tsne_python.zip" target="_blank" rel="noopener">mnist dataset</a> is shown in the lower 2-dimensional  space.
+<img src="./t-SNE.png" alt="Alt text"></p>
+<h4 id="23-how-to-give-the-hyper-parameters">2.3 How to give the hyper parameters</h4>
+<blockquote>
+<ul>
+<li>n_components: Dimension of the embedded space, this is the lower dimension that we want the high dimension data to be converted to. The default value is 2 for 2-dimensional space.</li>
+<li>Perplexity: The perplexity is related to the number of nearest neighbors that are used in t-SNE algorithms. Larger datasets usually require a larger perplexity. Perplexity can have a value between 5 and 50. The default value is 30.</li>
+<li>n_iter: Maximum number of iterations for optimization. Should be at least 250 and the default value is 1000</li>
+<li>learning_rate: The learning rate for t-SNE is usually in the range [10.0, 1000.0] with the default value of 200.0.</li>
+</ul>
+</blockquote>
+<h3 id="3-comparation-between-pca-and-t-sne">3. Comparation between PCA and t-SNE</h3>
+<blockquote>
+<ul>
+<li>The PCA is a linear algorithm which is not able to interpret complex ploynomial relationship between features. By contrast, t-SNE is actived based on probability distributions on neighbourhood graph to understand the structure with the data;</li>
+<li>The linear dimension reduction algorithm (PCA) concentrates on placing dissimilar data points far apart in a lower dismension representation, while the nonlinear algorithm (t-SNE) places the similar datapoints closely together in lower dimesional space. Hence, as can be seen in the following figure, PCA can only capture linear structures in the features. The t-SNE algorithm works in a very different way and focuses to preserve the local distances of the high-dimensional data in some mapping to low-dimensional data.
+<img src="./PCA_t-SNE.png" alt="Alt text"></li>
+</ul>
+</blockquote>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+X = np.loadtxt(&quot;mnist2500_X.txt&quot;)
+labels = np.loadtxt(&quot;mnist2500_labels.txt&quot;)
+
+## implementing by PCA
+pca = PCA(n_components=2, svd_solver='full')
+data_to_show_PCA = pca.fit_transform(X)
+
+## implementing by t-SNE
+data_to_show_tSNE = TSNE(n_components=2).fit_transform(X)
+
+## Figure PCA
+fig, ax = plt.subplots(1,2,figsize=(20, 8))
+scatter1 = ax[0].scatter(data_to_show_PCA[:, 0], data_to_show_PCA[:, 1], 50, labels, alpha=0.4)
+for i, txt in enumerate(labels[0:50]):
+    ax[0].annotate(txt, (data_to_show_PCA[i, 0], data_to_show_PCA[i, 1]))
+ax[0].set_title('PCA', fontsize=16)
+ax[0].set_xlabel('Principal 1')
+ax[0].set_ylabel('Principal 2')
+legend1 = ax[0].legend(*scatter1.legend_elements(),
+                    loc=&quot;upper left&quot;, title=&quot;Digit&quot;)
+ax[0].add_artist(legend1)
+fig.suptitle('Visualize high-dimensional data points through \n PCA and t-SNE', fontsize=16)
+## Figure t-SNE
+scatter2 = ax[1].scatter(data_to_show_tSNE[:, 0], data_to_show_tSNE[:, 1], 50, labels, alpha=0.4)
+for i, txt in enumerate(labels[0:50]):
+    ax[1].annotate(txt, (data_to_show_tSNE[i, 0], data_to_show_tSNE[i, 1]))
+ax[1].set_title('t-SNE', fontsize=16)
+ax[1].set_xlabel('Dimension 1')
+ax[1].set_ylabel('Dimension 2')
+legend2 = ax[1].legend(*scatter2.legend_elements(),
+                    loc=&quot;upper left&quot;, title=&quot;Digit&quot;)
+ax[1].add_artist(legend2)
+
+plt.savefig('PCA_t-SNE.png')
+plt.show()
+</code></pre>
+<p><img src="./PCAVSt-SNE_python.png" alt="Alt text"></p>
+<h3 id="references">References</h3>
+<ol>
+<li>
+<a href="http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf" target="_blank" rel="noopener">A tutorial on Principal Components Analysis</a></li>
+<li>
+<a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/wics.101" target="_blank" rel="noopener">Principal component analysis</a></li>
+<li>
+<a href="https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/" target="_blank" rel="noopener">PCA: A Practical Guide to Principal Component Analysis in R &amp; Python</a></li>
+<li>
+<a href="https://medium.com/datadriveninvestor/principal-component-analysis-pca-a0c5715bc9a2" target="_blank" rel="noopener">A simple introduction to PCA.</a></li>
+<li>
+<a href="https://cds.cern.ch/record/998831" target="_blank" rel="noopener">Chaper12: Continous latent variables in Pattern recognition and machine learning.</a></li>
+<li>
+<a href="https://www.analyticsvidhya.com/blog/2017/01/t-sne-implementation-r-python/" target="_blank" rel="noopener">t-SNE Walkthrough</a></li>
+<li>
+<a href="https://distill.pub/2016/misread-tsne/" target="_blank" rel="noopener">Good hyperparameter Information</a></li>
+<li>
+<a href="https://lvdmaaten.github.io/tsne/" target="_blank" rel="noopener">Laurens van der Maaten personal page</a></li>
+<li>
+<a href="https://www.youtube.com/watch?v=RJVL80Gg3lA" target="_blank" rel="noopener">Laurens van der Maaten&rsquo; talk about t-SNE</a></li>
+<li>
+<a href="https://www.quora.com/What-advantages-does-the-t-SNE-algorithm-have-over-PCA" target="_blank" rel="noopener">What advantages does the t-SNE algorithm have over PCA?</a></li>
+</ol>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/pca/">PCA</a>
+  
+  <a class="badge badge-light" href="/tag/t-sne/">t-SNE</a>
+  
+  <a class="badge badge-light" href="/tag/machine-learning/">Machine learning</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/t-sne/&amp;text=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/t-sne/&amp;t=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE&amp;body=/post/t-sne/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/t-sne/&amp;title=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE%20/post/t-sne/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/t-sne/&amp;title=Dimension%20Reduction%20and%20High%20Dimensional%20Data%20Visualization%20by%20PCA%20and%20t-SNE" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/yinyin-su/avatar_hu8c7d007082ea7670e0d1b10d1367c27e_1280177_270x270_fill_lanczos_center_2.png" alt="Yinyin SU">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="/">Yinyin SU</a></h5>
+        <h6 class="card-subtitle">PhD student in Robotic and Control</h6>
+        <p class="card-text">My research interests include soft robotics, control and optimization, robotic system and dynamic.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/contact/" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/QR_weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=mSpxozsAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/suyinyin" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "yinyinsu" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+<div class="article-widget">
+  
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/post/preceptron/" rel="prev">Preceptron algorithm</a>
+  </div>
+  
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/preceptron/">Preceptron algorithm</a></li>
+      
+      <li><a href="/post/someusefulcommandinros/">Some useful commands for ROS in Ubuntu</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://yinyinsu.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yinyin SU. All rights reserved.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

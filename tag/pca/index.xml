@@ -14,9 +14,9 @@
     
     <item>
       <title>Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</title>
-      <link>/post/controlandoptimization/t-sne/</link>
+      <link>/post/t-sne/</link>
       <pubDate>Thu, 22 Oct 2020 20:30:09 +0800</pubDate>
-      <guid>/post/controlandoptimization/t-sne/</guid>
+      <guid>/post/t-sne/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt; and &lt;strong&gt;t-Distributed Stochastic Neighbor Embedding (t-SNE)&lt;/strong&gt; are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature. Futhermore, the low-dimensional data can be visualized in frame, can feel by human. Hence, In this post, I simply summarized some mathematics model for PCA and t-SNE algorithms, implemented these methods repectively, and presented some advangtages and disadvantages of these alogorithms. At the end, some important hyperparameters that effect the performance of t-SNE are described to remind readers to choose the proper parameters. Some other demension reduction methods were summarized as follows:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;

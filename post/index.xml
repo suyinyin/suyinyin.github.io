@@ -12,5 +12,823 @@
       <link>/post/</link>
     </image>
     
+    <item>
+      <title>Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</title>
+      <link>/post/t-sne/</link>
+      <pubDate>Thu, 22 Oct 2020 20:30:09 +0800</pubDate>
+      <guid>/post/t-sne/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt; and &lt;strong&gt;t-Distributed Stochastic Neighbor Embedding (t-SNE)&lt;/strong&gt; are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature. Futhermore, the low-dimensional data can be visualized in frame, can feel by human. Hence, In this post, I simply summarized some mathematics model for PCA and t-SNE algorithms, implemented these methods repectively, and presented some advangtages and disadvantages of these alogorithms. At the end, some important hyperparameters that effect the performance of t-SNE are described to remind readers to choose the proper parameters. Some other demension reduction methods were summarized as follows:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;PCA (linear);&lt;/li&gt;
+&lt;li&gt;t-SNE (non-parametric/ nonlinear);&lt;/li&gt;
+&lt;li&gt;Sammon mapping (nonlinear);&lt;/li&gt;
+&lt;li&gt;Isomap (nonlinear);&lt;/li&gt;
+&lt;li&gt;LLE (nonlinear);&lt;/li&gt;
+&lt;li&gt;CCA (nonlinear);&lt;/li&gt;
+&lt;li&gt;SNE (nonlinear);&lt;/li&gt;
+&lt;li&gt;MVU (nonlinear);&lt;/li&gt;
+&lt;li&gt;Laplacian Eigenmaps (nonlinear),&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and their attributes were shown in the below figure.
+&lt;img src=&#34;./DimensionReduction.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1-pca&#34;&gt;1. PCA&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt;  is a  
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Principal_component_analysis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;process of  computing principal components using  the first few principal component and ignoring the rest&lt;/a&gt;. The goals of PCA are  to&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;extract the most important information from the data table;&lt;/li&gt;
+&lt;li&gt;compress the size of the data set by keeping only this important information;&lt;/li&gt;
+&lt;li&gt;simplify the description of the data set; and&lt;/li&gt;
+&lt;li&gt;analyze the structure of the observations and the variables.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The PCA can be defined commonly by two methods, resulting in the same algorithme. As shown in the following figure, principal component analysis seeks a space of lower dimensionality, known as the principal subspace and denoted by the magenta line, such that the orthogonal projection of the data points (red dots) onto this subspace maximizes the variance of the projected points (green dots). An alternative definition of PCA is based on minimizing the sum-of-squares of the projection errors, indicated by the blue lines.
+&lt;img src=&#34;./PCA2.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;11-maxiunum-variance-formulation&#34;&gt;1.1 Maxiunum variance formulation&lt;/h4&gt;
+&lt;p&gt;Consider a data set of observations $\left\{\mathbf{x}_{n}\right\}$
+where $n = 1, \cdots, N$ and the dimensionality of $\mathbf{x}_{n}$  is $D$. The PCA can project the data on to lower dimensional space with dimensionality $M &amp;lt; D$  while maximizing the variance of the projected data.
+We define unit vector ${{w}_{1}}$, which is column vector,  as the first principal direction and each data point $\mathbf{x}_{n}$ is then projected onto a scalar value ${{z}_{1}^n} = \mathbf{{w}_{1}^{T}}{{{x}}_{n}}$.  Based on the above definition, we preject all data points onto $\mathbf{w_1}$ direction, maximizing the variance along $\mathbf{w_1}$ direction,
+$$\max Var\left( {{\mathbf{z}}_{1}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{1}}-{{{\mathbf{\bar{z}}}}_{1}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{1}} \right||}_{2}}=1, $$
+&lt;img src=&#34;./PCA.png&#34; alt=&#34;Alt text&#34;&gt;
+where $\mathbf{z}_{1}$ is $[z_1^{1}, z_2^{1}, \cdots, z_N^{1}]$, and ${{{\mathbf{\bar{z}}}}_{1}}$ is sample set mean, given by ${{\mathbf{\bar{z}}}_{1}}=\frac{1}{N}\sum\limits_{i=1}^{N}{z_{i}^{1}}$. The above formulation is also used in other principal direction like $\mathbf{w_2}$, so the variance of data set  $\mathbf{z_2}$ can be derived by
+$$\max Var\left( {{\mathbf{z}}_{2}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{2}}-{{{\mathbf{\bar{z}}}}_{2}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{2}} \right||}_{2}}=1$$
+As a result, the low-dimensional data points
+$$\mathbf{z}=W\mathbf{x}, $$&lt;/p&gt;
+&lt;p&gt;where $W$ is  $\left[ \begin{matrix} {{\mathbf{w}}_{1}} &amp;amp; {{\mathbf{w}}_{2}} &amp;amp; {{\mathbf{w}}_{3}} &amp;amp; \cdots  \end{matrix} \right]$, and it is a orthogonal matrix.
+The variance of data set $\mathbf{z_1}$ can be derived&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Var\left( {{{\mathbf{{z}}}}_{1}} \right) &amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( z_{i}^{1}-{{{\bar{z}}}^{1}} \right)}}^{2}} \nonumber \\&lt;br&gt;
+&amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( \mathbf{w}_{1}^{\text{T}}x_{i}^{1}-\mathbf{w}_{1}^{\text{T}}{{{\bar{x}}}^{1}} \right)}}^{2}}  \nonumber\\&lt;br&gt;
+&amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}}^{2}}=\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)} \nonumber\\&lt;br&gt;
+&amp;amp; =\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}^{\text{T}}} \nonumber\\&lt;br&gt;
+&amp;amp; =\mathbf{w}_{1}^{\text{T}}\left[ \frac{1}{N}\sum\limits_{i=1}^{N}{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}^{\text{T}}} \right]{{\mathbf{w}}_{1}} \nonumber\\&lt;br&gt;
+&amp;amp; = \mathbf{w}_{1}^{\text{T}} cov\left( \mathbf x\right) \mathbf{w}_{1}\nonumber\\&lt;br&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $S = cov\left( \mathbf x\right)$ is covariance matrix of data set $\left\{\mathbf{x}_{n}\right\}$, and it is a sysmetric and semidefinite matrix. Eventually, if we want to obtain the principal vector $\mathbf{w_1}$, the optimization equation is&lt;/p&gt;
+&lt;p&gt;\begin{align}
+\underset{{{\mathbf{w}}_{1}}}{\mathop{\max }},\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}},\\&lt;br&gt;
+s.t.\quad \mathbf{w}_{1}^{\text{T}}{{\mathbf{w}}_{1}} = 1.
+\end{align}&lt;/p&gt;
+&lt;p&gt;Using the Langrange multiplier,
+$$g\left( {{\mathbf{w}}_{1}} \right)=\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}}+\alpha \left( 1-\mathbf{w}_{1}^{\text{T}}{{\mathbf{w}}_{1}} \right), $$&lt;/p&gt;
+&lt;p&gt;let $\frac{\partial g\left( {{\mathbf{w}}_{1}} \right)}{\partial {{\mathbf{w}}_{1}}}=0$, the following equation can be obtianed
+$$\frac{\partial g\left( {{\mathbf{w}}_{1}} \right)}{\partial {{\mathbf{w}}_{1}}}=S{{\mathbf{w}}_{1}}-\alpha{{\mathbf{w}}_{1}} =0$$
+Hence, the ${{\mathbf{w}}_{1}}$ and $\alpha$ are the eigenvector and the corresponding eigenvalue of covariance matrix $S$. Moreover, $\alpha$ is the first largest eigenvalue. Also, the ${{\mathbf{w}}_{2}}$ is the corresponding eigenvetor related to the second largest eigenvalue of $S$.&lt;/p&gt;
+&lt;h3 id=&#34;2-t-sne&#34;&gt;2. t-SNE&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;t-SNE&lt;/strong&gt; 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;is a mechine learning algorithm for visualazation developed by Sam Roweis and Geoggrey Hinton&lt;/a&gt;, well suitied for embedding high-dimensiontal data for visualization in a low-dimensional space of two or three dimension observed directly by human. It is extensively applied in image processing, NLP, genomic data and speech processing. The t-SNE puts emphasis on (1) &lt;strong&gt;modeling dissimilar datapoints by means of large pairwise distances&lt;/strong&gt;, and (2) &lt;strong&gt;modeling similar datapoints by means of small pairwise distances&lt;/strong&gt;. To keep things simple, here’s a brief overview of working of t-SNE:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;The algorithms starts by calculating the probability of similarity of points in high-dimensional space and calculating the probability of similarity of points in the corresponding low-dimensional space. The similarity of points is calculated as the conditional probability that a point A would choose point B as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian (normal distribution) centered at A.&lt;/li&gt;
+&lt;li&gt;It then tries to minimize the difference between these conditional probabilities (or similarities) in higher-dimensional and lower-dimensional space for a perfect representation of data points in lower-dimensional space.&lt;/li&gt;
+&lt;li&gt;To measure the minimization of the sum of difference of conditional probability t-SNE minimizes the sum of 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kullback-Leibler divergence&lt;/a&gt; of overall data points using a gradient descent method.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;21-mathematics-model&#34;&gt;2.1 Mathematics model&lt;/h4&gt;
+&lt;h5 id=&#34;step-1-define-similarity-in-high-dimensional-space&#34;&gt;Step 1: Define similarity in high-dimensional space&lt;/h5&gt;
+&lt;p&gt;t-SNE uses Stochastic Neighbour Embedding (SNE) method to convert the high-dimensional Euclidean distances between data points into conditional probablities that represent their similiarities.  The conditional probability ${{p}_{j|i}}$  is defined to represent the similarity, $x_i$ would choose $x_j$ as its neighhour if neighours are chosen in proportion to their probablity density under a Guassian with center at $x_i$.  The nearer the data points are, the higher value of  ${{p}_{j|i}}$  is. Mathematically, ${{p}_{j|i}}$  can be defined by
+$${\displaystyle p_{j\mid i}={\frac {\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{j}\rVert ^{2}/2\sigma _{i}^{2})}{\sum _{k\neq i}\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{k}\rVert ^{2}/2\sigma _{i}^{2})}}}, $$
+where $\sigma_i$ is the variance of the Guassian distribution with the mean being $x_i$. Morever $p_{ij} $is defined by
+$${\displaystyle p_{ij}={\frac {p_{j\mid i}+p_{i\mid j}}{2N}}}$$
+where   $p_{ii} = 0$ and $p_{ij} = p_{ji}$.&lt;/p&gt;
+&lt;h5 id=&#34;step-2-define-similarity-in-low-dimensional-space&#34;&gt;Step 2: Define similarity in low-dimensional space&lt;/h5&gt;
+&lt;p&gt;For the low-dimensional counterparts $y_i$ and $y_j$ of the high-dimensional data points $x_i$ and $x_j$. It is possible to define a similar conditional probability, donoted by $q_{ij}$
+$${\displaystyle q_{ij}={\frac {(1+\lVert \mathbf {y} _{i}-\mathbf {y} _{j}\rVert ^{2})^{-1}}{\sum _{k}\sum _{l\neq k}(1+\lVert \mathbf {y} _{k}-\mathbf {y} _{l}\rVert ^{2})^{-1}}}}, $$
+where $q_{ii} = 0$.&lt;/p&gt;
+&lt;h5 id=&#34;step-3-define-cost-function-to-compute-q_ij&#34;&gt;Step 3: Define cost function to compute $q_{ij}$&lt;/h5&gt;
+&lt;p&gt;If the map points $y_i$ and $y_j$ correctly model the similarity between the high-dimensional datapoints $x_i$ and $x_j$, the conditional probabilities $p_{j|i}$ and $q_{j|i}$ will be equal. Motivated by this observation, SNE aims to find a low-dimensional data representation that minimizes the mismatch between $p_{j|i}$ and $q_{j|i}$.  A natural measure of the faithfulness with which $q_{j|i}$ models $p_{j|i}$ is the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kullback-Leibler divergence&lt;/a&gt;  (which is in this case equal to the cross-entropy up to an additive constant). SNE minimizes the sum of Kullback-Leibler divergences over all datapoints using a gradient descent method. The cost function C is given by
+$$C= \sum_{}{\displaystyle \mathrm {KL} \left(P\parallel Q\right)=\sum _{i\neq j}p_{ij}\log {\frac {p_{ij}}{q_{ij}}}}$$
+in which $P$ represents the conditional probability distribution over all other datapoints given datapoint $x$, and $Q$ represents the conditional probability distribution over all other map points given map point $y$. The defination of $p_{ij}$ and $q_{ij}$ solves the 
+&lt;a href=&#34;https://medium.com/@layog/i-do-not-understand-t-sne-part-2-b2f997d177e3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;crowding problem&lt;/a&gt; for SNE from Laurens van der Maaten in 
+&lt;a href=&#34;https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visualizing Data using t-SNE&lt;/a&gt;.
+The gradient of the Kullback-Leibler divergence $C$ is derived (the detailed derived procedure was presented in 
+&lt;a href=&#34;https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visualizing Data using t-SNE&lt;/a&gt;)
+$$\frac{\delta C}{\delta {{y}_{i}}}=4\sum\limits_{j}{\left( {{p}_{ij}}-{{q}_{ij}} \right)}\left( {{y}_{i}}-{{y}_{j}} \right){{\left( 1+{{\left| {{y}_{i}}-{{y}_{j}} \right|}^{2}} \right)}^{-1}}$$&lt;/p&gt;
+&lt;h4 id=&#34;22-implementing-pca-in-python3&#34;&gt;2.2 Implementing PCA in python3&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;## Inherited from personal page of Laurens van der Maaten
+## https://lvdmaaten.github.io/tsne/
+import numpy as np
+import matplotlib.pyplot as plt
+
+def Hbeta(D=np.array([]), beta=1.0):
+    &amp;quot;&amp;quot;&amp;quot;
+        Compute the perplexity and the P-row for a specific value of the
+        precision of a Gaussian distribution.
+    &amp;quot;&amp;quot;&amp;quot;
+
+    # Compute P-row and corresponding perplexity
+    P = np.exp(-D.copy() * beta)
+    sumP = sum(P)
+    H = np.log(sumP) + beta * np.sum(D * P) / sumP
+    P = P / sumP
+    return H, P
+
+
+def x2p(X=np.array([]), tol=1e-5, perplexity=30.0):
+    &amp;quot;&amp;quot;&amp;quot;
+        Performs a binary search to get P-values in such a way that each
+        conditional Gaussian has the same perplexity.
+    &amp;quot;&amp;quot;&amp;quot;
+
+    # Initialize some variables
+    print(&amp;quot;Computing pairwise distances...&amp;quot;)
+    (n, d) = X.shape
+    sum_X = np.sum(np.square(X), 1)
+    D = np.add(np.add(-2 * np.dot(X, X.T), sum_X).T, sum_X)
+    P = np.zeros((n, n))
+    beta = np.ones((n, 1))
+    logU = np.log(perplexity)
+
+    # Loop over all datapoints
+    for i in range(n):
+
+        # Print progress
+        if i % 500 == 0:
+            print(&amp;quot;Computing P-values for point %d of %d...&amp;quot; % (i, n))
+
+        # Compute the Gaussian kernel and entropy for the current precision
+        betamin = -np.inf
+        betamax = np.inf
+        Di = D[i, np.concatenate((np.r_[0:i], np.r_[i+1:n]))]
+        (H, thisP) = Hbeta(Di, beta[i])
+
+        # Evaluate whether the perplexity is within tolerance
+        Hdiff = H - logU
+        tries = 0
+        while np.abs(Hdiff) &amp;gt; tol and tries &amp;lt; 50:
+
+            # If not, increase or decrease precision
+            if Hdiff &amp;gt; 0:
+                betamin = beta[i].copy()
+                if betamax == np.inf or betamax == -np.inf:
+                    beta[i] = beta[i] * 2.
+                else:
+                    beta[i] = (beta[i] + betamax) / 2.
+            else:
+                betamax = beta[i].copy()
+                if betamin == np.inf or betamin == -np.inf:
+                    beta[i] = beta[i] / 2.
+                else:
+                    beta[i] = (beta[i] + betamin) / 2.
+
+            # Recompute the values
+            (H, thisP) = Hbeta(Di, beta[i])
+            Hdiff = H - logU
+            tries += 1
+
+        # Set the final row of P
+        P[i, np.concatenate((np.r_[0:i], np.r_[i+1:n]))] = thisP
+
+    # Return final P-matrix
+    print(&amp;quot;Mean value of sigma: %f&amp;quot; % np.mean(np.sqrt(1 / beta)))
+    return P
+
+def pca(X=np.array([]), no_dims=50):
+    &amp;quot;&amp;quot;&amp;quot;
+        Runs PCA on the NxD array X in order to reduce its dimensionality to
+        no_dims dimensions.
+    &amp;quot;&amp;quot;&amp;quot;
+
+    print(&amp;quot;Preprocessing the data using PCA...&amp;quot;)
+    (n, d) = X.shape
+    X = X - np.tile(np.mean(X, 0), (n, 1))
+    (l, M) = np.linalg.eig(np.dot(X.T, X))
+    Y = np.dot(X, M[:, 0:no_dims])
+    return Y
+
+def tsne(X=np.array([]), no_dims=2, initial_dims=50, perplexity=30.0):
+  &amp;quot;&amp;quot;&amp;quot;
+      Runs t-SNE on the dataset in the NxD array X to reduce its
+      dimensionality to no_dims dimensions. The syntaxis of the function is
+      `Y = tsne.tsne(X, no_dims, perplexity), where X is an NxD NumPy array.
+      Notation of the input parameters:
+      no_dims: Show the dimensional datapoints in 2-dimension space.
+      initial_dims: The PCA is introduced to pre-reduce the initial dimension. After the process, Dimension become 50 from 784.
+      perplexity: It is, in a sense, a guess about the number of close neighbors each point has. Its recommended value (5-50).
+  &amp;quot;&amp;quot;&amp;quot;
+
+  # Check inputs
+  if isinstance(no_dims, float):
+      print(&amp;quot;Error: array X should have type float.&amp;quot;)
+      return -1
+  if round(no_dims) != no_dims:
+      print(&amp;quot;Error: number of dimensions should be an integer.&amp;quot;)
+      return -1
+
+  # Initialize variables
+  X = pca(X, initial_dims).real
+  (n, d) = X.shape
+  max_iter = 1000
+  initial_momentum = 0.5
+  final_momentum = 0.8
+  eta = 500
+  min_gain = 0.01
+  Y = np.random.randn(n, no_dims)
+  dY = np.zeros((n, no_dims))
+  iY = np.zeros((n, no_dims))
+  gains = np.ones((n, no_dims))
+
+  # Compute P-values
+  P = x2p(X, 1e-5, perplexity)
+  P = P + np.transpose(P)
+  P = P / np.sum(P)
+  P = P * 4.									# early exaggeration
+  P = np.maximum(P, 1e-12)
+
+  # Run iterations
+  for iter in range(max_iter):
+      # Compute pairwise affinities
+      sum_Y = np.sum(np.square(Y), 1)
+      num = -2. * np.dot(Y, Y.T)
+      num = 1. / (1. + np.add(np.add(num, sum_Y).T, sum_Y))
+      num[range(n), range(n)] = 0.
+      Q = num / np.sum(num)
+      Q = np.maximum(Q, 1e-12)
+
+      # Compute gradient
+      PQ = P - Q
+      for i in range(n):
+          dY[i, :] = np.sum(np.tile(PQ[:, i] * num[:, i], (no_dims, 1)).T * (Y[i, :] - Y), 0)
+
+      # Perform the update
+      if iter &amp;lt; 20:
+          momentum = initial_momentum
+      else:
+          momentum = final_momentum
+      gains = (gains + 0.2) * ((dY &amp;gt; 0.) != (iY &amp;gt; 0.)) + \
+              (gains * 0.8) * ((dY &amp;gt; 0.) == (iY &amp;gt; 0.))
+      gains[gains &amp;lt; min_gain] = min_gain
+      iY = momentum * iY - eta * (gains * dY)
+      Y = Y + iY
+      Y = Y - np.tile(np.mean(Y, 0), (n, 1))
+
+      # Compute current value of cost function
+      if (iter + 1) % 10 == 0:
+          C = np.sum(P * np.log(P / Q))
+          print(&amp;quot;Iteration %d: error is %f&amp;quot; % (iter + 1, C))
+
+      # Stop lying about P-values
+      if iter == 100:
+          P = P / 4.
+  # Return solution
+  return Y
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    print(&amp;quot;Run Y = tsne.tsne(X, no_dims, perplexity) to perform t-SNE on your dataset.&amp;quot;)
+    print(&amp;quot;Running example on 2,500 MNIST digits...&amp;quot;)
+    X = np.loadtxt(&amp;quot;mnist2500_X.txt&amp;quot;)
+    labels = np.loadtxt(&amp;quot;mnist2500_labels.txt&amp;quot;)
+    Y = tsne(X, 2, 50, 20.0)
+    np.savetxt(&amp;quot;myfile.txt&amp;quot;, Y)
+    # data_to_show = np.loadtxt(&amp;quot;myfile.txt&amp;quot;)
+    data_to_show = Y
+    fig, ax = plt.subplots()
+    scatter = plt.scatter(data_to_show[:, 0], data_to_show[:, 1], 50, labels, alpha=0.4)
+    for i, txt in enumerate(labels[0:40]):
+        ax.annotate(txt, (data_to_show[i, 0], data_to_show[i, 1]))
+    legend1 = ax.legend(*scatter.legend_elements(),
+                        loc=&amp;quot;upper left&amp;quot;, title=&amp;quot;Digit&amp;quot;)
+    ax.add_artist(legend1)
+    ax.set_title(&#39;Visualize high-dimensional data points \n in 2-dimensional plot by t-SNE&#39;, fontsize=16)
+    ax.set_xlabel(&#39;Dimension 1&#39;)
+    ax.set_ylabel(&#39;Dimension 2&#39;)
+    plt.savefig(&#39;t-SNE.png&#39;)
+    plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As can be seen in the following figure, the visualized high-dimensional 
+&lt;a href=&#34;https://lvdmaaten.github.io/tsne/code/tsne_python.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mnist dataset&lt;/a&gt; is shown in the lower 2-dimensional  space.
+&lt;img src=&#34;./t-SNE.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;23-how-to-give-the-hyper-parameters&#34;&gt;2.3 How to give the hyper parameters&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;n_components: Dimension of the embedded space, this is the lower dimension that we want the high dimension data to be converted to. The default value is 2 for 2-dimensional space.&lt;/li&gt;
+&lt;li&gt;Perplexity: The perplexity is related to the number of nearest neighbors that are used in t-SNE algorithms. Larger datasets usually require a larger perplexity. Perplexity can have a value between 5 and 50. The default value is 30.&lt;/li&gt;
+&lt;li&gt;n_iter: Maximum number of iterations for optimization. Should be at least 250 and the default value is 1000&lt;/li&gt;
+&lt;li&gt;learning_rate: The learning rate for t-SNE is usually in the range [10.0, 1000.0] with the default value of 200.0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;3-comparation-between-pca-and-t-sne&#34;&gt;3. Comparation between PCA and t-SNE&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;The PCA is a linear algorithm which is not able to interpret complex ploynomial relationship between features. By contrast, t-SNE is actived based on probability distributions on neighbourhood graph to understand the structure with the data;&lt;/li&gt;
+&lt;li&gt;The linear dimension reduction algorithm (PCA) concentrates on placing dissimilar data points far apart in a lower dismension representation, while the nonlinear algorithm (t-SNE) places the similar datapoints closely together in lower dimesional space. Hence, as can be seen in the following figure, PCA can only capture linear structures in the features. The t-SNE algorithm works in a very different way and focuses to preserve the local distances of the high-dimensional data in some mapping to low-dimensional data.
+&lt;img src=&#34;./PCA_t-SNE.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+X = np.loadtxt(&amp;quot;mnist2500_X.txt&amp;quot;)
+labels = np.loadtxt(&amp;quot;mnist2500_labels.txt&amp;quot;)
+
+## implementing by PCA
+pca = PCA(n_components=2, svd_solver=&#39;full&#39;)
+data_to_show_PCA = pca.fit_transform(X)
+
+## implementing by t-SNE
+data_to_show_tSNE = TSNE(n_components=2).fit_transform(X)
+
+## Figure PCA
+fig, ax = plt.subplots(1,2,figsize=(20, 8))
+scatter1 = ax[0].scatter(data_to_show_PCA[:, 0], data_to_show_PCA[:, 1], 50, labels, alpha=0.4)
+for i, txt in enumerate(labels[0:50]):
+    ax[0].annotate(txt, (data_to_show_PCA[i, 0], data_to_show_PCA[i, 1]))
+ax[0].set_title(&#39;PCA&#39;, fontsize=16)
+ax[0].set_xlabel(&#39;Principal 1&#39;)
+ax[0].set_ylabel(&#39;Principal 2&#39;)
+legend1 = ax[0].legend(*scatter1.legend_elements(),
+                    loc=&amp;quot;upper left&amp;quot;, title=&amp;quot;Digit&amp;quot;)
+ax[0].add_artist(legend1)
+fig.suptitle(&#39;Visualize high-dimensional data points through \n PCA and t-SNE&#39;, fontsize=16)
+## Figure t-SNE
+scatter2 = ax[1].scatter(data_to_show_tSNE[:, 0], data_to_show_tSNE[:, 1], 50, labels, alpha=0.4)
+for i, txt in enumerate(labels[0:50]):
+    ax[1].annotate(txt, (data_to_show_tSNE[i, 0], data_to_show_tSNE[i, 1]))
+ax[1].set_title(&#39;t-SNE&#39;, fontsize=16)
+ax[1].set_xlabel(&#39;Dimension 1&#39;)
+ax[1].set_ylabel(&#39;Dimension 2&#39;)
+legend2 = ax[1].legend(*scatter2.legend_elements(),
+                    loc=&amp;quot;upper left&amp;quot;, title=&amp;quot;Digit&amp;quot;)
+ax[1].add_artist(legend2)
+
+plt.savefig(&#39;PCA_t-SNE.png&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./PCAVSt-SNE_python.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A tutorial on Principal Components Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://onlinelibrary.wiley.com/doi/abs/10.1002/wics.101&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Principal component analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.analyticsvidhya.com/blog/2016/03/pca-practical-guide-principal-component-analysis-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PCA: A Practical Guide to Principal Component Analysis in R &amp;amp; Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://medium.com/datadriveninvestor/principal-component-analysis-pca-a0c5715bc9a2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A simple introduction to PCA.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://cds.cern.ch/record/998831&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chaper12: Continous latent variables in Pattern recognition and machine learning.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.analyticsvidhya.com/blog/2017/01/t-sne-implementation-r-python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;t-SNE Walkthrough&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://distill.pub/2016/misread-tsne/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Good hyperparameter Information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://lvdmaaten.github.io/tsne/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Laurens van der Maaten personal page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=RJVL80Gg3lA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Laurens van der Maaten&amp;rsquo; talk about t-SNE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.quora.com/What-advantages-does-the-t-SNE-algorithm-have-over-PCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;What advantages does the t-SNE algorithm have over PCA?&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Preceptron algorithm</title>
+      <link>/post/preceptron/</link>
+      <pubDate>Thu, 03 Sep 2020 20:30:09 +0800</pubDate>
+      <guid>/post/preceptron/</guid>
+      <description>&lt;p&gt;In machine learning, the &lt;strong&gt;perceptron&lt;/strong&gt; is an algorithm for supervised learning of binary classfiers. The 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Perceptron&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;perceptron algorithm&lt;/a&gt; was invented 1958 at the Cornell Aeronautical lab by Frank Rosenblatt.&lt;/p&gt;
+&lt;h3 id=&#34;perceptron-model&#34;&gt;Perceptron model&lt;/h3&gt;
+&lt;p&gt;For input space (featured space) $\mathcal{X} = {{\mathbf{R}}^{n}}$ and  output space $\mathcal{Y} =\{-1,  +1\}$, the perceptron model can be built by:
+$$f(x) = sign(\omega \centerdot x+b)$$
+$$sign(x) =
+\begin{cases}
++1 &amp;amp; \text{if } x \ge 0,\\&lt;br&gt;
+-1 &amp;amp; \text{if } x &amp;lt; 0.
+\end{cases}$$
+where $\omega$ and $b$ are the weight and bias for the above function respectively. Through being trained by the give training data $T = \{ (x_0, y_0), (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)\}$, where $x_i \in \mathcal{X} =  {{\mathbf{R}}^{n}}$ and $y_i \in \mathcal{Y}=\{-1, +1\}$, $i = 1, 2, \cdots, N$. The parameters $\omega$ and $b$ can be leanned through the mentioned data set.  The learned linear hyperplane can divide the training data into two parts labelling +1 and -1.  The schematic diagram is shown as follows.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-schematic-diagram-of-perceptron&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The schematic diagram of perceptron
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;perceptron-strategy&#34;&gt;Perceptron strategy&lt;/h3&gt;
+&lt;p&gt;In perceptron algorithm, the total distance to the hyperplane is defined to depict its cost function:
+$$L\left( \omega ,b \right)=-\sum\limits_{{{x}_{i}}\in M}{{{y}_{i}}\left( \omega \cdot {{x}_{i}}+b \right)}$$
+where $M$ is misclassfication data set.&lt;/p&gt;
+&lt;h3 id=&#34;perceptron-learning-algorithm&#34;&gt;Perceptron learning algorithm&lt;/h3&gt;
+&lt;p&gt;For the given training data set, the parameters $\omega$ and $b$ can be optimized by minimizing the cost function:
+$$\underset{\omega ,b}{\mathop{\min }},L\left( \omega ,b \right)=-\sum\limits_{{{x}_{i}}\in M}{{{y}_{i}}\left( \omega \cdot {{x}_{i}}+b \right)}$$
+We can use stochastic gradient descent method to solve the above optimized problem. Take partial derivative with respect to $\omega$ and $b$, the iteration strategy can be obtained:
+$$\begin{align}
+&amp;amp; \omega \leftarrow \omega +\eta {{y}_{i}}{{x}_{i}} \&lt;br&gt;
+&amp;amp; b\leftarrow b+\eta {{y}_{i}} \&lt;br&gt;
+\end{align}$$
+where $\eta$ is a learning rate hyperparameter set by user.&lt;/p&gt;
+&lt;p&gt;Based on the aforementioned discussion, the perceptron algorithm can be derived:
+$\omega$, $b$&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Preceptron algorithm&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Input:&lt;/strong&gt; training data set: $T = { (x_0, y_0), (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)}$, $i = 1, 2, 3, \cdots, N$; learning rate $\eta (0 &amp;lt; \eta \le 1)$;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Output:&lt;/strong&gt; $\omega$, $b$ and preceptron model: $f(x) = sign(\omega \centerdot x+b)$&lt;/li&gt;
+&lt;li&gt;Initialize $\omega_0, b_0$;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;while&lt;/strong&gt;: Choosing the single instance $(x_i, y_i)$ from $T$ until no misclassfication data contained in the set;&lt;/li&gt;
+&lt;li&gt;  &lt;strong&gt;if&lt;/strong&gt;  $y_i \left( \omega \cdot x_i +b\right) \le 0$&lt;/li&gt;
+&lt;li&gt;   $\omega \leftarrow \omega +\eta {y_i}{x_i}$ and $b\leftarrow b+\eta {{y}_{i}}$&lt;/li&gt;
+&lt;li&gt;  &lt;strong&gt;endif&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;end while&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;implementing-the-algorithm-in-python3&#34;&gt;Implementing the algorithm in python3&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib.animation import FuncAnimation
+
+# define a function to realize preceptron algorithm.
+def PrecessingPreceptron(point, learning_rate):
+    w_set = []
+    b_set = []
+    w = np.array([0,0])
+    b = 0
+    flag = 1
+    while flag:
+        flag = 0
+        i = 0
+        for i in range(len(point)):
+            if point[i,2]*(np.matmul(w, point[i,0:2]) + b) &amp;lt;= 0:
+                w = w + learning_rate * point[i,0:2] * point[i,2]
+                b = b + learning_rate * point[i,2]
+                w_set.append(w)
+                b_set.append(b)
+                flag = 1
+                break
+        if flag == 0:
+            break
+    return w_set, b_set
+
+# DrawFigure is used to draw the process
+def DrawFigure(count, w_set, b_set, gap):
+    point_x_1 = 0
+    point_x_2 = 5
+    if count == 0:
+        line.set_data([], [])
+        return line,
+    if gap*count &amp;lt; len(w_set):
+        w = w_set[count*gap]
+        b = b_set[count*gap]
+    else:
+        w = w_set[-1]
+        b = b_set[-1]
+    if w[1] != 0:
+        point_y_1 = -(w[0] * point_x_1 + b) / w[1]
+        point_y_2 = -(w[0] * point_x_2 + b) / w[1]
+        thisx = np.array([point_x_1, point_x_2])
+        thisy = np.array([point_y_1, point_y_2])
+        line.set_data(thisx, thisy)
+        return line,
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    # define input data set
+    traning_data = np.array([[3, 4, 1],[4, 3, 1], [3,3,-1],[1,2,-1],[3,5,1],[4,7,1],[3,2,-1],[1.5,5,-1]])
+    learning_rate = 0.7
+    fig, ax = plt.subplots()
+    line, = ax.plot([], [], &#39;k-&#39;)
+    for index in range(len(traning_data)):
+        if traning_data[index,2] == 1:
+            ax.plot(traning_data[index, 0], traning_data[index, 1], &#39;ro&#39;)
+        else:
+            ax.plot(traning_data[index,0], traning_data[index,1],&#39;bo&#39;)
+    plt.xlabel(&#39;$x_1$&#39;)
+    plt.ylabel(&#39;$x_2$&#39;)
+    plt.title(&#39;Preceptron algorithm learning precess&#39;)
+    w_set, b_set = PrecessingPreceptron(traning_data, learning_rate)
+    anim = FuncAnimation(fig, DrawFigure,frames=np.arange(0, 15), fargs=(w_set, b_set, 50), interval=300, blit=True)
+    anim.save(&#39;preceptron.gif&#39;, writer=&#39;imagemagick&#39;)
+    plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;
+&lt;img src=&#34;preceptron.gif&#34; alt=&#34;Alt Text&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;It can be testified that the perceptron algorithm could converge at last within the limited steps of iterations.&lt;/li&gt;
+&lt;li&gt;The original algorithm have multiple solutions coming from: 1. The initial parameters $\omega_0, b_0$; 2. the selection order of misclassficated point in the learning process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Some useful commands for ROS in Ubuntu</title>
+      <link>/post/someusefulcommandinros/</link>
+      <pubDate>Tue, 11 Aug 2020 15:34:21 +0800</pubDate>
+      <guid>/post/someusefulcommandinros/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ROS&lt;/strong&gt; is an open-source, meta-operating system for your robot. Some advantages are as follows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Distributed computation&lt;/li&gt;
+&lt;li&gt;Software resure&lt;/li&gt;
+&lt;li&gt;Rapid testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;packages&#34;&gt;Packages&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rospack list
+# You can obtain a list of all of the installed ROS packages.
+rospack find package-name
+# find the directory of a single package
+rosls package-name
+# view all files in the package directory
+roscd package-name
+# go to the package directory directly
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nodes&#34;&gt;Nodes&lt;/h3&gt;
+&lt;p&gt;ROS node communication network
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-ros-node-communication-network&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    ROS node communication network
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rosrun package-name executable-name
+# Starting a node
+rosnode list
+#listing nodes
+rosnode info node-name
+# get some information abour a particular node.
+rosnode kill node-name
+# Killing a node.
+rosnode cleanup
+#remove the dead nodes from the list.
+rqt_graph
+# veiwing the graph
+rosmsg show message-type-name
+#inspecting a message type.
+rostopic pub -r rate-in-hz topic-name message-type message-content
+# publishing messages from the command line.
+rosrun turtlesim turtlesim_node __name:=A
+rosrun turtlesim turtlesim_node __name:=B
+# run the same node with different name, as ROS master does not allow multiple nodes with the same name.
+roswtf
+# perform a broad variety of sanity checks.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;creating-a-workplace-and-a-package&#34;&gt;Creating a workplace and a package&lt;/h3&gt;
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+
+
+  &lt;img data-src=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The file structure of workplace
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;user@hostname$ mkdir -p ~/catkin_ws/src
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_init_workspace
+user@hostname$ source devel/setup.bash
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_create_pkg my_package_name
+# creating two default versions of these two configuration files: package.xml and CMakeLists.txt.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;the-first-program-hello-world-in-ros&#34;&gt;The first program &amp;lsquo;hello world&amp;rsquo; in ROS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1: Write the &lt;code&gt;helle world&lt;/code&gt; program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// This is a ROS version fo the standard &amp;quot;hello world&amp;quot; program
+// This header defines the standard ROS classes.
+#include &amp;lt;ros/ros.h&amp;gt;
+int main(int agrc, char** agrv){
+//Initialize the ROS system.
+ros::init(argc, argv, &amp;quot;hello_ros&amp;quot;);
+// Establish this program as a ROS node
+ros::NodeHandle nh;
+//Send some output as a log message.
+ROS_INFO_STREAM(&amp;quot;Hello, ROS!&amp;quot;);
+return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 2: Compiling the &lt;code&gt;hello world&lt;/code&gt; program&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Declaring dependencies&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;CMakeLists.txt
+&lt;code&gt;find_package(catkin REQUIRED COMPONENTS package-names)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;package.xml
+&lt;code&gt;&amp;lt;build_depend&amp;gt;package-name&amp;lt;/build_depend&amp;gt;&lt;/code&gt;
+&lt;code&gt;&amp;lt;run_depend&amp;gt;package-name&amp;lt;/run_depend&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Declaring an executable&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;CMakeLists.txt
+&lt;code&gt;add_executable(executable-name source-files1 source-files2 ...)&lt;/code&gt;
+&lt;code&gt;target_link_libraries(executable-name ${catkin_LIBRARIES})&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Building the workplace&lt;/strong&gt;
+&lt;code&gt;catkin_make&lt;/code&gt;
+&lt;code&gt;source devel/setup.bash&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;write-a-publisher-node-and-a-subscriber-node&#34;&gt;Write a publisher node and a subscriber node&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Be mindful of the lifetime of your &lt;strong&gt;ros::Publisher&lt;/strong&gt; objects. Creating the publisher is an expensive operation, so it&amp;rsquo;s a usually a bad idea to creat a new &lt;strong&gt;ros::Publisher&lt;/strong&gt; object each time you want to publish a message.&lt;/li&gt;
+&lt;li&gt;Refer the 
+&lt;a href=&#34;http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&amp;#43;&amp;#43;%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ROS wiki Publisher&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// This program publishes randomly-generated velocity messages for turtlesim.
+#include&amp;lt;ros/ros.h&amp;gt;
+// incldue message type declaration
+#include&amp;lt;geometry_msgs/Twist.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+
+int main(int agrc, char** agrv){
+//Initialize the ROS system and become a node
+ros::init(agrc, agrv, &amp;quot;publish_velocity&amp;quot;);
+ros::NodeHandle nh;
+//creat a publisher object
+// ros::Publisher pub = node_handle.advertise&amp;lt;message_type&amp;gt;(topic_name, queue_size);
+// queue size is an integer representing the size of the message queue for publisher. In most case, a reasonablly large value, say 1000, is suitable.
+ros::Publisher pub = nh.advertise&amp;lt;geometry_msgs::Twist&amp;gt;(&amp;quot;turtle1/cmd_vel&amp;quot;, 1000);
+
+//send the random number generator.
+srand(time(0));
+
+//loop at 2 Hz until the node is shut down.
+ros::Rate rate(2);
+// ros::ok() function is used to check for node shutdown.
+while(ros::ok()){
+// creat and fill in the message. The other four fields, which are ignored by turtlesim, default to 0.
+geometry_msgs::Twist msg;
+msg.linear.x = double(rand())/double(RAND_MAX);
+msg.linear.z = 2*double(rand())/double(RAND_MAX) - 1;
+//Publish the message.
+pub.publish(msg);
+//send a message to rosout with the details.
+ROS_INFO_STREAM(&amp;quot;Sending random velocity command: &amp;quot;&amp;lt;&amp;lt; &amp;quot; linear=&amp;quot; &amp;lt;&amp;lt; msg.linear.x &amp;lt;&amp;lt; &amp;quot; angular=&amp;quot; &amp;lt;&amp;lt; msg.angular.z);
+
+//Wait until it&#39;s time for another iteration.
+rate.sleep();
+}
+return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Refer to 
+&lt;a href=&#34;http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&amp;#43;&amp;#43;%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ROS wiki Subscriber&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//This program subscribes to turtle 1 /pose and show its message on the sreen.
+#include&amp;lt;ros/ros.h&amp;gt;
+#include&amp;lt;turtlesim/ Pose.h&amp;gt;
+#include&amp;lt;iomanip&amp;gt;
+// for std::setprecision and std::fixed
+
+//A callback function. Excuted each time a new pose
+// message arrives.
+void poseMessageReceived(const turtlesim::Pose&amp;amp; msg){
+ROS_INFO_STREAM(std::setprecision(2) &amp;lt;&amp;lt; std::fixed &amp;lt;&amp;lt; &amp;quot;position =(&amp;quot; &amp;lt;&amp;lt; msg.x &amp;lt;&amp;lt; &amp;quot;, &amp;quot; &amp;lt;&amp;lt; msg.y &amp;lt;&amp;lt; &amp;quot;)&amp;quot; &amp;lt;&amp;lt; &amp;quot; direction=&amp;quot; &amp;lt;&amp;lt; msg.theta);
+
+int main(int agrc, char** agrv){
+// Initialize the ROS system and become a node.
+ros::init(agrc, agrv, &amp;quot;subscribe_to_pose&amp;quot;);
+ros::NodeHandle nh;
+//creat a subcriber object
+// ros::Subscriber sub = node_handle.subscribe(topic_name, queue_size, pointer_to_callback_function);
+//Most of parameters have analogues in the declaration of a ros::Publisher object.
+ros::Subscriber sub = nh.subscribe(&amp;quot;turtle1/pose&amp;quot;. 1000, &amp;amp;poseMessageReceived);
+//let ROS take over.
+ros::spin();
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://wiki.ros.org/roscpp/Overview/Callbacks%20and%20Spinning&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The relationship between &lt;strong&gt;ros::spin()&lt;/strong&gt; and &lt;strong&gt;ros::spinonce()&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;ROS will only execute our callback function when we give it explicit permission to do so by using &lt;strong&gt;ros::spin()&lt;/strong&gt; or &lt;strong&gt;ros::spinonce()&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ros::spin()&lt;/strong&gt; will be called all the time, while &lt;strong&gt;ros::spinonce()&lt;/strong&gt; is called only one time. Hence, the main process will block when you use &lt;strong&gt;ros::spin()&lt;/strong&gt; function until the the node shutdown.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ros::spin()&lt;/strong&gt; equals to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;while(ros::ok()){
+ ros::spinonce();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;If you want to subscribe and publish message using the same node, you can refer to this 
+&lt;a href=&#34;https://gist.github.com/PrieureDeSion/77c109a074573ce9d13da244e5f82c4d#file-sim-cpp-L56&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;example&lt;/a&gt; by Dhruv Ilesh Shah.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

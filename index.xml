@@ -14,9 +14,9 @@
     
     <item>
       <title>Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</title>
-      <link>/post/controlandoptimization/t-sne/</link>
+      <link>/post/t-sne/</link>
       <pubDate>Thu, 22 Oct 2020 20:30:09 +0800</pubDate>
-      <guid>/post/controlandoptimization/t-sne/</guid>
+      <guid>/post/t-sne/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt; and &lt;strong&gt;t-Distributed Stochastic Neighbor Embedding (t-SNE)&lt;/strong&gt; are all efficient ways to transform the data points in high dimesion to the corresponding feature points in low dimension without losing the principal feature. Futhermore, the low-dimensional data can be visualized in frame, can feel by human. Hence, In this post, I simply summarized some mathematics model for PCA and t-SNE algorithms, implemented these methods repectively, and presented some advangtages and disadvantages of these alogorithms. At the end, some important hyperparameters that effect the performance of t-SNE are described to remind readers to choose the proper parameters. Some other demension reduction methods were summarized as follows:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
@@ -388,9 +388,9 @@ plt.show()
     
     <item>
       <title>Preceptron algorithm</title>
-      <link>/post/controlandoptimization/preceptron/</link>
+      <link>/post/preceptron/</link>
       <pubDate>Thu, 03 Sep 2020 20:30:09 +0800</pubDate>
-      <guid>/post/controlandoptimization/preceptron/</guid>
+      <guid>/post/preceptron/</guid>
       <description>&lt;p&gt;In machine learning, the &lt;strong&gt;perceptron&lt;/strong&gt; is an algorithm for supervised learning of binary classfiers. The 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Perceptron&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;perceptron algorithm&lt;/a&gt; was invented 1958 at the Cornell Aeronautical lab by Frank Rosenblatt.&lt;/p&gt;
 &lt;h3 id=&#34;perceptron-model&#34;&gt;Perceptron model&lt;/h3&gt;
@@ -428,10 +428,10 @@ where $\omega$ and $b$ are the weight and bias for the above function respective
 &lt;figure id=&#34;figure-the-schematic-diagram-of-perceptron&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/controlandoptimization/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
+  &lt;img data-src=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
 &lt;/a&gt;
 
 
@@ -554,26 +554,10 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     </item>
     
     <item>
-      <title>Alogorithm</title>
-      <link>/post/controlandoptimization/alogorithm/</link>
-      <pubDate>Tue, 11 Aug 2020 16:18:34 +0800</pubDate>
-      <guid>/post/controlandoptimization/alogorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Paper_1</title>
-      <link>/post/interestingpapers/paper_1/</link>
-      <pubDate>Tue, 11 Aug 2020 16:17:50 +0800</pubDate>
-      <guid>/post/interestingpapers/paper_1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Some useful commands for ROS in Ubuntu</title>
-      <link>/post/rosubuntu/someusefulcommandinros/</link>
+      <link>/post/someusefulcommandinros/</link>
       <pubDate>Tue, 11 Aug 2020 15:34:21 +0800</pubDate>
-      <guid>/post/rosubuntu/someusefulcommandinros/</guid>
+      <guid>/post/someusefulcommandinros/</guid>
       <description>&lt;p&gt;&lt;strong&gt;ROS&lt;/strong&gt; is an open-source, meta-operating system for your robot. Some advantages are as follows.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Distributed computation&lt;/li&gt;
@@ -618,10 +602,10 @@ roscd package-name
 &lt;figure id=&#34;figure-ros-node-communication-network&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;ROS node communication network&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
+  &lt;img data-src=&#34;/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2441&#34; height=&#34;1621&#34;&gt;
 &lt;/a&gt;
 
 
@@ -683,10 +667,10 @@ roswtf
 &lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/rosubuntu/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
+  &lt;img data-src=&#34;/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;2339&#34; height=&#34;1653&#34;&gt;
 &lt;/a&gt;
 
 

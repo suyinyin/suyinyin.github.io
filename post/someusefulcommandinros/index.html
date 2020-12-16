@@ -1,0 +1,1471 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yinyin SU">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="ROS is an open-source, meta-operating system for your robot. Some advantages are as follows.
+ Distributed computation Software resure Rapid testing  Packages rospack list # You can obtain a list of all of the installed ROS packages.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/someusefulcommandinros/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/someusefulcommandinros/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Yinyin">
+  <meta property="og:url" content="/post/someusefulcommandinros/">
+  <meta property="og:title" content="Some useful commands for ROS in Ubuntu | Yinyin">
+  <meta property="og:description" content="ROS is an open-source, meta-operating system for your robot. Some advantages are as follows.
+ Distributed computation Software resure Rapid testing  Packages rospack list # You can obtain a list of all of the installed ROS packages."><meta property="og:image" content="/post/someusefulcommandinros/featured.png">
+  <meta property="twitter:image" content="/post/someusefulcommandinros/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-08-11T15:34:21&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-08-11T15:34:21&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/someusefulcommandinros/"
+  },
+  "headline": "Some useful commands for ROS in Ubuntu",
+  
+  "image": [
+    "/post/someusefulcommandinros/featured.png"
+  ],
+  
+  "datePublished": "2020-08-11T15:34:21+08:00",
+  "dateModified": "2020-08-11T15:34:21+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yinyin SU"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yinyin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "ROS is an open-source, meta-operating system for your robot. Some advantages are as follows.\n Distributed computation Software resure Rapid testing  Packages rospack list # You can obtain a list of all of the installed ROS packages."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Some useful commands for ROS in Ubuntu | Yinyin</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/experience/"><span>Experiences</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/contact/"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>Resume</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Some useful commands for ROS in Ubuntu</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/yinyin-su/">Yinyin SU</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 11, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/someusefulcommandinros/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><strong>ROS</strong> is an open-source, meta-operating system for your robot. Some advantages are as follows.</p>
+<ul>
+<li>Distributed computation</li>
+<li>Software resure</li>
+<li>Rapid testing</li>
+</ul>
+<h3 id="packages">Packages</h3>
+<pre><code class="language-bash">rospack list
+# You can obtain a list of all of the installed ROS packages.
+rospack find package-name
+# find the directory of a single package
+rosls package-name
+# view all files in the package directory
+roscd package-name
+# go to the package directory directly
+</code></pre>
+<h3 id="nodes">Nodes</h3>
+<p>ROS node communication network
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-ros-node-communication-network">
+
+
+  <a data-fancybox="" href="/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png" data-caption="ROS node communication network">
+
+
+  <img data-src="/post/someusefulcommandinros/ros_node_hu8e57c766d6edf676a0008cac0aae427c_68479_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2441" height="1621">
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    ROS node communication network
+  </figcaption>
+
+
+</figure>
+</p>
+<pre><code class="language-bash">rosrun package-name executable-name
+# Starting a node
+rosnode list
+#listing nodes
+rosnode info node-name
+# get some information abour a particular node.
+rosnode kill node-name
+# Killing a node.
+rosnode cleanup
+#remove the dead nodes from the list.
+rqt_graph
+# veiwing the graph
+rosmsg show message-type-name
+#inspecting a message type.
+rostopic pub -r rate-in-hz topic-name message-type message-content
+# publishing messages from the command line.
+rosrun turtlesim turtlesim_node __name:=A
+rosrun turtlesim turtlesim_node __name:=B
+# run the same node with different name, as ROS master does not allow multiple nodes with the same name.
+roswtf
+# perform a broad variety of sanity checks.
+</code></pre>
+<h3 id="creating-a-workplace-and-a-package">Creating a workplace and a package</h3>
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-the-file-structure-of-workplace">
+
+
+  <a data-fancybox="" href="/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png" data-caption="The file structure of workplace">
+
+
+  <img data-src="/post/someusefulcommandinros/Catkin_workspaces_hu8aa6be10b464cbd6bd5b9f5b673b4435_53441_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2339" height="1653">
+</a>
+
+
+  
+  
+  <figcaption data-pre="Figure " data-post=":" class="numbered">
+    The file structure of workplace
+  </figcaption>
+
+
+</figure>
+
+<pre><code class="language-bash">user@hostname$ mkdir -p ~/catkin_ws/src
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_init_workspace
+user@hostname$ source devel/setup.bash
+user@hostname$ cd ~/catkin_ws/src
+user@hostname$ catkin_create_pkg my_package_name
+# creating two default versions of these two configuration files: package.xml and CMakeLists.txt.
+</code></pre>
+<h3 id="the-first-program-hello-world-in-ros">The first program &lsquo;hello world&rsquo; in ROS</h3>
+<ul>
+<li>Step 1: Write the <code>helle world</code> program</li>
+</ul>
+<pre><code class="language-cpp">// This is a ROS version fo the standard &quot;hello world&quot; program
+// This header defines the standard ROS classes.
+#include &lt;ros/ros.h&gt;
+int main(int agrc, char** agrv){
+//Initialize the ROS system.
+ros::init(argc, argv, &quot;hello_ros&quot;);
+// Establish this program as a ROS node
+ros::NodeHandle nh;
+//Send some output as a log message.
+ROS_INFO_STREAM(&quot;Hello, ROS!&quot;);
+return 0;
+}
+</code></pre>
+<ul>
+<li>Step 2: Compiling the <code>hello world</code> program</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>Declaring dependencies</strong></li>
+</ul>
+<ol>
+<li>CMakeLists.txt
+<code>find_package(catkin REQUIRED COMPONENTS package-names)</code></li>
+<li>package.xml
+<code>&lt;build_depend&gt;package-name&lt;/build_depend&gt;</code>
+<code>&lt;run_depend&gt;package-name&lt;/run_depend&gt;</code></li>
+</ol>
+<ul>
+<li><strong>Declaring an executable</strong></li>
+</ul>
+<ol>
+<li>CMakeLists.txt
+<code>add_executable(executable-name source-files1 source-files2 ...)</code>
+<code>target_link_libraries(executable-name ${catkin_LIBRARIES})</code></li>
+</ol>
+<ul>
+<li><strong>Building the workplace</strong>
+<code>catkin_make</code>
+<code>source devel/setup.bash</code></li>
+</ul>
+</blockquote>
+<h3 id="write-a-publisher-node-and-a-subscriber-node">Write a publisher node and a subscriber node</h3>
+<ul>
+<li>Be mindful of the lifetime of your <strong>ros::Publisher</strong> objects. Creating the publisher is an expensive operation, so it&rsquo;s a usually a bad idea to creat a new <strong>ros::Publisher</strong> object each time you want to publish a message.</li>
+<li>Refer the 
+<a href="http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&#43;&#43;%29" target="_blank" rel="noopener">ROS wiki Publisher</a>.</li>
+</ul>
+<pre><code class="language-cpp">// This program publishes randomly-generated velocity messages for turtlesim.
+#include&lt;ros/ros.h&gt;
+// incldue message type declaration
+#include&lt;geometry_msgs/Twist.h&gt;
+#include&lt;stdlib.h&gt;
+
+int main(int agrc, char** agrv){
+//Initialize the ROS system and become a node
+ros::init(agrc, agrv, &quot;publish_velocity&quot;);
+ros::NodeHandle nh;
+//creat a publisher object
+// ros::Publisher pub = node_handle.advertise&lt;message_type&gt;(topic_name, queue_size);
+// queue size is an integer representing the size of the message queue for publisher. In most case, a reasonablly large value, say 1000, is suitable.
+ros::Publisher pub = nh.advertise&lt;geometry_msgs::Twist&gt;(&quot;turtle1/cmd_vel&quot;, 1000);
+
+//send the random number generator.
+srand(time(0));
+
+//loop at 2 Hz until the node is shut down.
+ros::Rate rate(2);
+// ros::ok() function is used to check for node shutdown.
+while(ros::ok()){
+// creat and fill in the message. The other four fields, which are ignored by turtlesim, default to 0.
+geometry_msgs::Twist msg;
+msg.linear.x = double(rand())/double(RAND_MAX);
+msg.linear.z = 2*double(rand())/double(RAND_MAX) - 1;
+//Publish the message.
+pub.publish(msg);
+//send a message to rosout with the details.
+ROS_INFO_STREAM(&quot;Sending random velocity command: &quot;&lt;&lt; &quot; linear=&quot; &lt;&lt; msg.linear.x &lt;&lt; &quot; angular=&quot; &lt;&lt; msg.angular.z);
+
+//Wait until it's time for another iteration.
+rate.sleep();
+}
+return 0;
+}
+
+</code></pre>
+<ul>
+<li>Refer to 
+<a href="http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c&#43;&#43;%29" target="_blank" rel="noopener">ROS wiki Subscriber</a></li>
+</ul>
+<pre><code class="language-cpp">//This program subscribes to turtle 1 /pose and show its message on the sreen.
+#include&lt;ros/ros.h&gt;
+#include&lt;turtlesim/ Pose.h&gt;
+#include&lt;iomanip&gt;
+// for std::setprecision and std::fixed
+
+//A callback function. Excuted each time a new pose
+// message arrives.
+void poseMessageReceived(const turtlesim::Pose&amp; msg){
+ROS_INFO_STREAM(std::setprecision(2) &lt;&lt; std::fixed &lt;&lt; &quot;position =(&quot; &lt;&lt; msg.x &lt;&lt; &quot;, &quot; &lt;&lt; msg.y &lt;&lt; &quot;)&quot; &lt;&lt; &quot; direction=&quot; &lt;&lt; msg.theta);
+
+int main(int agrc, char** agrv){
+// Initialize the ROS system and become a node.
+ros::init(agrc, agrv, &quot;subscribe_to_pose&quot;);
+ros::NodeHandle nh;
+//creat a subcriber object
+// ros::Subscriber sub = node_handle.subscribe(topic_name, queue_size, pointer_to_callback_function);
+//Most of parameters have analogues in the declaration of a ros::Publisher object.
+ros::Subscriber sub = nh.subscribe(&quot;turtle1/pose&quot;. 1000, &amp;poseMessageReceived);
+//let ROS take over.
+ros::spin();
+}
+}
+</code></pre>
+<ul>
+<li>
+<a href="http://wiki.ros.org/roscpp/Overview/Callbacks%20and%20Spinning" target="_blank" rel="noopener">The relationship between <strong>ros::spin()</strong> and <strong>ros::spinonce()</strong></a></li>
+</ul>
+<blockquote>
+<ul>
+<li>ROS will only execute our callback function when we give it explicit permission to do so by using <strong>ros::spin()</strong> or <strong>ros::spinonce()</strong></li>
+<li><strong>ros::spin()</strong> will be called all the time, while <strong>ros::spinonce()</strong> is called only one time. Hence, the main process will block when you use <strong>ros::spin()</strong> function until the the node shutdown.</li>
+<li><strong>ros::spin()</strong> equals to</li>
+</ul>
+<pre><code class="language-cpp">while(ros::ok()){
+ ros::spinonce();
+}
+</code></pre>
+<ul>
+<li>If you want to subscribe and publish message using the same node, you can refer to this 
+<a href="https://gist.github.com/PrieureDeSion/77c109a074573ce9d13da244e5f82c4d#file-sim-cpp-L56" target="_blank" rel="noopener">example</a> by Dhruv Ilesh Shah.</li>
+</ul>
+</blockquote>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/ros/">ROS</a>
+  
+  <a class="badge badge-light" href="/tag/ubuntu/">Ubuntu</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/someusefulcommandinros/&amp;text=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/someusefulcommandinros/&amp;t=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu&amp;body=/post/someusefulcommandinros/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/someusefulcommandinros/&amp;title=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu%20/post/someusefulcommandinros/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/someusefulcommandinros/&amp;title=Some%20useful%20commands%20for%20ROS%20in%20Ubuntu" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/yinyin-su/avatar_hu8c7d007082ea7670e0d1b10d1367c27e_1280177_270x270_fill_lanczos_center_2.png" alt="Yinyin SU">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="/">Yinyin SU</a></h5>
+        <h6 class="card-subtitle">PhD student in Robotic and Control</h6>
+        <p class="card-text">My research interests include soft robotics, control and optimization, robotic system and dynamic.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/contact/" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/QR_weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=mSpxozsAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/suyinyin" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "yinyinsu" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+<div class="article-widget">
+  
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/preceptron/" rel="next">Preceptron algorithm</a>
+  </div>
+  
+  
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/t-sne/">Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</a></li>
+      
+      <li><a href="/post/preceptron/">Preceptron algorithm</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://yinyinsu.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yinyin SU. All rights reserved.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
