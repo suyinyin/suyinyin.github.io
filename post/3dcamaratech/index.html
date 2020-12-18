@@ -1,0 +1,1503 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yinyin SU">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="**Written by Yinyin SU on 16th December 2020**  **E-mail: ** -- Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/3dcamaratech/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/3dcamaratech/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Yinyin">
+  <meta property="og:url" content="/post/3dcamaratech/">
+  <meta property="og:title" content="Three dimensional camera techniques | Yinyin">
+  <meta property="og:description" content="**Written by Yinyin SU on 16th December 2020**  **E-mail: ** -- Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth."><meta property="og:image" content="/post/3dcamaratech/featured.png">
+  <meta property="twitter:image" content="/post/3dcamaratech/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-12-18T20:30:09&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-12-18T20:30:09&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/3dcamaratech/"
+  },
+  "headline": "Three dimensional camera techniques",
+  
+  "image": [
+    "/post/3dcamaratech/featured.png"
+  ],
+  
+  "datePublished": "2020-12-18T20:30:09+08:00",
+  "dateModified": "2020-12-18T20:30:09+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yinyin SU"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yinyin",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "**Written by Yinyin SU on 16th December 2020**  **E-mail: ** -- Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Three dimensional camera techniques | Yinyin</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Yinyin</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/experience/"><span>Experiences</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects/"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication/"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/contact/"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>Resume</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Three dimensional camera techniques</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/yinyin-su/">Yinyin SU</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 18, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    16 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/3dcamaratech/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <!-- # Three dimensional camera techniques -->
+<!-- > **Written by Yinyin SU on 16th December 2020**
+> **E-mail: <yinyinsu1991@gmail.com>** -->
+<p>Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth. The post presented some common knowledge about the 3D cameras, including the overview of the most common 3D sensing techniques on the markets and their underlying mechanisms, some camera calibration technology, hand-eye calibration methods, mapping depth to point cloud.</p>
+<h3 id="1-3d-camera-technique">1. 3D camera technique</h3>
+<p>At present, the three prevalent 3D imaging technologies are <strong>binocular stereo vision, time of flight (ToF) and structured light</strong>. Concerning active light source projection, the techniques fall into passive and active categories. Binocular stereo vision is a passive technique and the other two are active techniques.</p>
+<h4 id="11-bibocular-stereo-vision">1.1. Bibocular stereo vision</h4>
+<p>Computer stereo vision is the extraction of 3D information from digital images, such as those obtained by CCD cameras. 
+<a href="https://en.wikipedia.org/wiki/Computer_stereo_vision" target="_blank" rel="noopener">By comparing the information about a scene from two vantage points, 3D information can be extracted by examining the relative position of objects in the two panels</a>. This skill mimics the binocular vision of human beings. Humans have two eyes from which there is about 60mm to 70mm apart. It will result in slight image location disparity when the eyes view the same scene. The stereo vision which is the same as the human eye needs two lenses, enabling each of them to capture these slightly different images. Based on this disparity, the depth information can be computed. It is a passive technique because no external light is required other than the ambient light, which means it is suitable for outdoor use in relatively good light conditions. The stereo matching method of this technique requires the great processing power of the sensor to guarantee resolution and instantaneous output. Constrained by the baseline, this skill often works in a short range, often within 2 meters. Famous stereo cameras include <em>ZED 2K Stereo camera of sterols</em> and <em>Point grey&rsquo;s BumbleBee</em>.</p>
+<!-- ![@Bibocular stereo vision | center |400X0](./Binocular-stereo-vision.png = 400X0) -->
+<p align="center">
+  <img src="./Binocular-stereo-vision.png" alt="Sublime's custom image" width = 400 height = 300 />
+  <em>Bibocular stereo visio</em>
+</p>
+<h4 id="12-tof">1.2. ToF</h4>
+<p>ToF is a technique of calculating the distance between the camera and the object, by measuring the time it takes the projected infrared light to travel from the camera, bounced off the object surface, and return to the sensor. Due to the constant light speed, the processor can calculate the distance of the object and reconstruct it by analyzing the phase shift of the emitted and returned light. Unlike the stereo vision technology, <em>ToF is an active technique, as it actively projects light to measure the distance, instead of relying on ambient light</em>. It works well in dim or dark light conditions. ToF cameras are widely applied in the field of VR/AR, robotic navigation, objective recognition, and auto piloting. Well-known products are a series of <em>Kinect depth cameras produced by Microsoft</em>.</p>
+<!-- ![@Time of Flight | center | 400X0](./ToF.jpg) -->
+<p align="center">
+  <img src="./ToF.jpg" alt="Sublime's custom image" width = 600 />
+  <em>Time of Flight</em>
+</p>
+<h4 id="13-structured-light">1.3. Structured light</h4>
+<p>The structured light technique is another active 3D imaging method, which is very similar to the stereo vision technique on basic mechanisms. Different from the stereo vision method, it employs structured light without depending on external light conditions. The cameras project modulated pattern to the surface of a scene and calculate the disparity between the original projected pattern and the observed pattern deformed by the surface of the scene. As an active skill, structured light cameras can work well in conditions lacking light or texture as well. <strong>Compared with the ToF method, the well-modulated light pattern can generate higher accuracy in the short range.</strong> And the depth resolution can reach the submillimeter level. <em>Intel adopts a structured light technique in the Realsense depth camera series.</em> Structured light cameras are proper for cases requiring high accuracies in short-range, such as face recognition, gesture recognition, and industrial inspection.</p>
+<!-- ![@The structured light | center | 400X0](./Structured-light.png) -->
+<p align="center">
+  <img src="./Structured-light.png" alt="Sublime's custom image" width = 400 />
+  <em>The structured light</em>
+</p>
+<h4 id="14-pros-and-cons">1.4. Pros and cons</h4>
+<p><img src="./pros_cons.PNG" alt="@ The comparisons for different types of techniques | center"></p>
+<h3 id="2-camera-calibaration">2. Camera calibaration</h3>
+<p>
+<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Camera calibration is a necessary step in 3D computer vision to extract metric information from 2D images</a>. Calibration aims to find the quantities internal to the cameras that affect the image process, including image center, focal length, lens distortion parameters. The precise internal camera parameters are of paramount importance for the 3D interpretation of images, reconstruction of world models, and robot interaction with the world.</p>
+<h4 id="21--pinhole-camera-model">2.1.  Pinhole camera model</h4>
+<p>
+<a href="https://en.wikipedia.org/wiki/Pinhole_camera_model" target="_blank" rel="noopener">The pinhole camera model is a model of an ideal camera, that describes the mathematical relationship between the real world 3D object&rsquo;s coordinates and its 2D projection on the image plane </a>. Its validity depends on the quality of the camera and, in general, decreases from the center of the image to the edges as lens distortion effects increase.
+<img src="./image_coords.png" alt="Alt text | center |600X0">
+
+<a href="http://www.cse.psu.edu/~rtc12/CSE486/" target="_blank" rel="noopener">As shown in the above figure</a>, if we want to understand the relation between the 3D objects and the corresponding 2D images, the mathematical model is needed to describe the relationship. In this post, we use $(\textbf U, \textbf V, \textbf W)$, $( \textbf X, \textbf Y, \textbf Z)$, $(x, y)$, and $(u, v)$ to depict the positions of an object in real-world space, camera space, film space, and pixel space respectively. Firstly, we will build a model to map objects from camera coordinates to film coordinates.
+<img src="./caTofilm.png" alt="Alt text | center | 600X0">
+As shown in the above figure, the $(x, y)$ in the film space can be derived from the point in camera space via similar triangles rule. $f$ is the focal length. It is worth to be mentioned that the focal length along the x-direction, y-direction can be different, and it can be depicted by $f_x$, and $f_y$. The origin of the image in film space is at its center, while the origin of the pixel space is at the top-left position. So the offsets are needed to transfer the points in film space to those in pixel points. $o_x$ and $o_y$ are called $x$ offset and $y$ offset respectively.
+<img src="./filmTopixel.png" alt="Alt text |center | 600X0">
+The above two processes often are put together, which can be described by a $3\times3$ matrix $\mathbf K$. The parameters in $\mathbf K$ is the intrinsic parameters of the camera. It is different from different devices. It is recommended that these parameters should be known before you use a camera.
+The variance of data set $\mathbf{z_1}$</p>
+<p>$$\mathbf{K} = {\left[ \begin{matrix}
+f_x &amp; 0 &amp; o_{x}  \\<br>
+0 &amp; f_{y} &amp; {{o}_{y}}  \\<br>
+0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]}$$</p>
+<p>So the pixel coordiante value can be obtained by:
+$${{\left[ \begin{matrix}
+u &amp; v &amp; 1  \<br>
+\end{matrix} \right]}^{T}}=\mathbf{K}{{\left[ \begin{matrix}
+{X}/{Z}; &amp; {Y}/{Z}; &amp; 1  \<br>
+\end{matrix} \right]}^{T}}.$$
+Mapping objects from real-world space to camera space could use a homogeneous transformation matrix $\mathbf T$, which is a common approach to describe the body transformation in 3D space.
+$$\mathbf T = \left[ \begin{matrix}
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{r}_{13}} &amp; {{t}_{x}}  \\<br>
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{r}_{23}} &amp; {{t}_{y}}  \\<br>
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{r}_{33}} &amp; {{t}_{z}}  \\<br>
+0 &amp; 0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]$$
+By combining all the mentioned transform matrix, the objects in 3D real-world space can be transferred into the 2D image space, as shown in the following figure. The way in how to calibrate the internal and external parameters of the camera will be presented in the next subsection 3.</p>
+<!-- ![@Pinhole camera model | center | 700X0](./pinhole_model.png) -->
+<p align="center">
+  <img src="./pinhole_model.png" alt="Sublime's custom image" width = 600 height = 300 />
+  <em>Pinhole camera model</em>
+</p>
+#### 2.2 Lens Distortion Model
+Most cameras on the market are made up of convex lens to capture light, which brings some issues to be addressed: [1. have finite aperture so a blurring of unfocused objects appears; 2. contain geometric distortions due to lenses, which increase as we get closer to the edges of the lenses](https://ori.codes/artificial-intelligence/camera-calibration/camera-distortions/#fn:1). The most common type of camera lens distortion is called radial distortion, including positive or barrel radial distortion and negative or pincushion radial distortion, as depicted in the below figure.
+<!-- ![@ Radial distortion of lens camera | center | 600X0](./radial.png) -->
+<p align="center">
+  <img src="./radial.png" alt="Sublime's custom image" width = 650 height = 300 />
+  <em>Radial distortion of lens camera</em>
+</p>
+<p>Some action cameras which have large FOV will cause a lot of positive radial distortion. The negative radial distortion is often caused by the lens being not aligned perfectly parallel to the imaging plane. It leads to the image look tilted, which is bad for us since some objects look further away than they are. Next, we will discuss how to avoid the radial distortion, and two couples of coefficients $k_i$, describing radial distortion and $p_i$, describing the tangential distortion. The worse the distortion, the more coefficients we need to accurately describe it. More details about these parameters were given in 
+<a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#camera-calibration-and-3d-reconstruction" target="_blank" rel="noopener">OpenCV docs</a>. In the pinhole camera model, we use intrinsic matrix $\mathbf K$ to map object in camera coordinate to image in pixel coordinate. Expanding matrix $\mathbf K$, the following equations can be derived.
+$$\begin{align}
+&amp; x=X/Z \nonumber \\<br>
+&amp; y=Y/Z \nonumber \\<br>
+&amp; u={{f}_{x}}\cdot x+{{o}_{x}} \nonumber \\<br>
+&amp; v={{f}_{y}}\cdot y+{{o}_{y}} \nonumber  \\<br>
+\end{align}$$
+Due to the lens distortion in the real application of cameras, the distortion parameters should be added to the model. After getting point $(\textbf X, \textbf Y, \textbf Z)$ in camera space, the updated image pixel coordinates along $u$ direction and $v$ direction can be obtained:
+$${x}&lsquo;=x\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+2{{p}_{1}}xy+{{p}_{2}}$$</p>
+<p>$${y}&lsquo;=y\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+{{p}_{1}}({{r}^{2}}+2{{y}^{2}})+2{{p}_{2}}xy$$</p>
+<p>where ${{r}^{2}}={{x}^{2}}+{{y}^{2}}$, $u={{f}_{x}}\cdot {x}&lsquo;+{{o}_{x}}$ and $v={{f}_{y}}\cdot {y}&lsquo;+{{o}_{y}}$. Since we&rsquo;re primarily interested in efficiently removing the radial distortion, we&rsquo;ll be using <strong>Fitzgibbon&rsquo;s division</strong> model as opposed to <strong>Brown-Conrady&rsquo;s even-order polynomial model</strong>, since it requires fewer terms in cases of severe distortion. 
+<a href="http://www.cs.ait.ac.th/~mdailey/papers/Bukhari-RadialDistortion.pdf" target="_blank" rel="noopener">It is also a bit easier to work with since inverting the single parameter division model requires solving one degree less polynomial than inverting the single-parameter polynomial model</a>.</p>
+<h4 id="23-a-flexible-new-technique-for-camera">2.3. A Flexible New Technique for Camera</h4>
+<p>In this subsection, we will talk about some popular camera calibration techniques. In terms of the calibrated object used in camera calibration, four major methods have been applied in different fields: calibration using <strong>3D calibration object, calibrating using the 2D planar pattern, calibration using the 1D object (line-based calibration), and self-calibration, which is no calibration objects</strong>. For the 3D method, calibration is performed by observing a calibration object whose geometry in 3D space is known with very good precision. The object often contains two or three orthogonal to each other, e.g. calibration cube, and it has a plane undergoing a precisely known translation. Although the 3D method is an expensive and more elaborate setup, it is more accurate and has a simple theory. The 2D plan-base calibration requires observation of a planar pattern shown at a few different orientations. Mostly, a popular planar pattern is a 
+<a href="https://markhedleyjones.com/projects/calibration-checkerboard-collection" target="_blank" rel="noopener">checkerboard</a>. Owing to the easy setup, the 2D method is the most popular one. In this post, we concentrate on the 2D plan-based calibration method. You can refer to the lectures of Ahmed Elgammal for other methods and their 
+<a href="https://www.cs.rutgers.edu/~elgammal/classes/cs534/lectures/Calibration.pdf" target="_blank" rel="noopener">comparisons</a>. Here, we will pay more attention to the contributions in A Flexible New Technique for Camera presented by 
+<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Zhengyou Zhang</a>, which is the most popular 2D calibration approach.
+Firstly, setting the world coordinate system to the corner of the checkerboard, and axis z is perpendicular outward to the checkerboard. Due to all points lying in a plane, the z value of all points in the checkerboard is zero, namely $\textbf W = 0$ . So the 3-rd Colum of the extrinsic matrix will vanish, and the camera model becomes:
+$$\lambda \left[ \begin{matrix}
+u  \\<br>
+v  \\<br>
+1  \\<br>
+\end{matrix} \right]=\underbrace{\left[ \begin{matrix}
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
+0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]\left[ \begin{matrix}
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\<br>
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\<br>
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\<br>
+\end{matrix} \right]}_{\mathbf{H}}\left[ \begin{matrix}
+U  \\<br>
+V  \\<br>
+1  \\<br>
+\end{matrix} \right], $$</p>
+<p>where $\mathbf H$ is the $3\times3$ matrix, containing 9 parameters to be addressed. As the third element in the left side vector, actually, it needs 8 equations to solve all unknown elements. For the checkerboard, at least 4 points are needed to be chosen.</p>
+<p>$$\mathbf{H}=\left( {{\mathbf{h}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{2}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{3}}} \right)\underbrace{\left[ \begin{matrix}
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
+0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]}_{\mathbf{K}}\underbrace{\left[ \begin{matrix}
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\<br>
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\<br>
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\<br>
+\end{matrix} \right]}_\mathbf{R}$$</p>
+<p>where $\mathbf R={\left[{{\mathbf{r}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{r}}_{\mathbf{2}}}\mathbf{,t} \right]}$.So $\mathbf H$ can be described by:</p>
+<p>$$\mathbf{H}=\left( {{\mathbf{h}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{2}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{3}}} \right)=\mathbf{K}\left( {{\mathbf{r}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{r}}_{\mathbf{2}}}\mathbf{,t} \right), $$</p>
+<p>so ${{\mathbf{r}}_{\mathbf{1}}}={{\mathbf{K}}^{-1}}{{\mathbf{h}}_{\mathbf{1}}}$
+and ${{\mathbf{r}}_{2}}={{\mathbf{K}}^{-1}}{{\mathbf{h}}_{2}}$. Because $\mathbf r$ is rotarion matrix, so</p>
+<p>$$\mathbf{r}_{1}^{T}{{\mathbf{r}}_{2}}=0$$</p>
+<p>$$\left| {{\mathbf{r}}_{1}} \right|=\left| {{\mathbf{r}}_{2}} \right|=1$$</p>
+<p>The constraint equations can be derived:
+$${{\mathbf{h}}_{\mathbf{1}}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}_{2}}=0$$</p>
+<p>$${{\mathbf{h}}_{\mathbf{1}}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}_{1}}-{{\mathbf{h}}_{2}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}_{2}}=0$$</p>
+<p>Defining $\mathbf{B}:={{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}$, which is symmetric and positive definite matrix. $\mathbf K$ can be calculated from $\mathbf B$ using Cholesky factorization. $\mathbf B$ can be depicted in the following:
+$$\mathbf{B}=\left[ \begin{matrix}
+{{b}_{11}} &amp; {{b}_{12}} &amp; {{b}_{13}}  \\<br>
+{{b}_{12}} &amp; {{b}_{22}} &amp; {{b}_{23}}  \\<br>
+{{b}_{13}} &amp; {{b}_{23}} &amp; {{b}_{33}}  \\<br>
+\end{matrix} \right], $$</p>
+<p>so we can define a vector $\mathbf b$ to represent $\mathbf B$ :</p>
+<p>$$\mathbf{b}={{\left[ {{b}_{11}},{{b}_{12}},{{b}_{13}},{{b}_{22}},{{b}_{23}},{{b}_{33}} \right]}^{T}}$$</p>
+<p>We rewrite the  constraint equations by  $\mathbf b$  in the following type:
+$$\mathbf{v}_{ij}^{T}\mathbf{b}=0$$</p>
+<p>where ${{\mathbf{v}}_{ij}}={{\left[ {{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j1}},{{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j2}}+{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j1}},{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j2}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j1}}+{{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j3}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j2}}+{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j3}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j3}} \right]}^{T}}$. So the updated type of constraint equations are
+$$\left[ \begin{matrix}
+\mathbf{v}_{12}^{T}  \\<br>
+\mathbf{v}_{11}^{T}-\mathbf{v}_{22}^{T}  \\<br>
+\end{matrix} \right]\mathbf{b}=0$$</p>
+<p>To solve the above equation, at least 3 different images should be input. Owing to noise in the real measurement, the above equation can be solved in optimization methods by inputting more than 3 images. Solving $\mathbf b$ via minimizing the following equation:
+$$\mathbf{b}=\arg \underset{\mathbf{b}}{\mathop{\min }}\mathbf{v}^{T} \mathbf {b}$$</p>
+<p>More discussion about how to obtain the parameters after adding the lens distortion effects into the camera model can be found in 
+<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Zhang&rsquo;s paper</a>.</p>
+<h4 id="24-depth-camera-sensor-calibration">2.4 Depth camera sensor calibration</h4>
+<p><strong>Will be added.</strong></p>
+<ol>
+<li>
+<a href="https://sonhua.github.io/pdf/raman-calibration-icip14.pdf" target="_blank" rel="noopener">CALIBRATION OF DEPTH CAMERAS USING DENOISED DEPTH IMAGES</a></li>
+<li>
+<a href="https://ep.liu.se/ecp/106/006/ecp14106006.pdf" target="_blank" rel="noopener">Calibration of Depth Camera Arrays</a></li>
+<li>
+<a href="https://www.diva-portal.org/smash/get/diva2:1085621/FULLTEXT01.pdf" target="_blank" rel="noopener">Calibration using a general homogeneous depth camera model</a></li>
+<li>
+<a href="https://medium.com/@aliyasineser/the-depth-i-stereo-calibration-and-rectification-24da7b0fb1e0" target="_blank" rel="noopener">The Depth I: Stereo Calibration and Rectification</a></li>
+</ol>
+<h4 id="25-implementing-calibration-algorithm-through-opencv-library-and-matlabhttpsdocsopencvorg450ddd74tutorial_file_input_output_with_xml_ymlhtml">2.5 
+<a href="https://docs.opencv.org/4.5.0/dd/d74/tutorial_file_input_output_with_xml_yml.html" target="_blank" rel="noopener">Implementing calibration algorithm through OpenCV library and Matlab</a></h4>
+<p>Before running the calibration program, you need to choose which kind of input where a camera, video and images are supplied to use in <em>.\calibration\configurations.xml</em> . The calibrated results are displayed in the <em>.\calibration\out_camera_data.xml</em>. The main function is shown as follow, the complete camera calibration program was added to 
+<a href="https://gitlab.com/suyinyin/ra_in_sustech/-/blob/master/realsense_class/camera_calibration.cpp" target="_blank" rel="noopener">gitlab repo</a>.  Also, you can use 
+<a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html#:~:text=The%20calibration%20algorithm%20calculates%20the,focal%20length%20of%20the%20camera." target="_blank" rel="noopener">matlab to do the same task</a>.</p>
+<pre><code class="language-cpp">int main(int argc, char* argv[])
+{
+// 1. Read the settings from the configuration.xml
+while(){
+// 2. Get the next image from the image list, camera or video file.
+// 3. Find the pattern in the current input
+// 4. Press the key: u -  toggle the distortion removal, g -  start again the  detection process, ESC - end this application
+}
+// 5. save the calibrated results to out_camera_data.xml.
+ return 0;
+}
+</code></pre>
+<h3 id="3-hand-eye-calibration">3. Hand-eye calibration</h3>
+<p>
+<a href="https://en.wikipedia.org/wiki/Hand_eye_calibration_problem#:~:text=In%20robotics%20and%20mathematics%2C%20the,and%20the%20world%20coordinate%20system." target="_blank" rel="noopener">In robotics and mathematics, the hand eye calibration problem (also called the robot-sensor or robot-world calibration problem) is the problem of determining the transformation between a robot end-effector and a camera or between a robot base and the world coordinate system</a>.  It has been widely used in vision-based robot control also known as visual servoing, which uses visual information from the camera as feedback to plan and control.  ALl such application require accurate hand-eye calibration primarily to complement the accurate robotic arm pose with the sensor-based mearsurement of the observed environment into a more complete set of information. Hand–eye calibration requires accurate estimation of the homogenous transformation between the robot hand/end-effector and the optical frame of the camera affixed to the end effector. The
+problem can be formulated as $𝑨𝑿 = 𝑿𝑩$, where $𝑨$ and $𝑩$ are the robotic arm and camera posesbetween two successive time frames, respectively, and $𝑿$ is the unknown transform between the robot hand (end effector) and the camera. In this post, we introduced two types of hand-eye calibration: eye-to-hand way and eye-in-hand way, as shown as follows:
+<img src="./hand-eye.png" alt="@hand-eye clibration | center | 400X0 "></p>
+<h4 id="31-eye-to-hand-intallment">3.1 Eye-to-hand intallment</h4>
+<p><img src="./eye_to_hand.png" alt="@Eye-to-hand way | center">
+As shown in above figure, this is the eye-to-hand type installment, that is, the camera is installed in the fixed position from which the base of robotic arm has a constant relative position.</p>
+<blockquote>
+<p>{B} &ndash; The base coordinate system of robotic arm
+{E} &ndash; The end-effector coordinate system
+{S} &ndash; The checkerboarder coordinate system
+{C} &ndash; The camera coordinate system (generally the RGB sensor coordinate system)</p>
+</blockquote>
+<p>From  base coordinate ${\text B }$ to  camera coordinate ${\text C }$, the homogeneous tranformation matrix can be derived as follows:
+$${{T}_{\text{BC}}}=T_{\text{BE}}^{1}\cdot T_{\text{ES}}^{1}\cdot T_{\text{SC}}^{1}=T_{\text{BE}}^{2}\cdot T_{\text{ES}}^{2}\cdot T_{\text{SC}}^{2}$$</p>
+<p>As coordinate ${\text E }$  have a fixed relation to the coordinate ${\text S}$,  we can obtian
+$$T_{\text{BE}}^{2}{{\left( T_{\text{BE}}^{1} \right)}^{-1}}{{T}_{\text{BC}}}={{T}_{\text{BC}}}{{\left( T_{\text{SC}}^{2} \right)}^{-1}}T_{\text{SC}}^{1}$$</p>
+<p>We can define $\mathbf{A}=T_{\text{BE}}^{2}{{\left( T_{\text{BE}}^{1} \right)}^{-1}}$,  $\mathbf{B}={{\left( T_{\text{SC}}^{2} \right)}^{-1}}T_{\text{SC}}^{1}$ and $\mathbf{X}={{T}_{\text{BC}}}$, so the probelm becomes:
+$$\mathbf{AX}=\mathbf{XB}$$</p>
+<h4 id="32-eye-in-hand-intallment">3.2 Eye-in-hand intallment</h4>
+<p><img src="./eye_in_hand.png" alt="@Eye-in-hand way | center">
+As shown in above figure, this is the eye-in-hand type installment, that is, the camera is installed in the fixed position from which the tool of robotic arm has a constant relative position.
+$${{T}_{\text{BS}}}=T_{\text{BE}}^{1}\cdot T_{\text{EC}}^{1}\cdot T_{\text{CS}}^{1}=T_{\text{BE}}^{2}\cdot T_{\text{EC}}^{2}\cdot T_{\text{CS}}^{2}$$
+As  the tranformation matrix $T_{\text{BS}}$ is constant, the following equation can be derived:
+$${{\left( T_{\text{BE}}^{2} \right)}^{-1}}T_{\text{BE}}^{1}{{T}_{\text{ES}}}={{T}_{\text{ES}}}T_{\text{CS}}^{2}{{\left( T_{\text{CS}}^{1} \right)}^{-1}}$$
+where, we can define $\mathbf{A}={{\left( T_{\text{BE}}^{2} \right)}^{-1}}T_{\text{BE}}^{1}$, $\mathbf{B}=T_{\text{CS}}^{2}{{\left( T_{\text{CS}}^{1} \right)}^{-1}}$ and $\mathbf{X}={{T}_{\text{ES}}}$, so the problem become the same type:
+$$\mathbf{AX}=\mathbf{XB}$$
+So the problem becomes how to solve the above equation, many previous works has been presented. Here, we give four pupolar approaches to addressing the equation like this.</p>
+<blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> 1. 
+<a href="https://ieeexplore.ieee.org/document/34770" target="_blank" rel="noopener">A new technique for fully autonomous and efficient 3D robotics hand/eye calibration</a> (<strong>IEEE Transactions on robotics and automation</strong>)</li>
+<li><input disabled="" type="checkbox"> 2. 
+<a href="https://journals.sagepub.com/doi/10.1177/027836499501400301" target="_blank" rel="noopener">Hand-Eye Calibration</a> (<strong>he international journal of robotics research</strong>)</li>
+<li><input disabled="" type="checkbox"> 3. 
+<a href="http://robotics.snu.ac.kr/fcp/files/_pdf_files_publications/7_c/robot_sensor_calibration.pdf" target="_blank" rel="noopener">Robot sensor calibration: solving AX= XB on the Euclidean group</a>(<strong>IEEE Transactions on Robotics and Automation</strong>)</li>
+<li><input checked="" disabled="" type="checkbox"> 4. 
+<a href="https://journals.sagepub.com/doi/abs/10.1177/02783649922066213" target="_blank" rel="noopener">Hand-eye calibration using dual quaternions.</a>(<strong>The International Journal of Robotics Research</strong>)</li>
+</ul>
+</blockquote>
+<h3 id="4-alighnment">4. Alighnment</h3>
+<h3 id="5-mapping-depth-image-to-point-cloud">5. Mapping depth image to point cloud</h3>
+<p>In the section, we will discuss on how to reconstruct the 3 dimensional point in the real-world space from the pixel images and the corresponding depth image (alighn the depth images  to the color images). Namely, after we already have the pixel point $u, v$ and depth value $\lambda$,  how we can obtain the related point cloud in thei real-world space, which is of importance in vision servoing of robotics.  In the section, we know that
+$$\left[ \begin{matrix}
+u  \\<br>
+v  \\<br>
+1  \\<br>
+\end{matrix} \right]=\left[ \begin{matrix}
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
+0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]\left[ \begin{matrix}
+x  \\<br>
+y  \\<br>
+1  \\<br>
+\end{matrix} \right]$$</p>
+<p>where,
+$$\begin{align}
+&amp; x=X/Z \nonumber\\<br>
+&amp; y=Y/Z \nonumber\\<br>
+\end{align}$$</p>
+<p>As $\lambda = Z$, so
+$$ \left[ \begin{matrix}
+Zu  \\<br>
+Zv  \\<br>
+Z  \\<br>
+\end{matrix} \right]=\left[ \begin{matrix}
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
+0 &amp; 0 &amp; 1  \\<br>
+\end{matrix} \right]\left[ \begin{matrix}
+X  \\<br>
+Y  \\<br>
+Z \\<br>
+\end{matrix} \right]$$</p>
+<p>For the points in camera space and real-world space:
+$$\left[ \begin{matrix}
+X  \\<br>
+Y  \\<br>
+Z  \\<br>
+\end{matrix} \right]=\left[ \mathbf{r},\mathbf{t} \right]\left[ \begin{matrix}
+U  \\<br>
+V  \\<br>
+W  \\<br>
+1  \\<br>
+\end{matrix} \right]$$</p>
+<p>and we can make the real-world coordinate system stay the same with the camera coordinated system, so the homogeneous transformation matrix $\left[ \mathbf{r},\mathbf{t} \right]$ become unit matrix. Put all above equation together, the 3D coordinate value from the $u, v$ and $\lambda$
+$$\begin{align}
+&amp; U={\lambda \left( u-{{o}_{x}} \right)}/{{{f}_{y}}}; \nonumber\\<br>
+&amp; V={\lambda \left( v-{{o}_{y}} \right)}/{{{f}_{y}}}; \nonumber\\<br>
+&amp; W=\lambda  \nonumber\\<br>
+\end{align}$$</p>
+<h3 id="references">References</h3>
+<ol>
+<li>
+<a href="https://www.revopoint3d.com/comparing-three-prevalent-3d-imaging-technologies-tof-structured-light-and-binocular-stereo-vision/" target="_blank" rel="noopener">Comparing Three Prevalent 3D Imaging Technologies—ToF, Structured Light and Binocular Stereo Vision</a></li>
+<li>
+<a href="https://tech.preferred.jp/en/blog/a-brief-introduction-to-3d-cameras/" target="_blank" rel="noopener">A Brief Introduction to 3D Cameras</a></li>
+<li>
+<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">A Flexible New Technique for Camera by Zhang. </a></li>
+<li>
+<a href="http://www.cse.psu.edu/~rtc12/CSE486/" target="_blank" rel="noopener">Introduction to Computer Vision CSE Department, Penn State University Instructor: Robert Collins</a></li>
+<li>
+<a href="https://ori.codes/artificial-intelligence/camera-calibration/camera-distortions/#fn:1" target="_blank" rel="noopener"> Camera calibration: explanning camera distortions</a></li>
+<li>
+<a href="http://www.cs.ait.ac.th/~mdailey/papers/Bukhari-RadialDistortion.pdf" target="_blank" rel="noopener">Automatic Radial Distortion Estimation from a Single Image</a></li>
+<li>
+<a href="https://markhedleyjones.com/projects/calibration-checkerboard-collection" target="_blank" rel="noopener">Calibration checkerboard collection</a></li>
+<li>
+<a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html#:~:text=The%20calibration%20algorithm%20calculates%20the,focal%20length%20of%20the%20camera." target="_blank" rel="noopener">Camera calibration in Matlab</a></li>
+<li>
+<a href="http://www.vision.caltech.edu/bouguetj/calib_doc/papers/heikkila97.pdf" target="_blank" rel="noopener">A Four-step Camera Calibration Procedure with Implicit Image Correction</a></li>
+<li>
+<a href="https://www.mdpi.com/1424-8220/19/12/2837/pdf-vor" target="_blank" rel="noopener">Methods for Simultaneous Robot-World-Hand–EyeCalibration: A Comparative Study</a></li>
+</ol>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/3d-camera/">3D camera</a>
+  
+  <a class="badge badge-light" href="/tag/bibocular-stereo-vision/">Bibocular stereo vision</a>
+  
+  <a class="badge badge-light" href="/tag/time-of-flight/">Time of flight</a>
+  
+  <a class="badge badge-light" href="/tag/structured-light/">Structured light</a>
+  
+  <a class="badge badge-light" href="/tag/camera-calibration/">Camera calibration</a>
+  
+  <a class="badge badge-light" href="/tag/hand-eye-calibration/">Hand-eye calibration</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/3dcamaratech/&amp;text=Three%20dimensional%20camera%20techniques" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/3dcamaratech/&amp;t=Three%20dimensional%20camera%20techniques" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Three%20dimensional%20camera%20techniques&amp;body=/post/3dcamaratech/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/3dcamaratech/&amp;title=Three%20dimensional%20camera%20techniques" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Three%20dimensional%20camera%20techniques%20/post/3dcamaratech/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/3dcamaratech/&amp;title=Three%20dimensional%20camera%20techniques" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/yinyin-su/avatar_hu8c7d007082ea7670e0d1b10d1367c27e_1280177_270x270_fill_lanczos_center_2.png" alt="Yinyin SU">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="/">Yinyin SU</a></h5>
+        <h6 class="card-subtitle">PhD student in Robotic and Control</h6>
+        <p class="card-text">My research interests include soft robotics, control and optimization, robotic system and dynamic.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/contact/" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/QR_weixin.jpg" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=mSpxozsAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/suyinyin" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "yinyinsu" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+<div class="article-widget">
+  
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/post/t-sne/" rel="prev">Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</a>
+  </div>
+  
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/t-sne/">Dimension Reduction and High Dimensional Data Visualization by PCA and t-SNE</a></li>
+      
+      <li><a href="/post/preceptron/">Preceptron algorithm</a></li>
+      
+      <li><a href="/post/someusefulcommandinros/">Some useful commands for ROS in Ubuntu</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://yinyinsu.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Copyright © Yinyin SU. All rights reserved.
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
