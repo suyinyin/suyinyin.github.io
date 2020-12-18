@@ -18,8 +18,6 @@
       <pubDate>Fri, 18 Dec 2020 20:30:09 +0800</pubDate>
       <guid>/post/3dcamaratech/</guid>
       <description>&lt;!-- # Three dimensional camera techniques --&gt;
-&lt;!-- &gt; **Written by Yinyin SU on 16th December 2020**
-&gt; **E-mail: &lt;yinyinsu1991@gmail.com&gt;** --&gt;
 &lt;p&gt;Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth. The post presented some common knowledge about the 3D cameras, including the overview of the most common 3D sensing techniques on the markets and their underlying mechanisms, some camera calibration technology, hand-eye calibration methods, mapping depth to point cloud.&lt;/p&gt;
 &lt;h3 id=&#34;1-3d-camera-technique&#34;&gt;1. 3D camera technique&lt;/h3&gt;
 &lt;p&gt;At present, the three prevalent 3D imaging technologies are &lt;strong&gt;binocular stereo vision, time of flight (ToF) and structured light&lt;/strong&gt;. Concerning active light source projection, the techniques fall into passive and active categories. Binocular stereo vision is a passive technique and the other two are active techniques.&lt;/p&gt;
