@@ -668,7 +668,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    15 min read
+    16 min read
   </span>
   
 
@@ -799,7 +799,7 @@ $${x}&lsquo;=x\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{
 <a href="https://markhedleyjones.com/projects/calibration-checkerboard-collection" target="_blank" rel="noopener">checkerboard</a>. Owing to the easy setup, the 2D method is the most popular one. In this post, we concentrate on the 2D plan-based calibration method. You can refer to the lectures of Ahmed Elgammal for other methods and their 
 <a href="https://www.cs.rutgers.edu/~elgammal/classes/cs534/lectures/Calibration.pdf" target="_blank" rel="noopener">comparisons</a>. Here, we will pay more attention to the contributions in A Flexible New Technique for Camera presented by 
 <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Zhengyou Zhang</a>, which is the most popular 2D calibration approach.
-Firstly, setting the world coordinate system to the corner of the checkerboard, and axis z is perpendicular outward to the checkerboard. Due to all points lying in a plane, the z value of all points in the checkerboard is zero, namely $\textbf W = 0$ . So the 3-rd Colum of the extrinsic matrix will vanish, and the camera model becomes:
+Firstly, setting the world coordinate system to the corner of the checkerboard, and axis z is perpendicular outward to the checkerboard. Due to all points lying in a plane, the z value of all points in the checkerboard is zero, namely $ W = 0$ . So the 3rd Colum of the extrinsic matrix will vanish, and the camera model becomes:
 $$\lambda \left[ \begin{matrix}
 u  \\<br>
 v  \\<br>
@@ -893,10 +893,10 @@ problem can be formulated as $𝑨𝑿 = 𝑿𝑩$, where $𝑨$ and $𝑩$ are 
 <p><img src="./eye_to_hand.png" alt="@Eye-to-hand way | center">
 As shown in above figure, this is the eye-to-hand type installment, that is, the camera is installed in the fixed position from which the base of robotic arm has a constant relative position.</p>
 <blockquote>
-<p>{B} &ndash; The base coordinate system of robotic arm
-{E} &ndash; The end-effector coordinate system
-{S} &ndash; The checkerboarder coordinate system
-{C} &ndash; The camera coordinate system (generally the RGB sensor coordinate system)</p>
+<p>{$\textbf B$} &ndash; The base coordinate system of robotic arm<br>
+{$\textbf E$} &ndash; The end-effector coordinate system<br>
+{$\textbf S$} &ndash; The checkerboarder coordinate system<br>
+{$\textbf C$} &ndash; The camera coordinate system (generally the RGB sensor coordinate system)</p>
 </blockquote>
 <p>From  base coordinate ${\text B }$ to  camera coordinate ${\text C }$, the homogeneous tranformation matrix can be derived as follows:
 $${{T}_{\text{BC}}}=T_{\text{BE}}^{1}\cdot T_{\text{ES}}^{1}\cdot T_{\text{SC}}^{1}=T_{\text{BE}}^{2}\cdot T_{\text{ES}}^{2}\cdot T_{\text{SC}}^{2}$$</p>
