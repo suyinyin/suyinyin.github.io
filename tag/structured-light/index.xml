@@ -236,6 +236,15 @@ So the problem becomes how to solve the above equation, many previous works has 
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;4-alighnment&#34;&gt;4. Alighnment&lt;/h3&gt;
+&lt;p&gt;In the robotic field, often find objects from the color image, and then calculate the corresponding 3D coordinate value by combining the related depth value. Before the above procedure, need to align the depth image to color image (depth registration).&lt;/p&gt;
+&lt;!-- ![@Alighment1 | center | 100X0 ](./alignment1.png) --&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;./alignment1.png&#34; alt=&#34;Sublime&#39;s custom image&#34; width = 500 /&gt;
+&lt;/p&gt;
+Homogeneous transformation matrix $T_{CW}$ and $T_{DW}$ can be obtained through the above calibration method, so the matrix $T_{CD}$ is
+$${{\text{T}}_{\text{CD}}}={{\text{T}}_{\text{CW}}}\text{T}_{\text{DW}}^{-1}$$
+&lt;p&gt;The alignned result is shown as follows.
+&lt;img src=&#34;./alignment2.png&#34; alt=&#34;@Alighment2 | center &#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;5-mapping-depth-image-to-point-cloud&#34;&gt;5. Mapping depth image to point cloud&lt;/h3&gt;
 &lt;p&gt;In the section, we will discuss on how to reconstruct the 3 dimensional point in the real-world space from the pixel images and the corresponding depth image (alighn the depth images  to the color images). Namely, after we already have the pixel point $u, v$ and depth value $\lambda$,  how we can obtain the related point cloud in thei real-world space, which is of importance in vision servoing of robotics.  In the section, we know that
 $$\left[ \begin{matrix}

@@ -926,6 +926,15 @@ So the problem becomes how to solve the above equation, many previous works has 
 </ul>
 </blockquote>
 <h3 id="4-alighnment">4. Alighnment</h3>
+<p>In the robotic field, often find objects from the color image, and then calculate the corresponding 3D coordinate value by combining the related depth value. Before the above procedure, need to align the depth image to color image (depth registration).</p>
+<!-- ![@Alighment1 | center | 100X0 ](./alignment1.png) -->
+<p align="center">
+  <img src="./alignment1.png" alt="Sublime's custom image" width = 500 />
+</p>
+Homogeneous transformation matrix $T_{CW}$ and $T_{DW}$ can be obtained through the above calibration method, so the matrix $T_{CD}$ is
+$${{\text{T}}_{\text{CD}}}={{\text{T}}_{\text{CW}}}\text{T}_{\text{DW}}^{-1}$$
+<p>The alignned result is shown as follows.
+<img src="./alignment2.png" alt="@Alighment2 | center "></p>
 <h3 id="5-mapping-depth-image-to-point-cloud">5. Mapping depth image to point cloud</h3>
 <p>In the section, we will discuss on how to reconstruct the 3 dimensional point in the real-world space from the pixel images and the corresponding depth image (alighn the depth images  to the color images). Namely, after we already have the pixel point $u, v$ and depth value $\lambda$,  how we can obtain the related point cloud in thei real-world space, which is of importance in vision servoing of robotics.  In the section, we know that
 $$\left[ \begin{matrix}
