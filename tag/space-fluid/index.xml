@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Space fluid | Yinyin</title>
+    <link>/tag/space-fluid/</link>
+      <atom:link href="/tag/space-fluid/index.xml" rel="self" type="application/rss+xml" />
+    <description>Space fluid</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 10 Feb 2021 20:20:01 +0800</lastBuildDate>
+    <image>
+      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
+      <title>Space fluid</title>
+      <link>/tag/space-fluid/</link>
+    </image>
+    
+    <item>
+      <title>Shijian-10 Microgravity Science Satellite</title>
+      <link>/project/sj10/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/sj10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiangong-2 Space Laboratory</title>
+      <link>/project/tg2/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/tg2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,18 +5,18 @@
     <link>/tag/control/</link>
       <atom:link href="/tag/control/index.xml" rel="self" type="application/rss+xml" />
     <description>Control</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Tue, 11 Aug 2020 16:18:34 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 10 Feb 2021 20:20:01 +0800</lastBuildDate>
     <image>
-      <url>/images/icon_hua378e18c352296c325c0cd6b7c9acc78_68212_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
       <title>Control</title>
       <link>/tag/control/</link>
     </image>
     
     <item>
-      <title>Alogorithm</title>
-      <link>/post/controlandoptimization/alogorithm/</link>
-      <pubDate>Tue, 11 Aug 2020 16:18:34 +0800</pubDate>
-      <guid>/post/controlandoptimization/alogorithm/</guid>
+      <title>Soft Arm</title>
+      <link>/project/soft_robotic_arm/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/soft_robotic_arm/</guid>
       <description></description>
     </item>
     

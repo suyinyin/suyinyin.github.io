@@ -5,12 +5,44 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Yinyin</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Fri, 18 Dec 2020 20:30:09 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 10 Feb 2021 20:20:01 +0800</lastBuildDate>
     <image>
       <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
       <title>Yinyin</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Shijian-10 Microgravity Science Satellite</title>
+      <link>/project/sj10/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/sj10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soft Arm</title>
+      <link>/project/soft_robotic_arm/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/soft_robotic_arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soft Robotic Face</title>
+      <link>/project/soft_robotic_face/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/soft_robotic_face/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiangong-2 Space Laboratory</title>
+      <link>/project/tg2/</link>
+      <pubDate>Wed, 10 Feb 2021 20:20:01 +0800</pubDate>
+      <guid>/project/tg2/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Three dimensional camera techniques</title>
@@ -1276,14 +1308,6 @@ ros::spin();
       <link>/experience/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       <guid>/experience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>/projects/</link>
-      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/projects/</guid>
       <description></description>
     </item>
     
