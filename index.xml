@@ -5,12 +5,71 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Yinyin</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 10 Feb 2021 20:20:01 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Thu, 24 Feb 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
       <title>Yinyin</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Kinematic Analysis of Soft Continuum Manipulators Based on Sparse Workspace Mapping</title>
+      <link>/publication/journal-article-5/</link>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article-5/</guid>
+      <description>&lt;!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;featured.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+
+
+  &lt;img src=&#34;featured.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The file structure of workplace
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+ --&gt;
+&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+ --&gt;
+&lt;!-- Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
     
     <item>
       <title>Shijian-10 Microgravity Science Satellite</title>

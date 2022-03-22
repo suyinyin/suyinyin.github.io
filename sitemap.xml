@@ -3,6 +3,91 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/publication-type/2/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/inverse-kinematics/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/james-lam/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/jing-li/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/journal-article-5/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/modeling/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/soft-manipulators/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/sparse-searching/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/wenping-wang/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/xiaojiao-chen/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/yinyin-su/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/zheng-wang/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tag/ball-tracking/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
   </url>
@@ -88,27 +173,12 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/project/tg2/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/3d-camera/</loc>
-    <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
   </url>
   
@@ -144,11 +214,6 @@
   
   <url>
     <loc>/tag/time-of-flight/</loc>
-    <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/yinyin-su/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
   </url>
   
@@ -198,11 +263,6 @@
   </url>
   
   <url>
-    <loc>/publication-type/2/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication/journal-article-1/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
@@ -219,16 +279,6 @@
   
   <url>
     <loc>/tag/proprioception/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -254,11 +304,6 @@
   
   <url>
     <loc>/author/yuming-zhu/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/zheng-wang/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
   
