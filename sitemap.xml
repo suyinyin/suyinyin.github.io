@@ -4,26 +4,176 @@
   
   <url>
     <loc>/publication-type/2/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/inverse-kinematics/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/james-lam/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/author/jing-li/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/kinematic-model/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/liangliang-wang/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/pressure-information/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/proprioception/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/receptor/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/receptor-failure/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/runzhi-zhang/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/soft-pneumatic-chamber/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/journal-article-6/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/xiaojiao-chen/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/yinyin-su/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/zheng-wang/</loc>
+    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/juan-yi/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/multifunctionality/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/journal-article-7/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/sicong-liu/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/soft-robots/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/yige-wu/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/zhonggui-fang/</loc>
+    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication-type/1/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/conference-paper-2/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/chaoyang-song/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/dehao-duanmu/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/variable-stiffness/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/wearable/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/yujia-liu/</loc>
+    <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/inverse-kinematics/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,16 +188,6 @@
   </url>
   
   <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/soft-manipulators/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url>
@@ -58,32 +198,7 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/author/wenping-wang/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/xiaojiao-chen/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/yinyin-su/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/zheng-wang/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -278,16 +393,6 @@
   </url>
   
   <url>
-    <loc>/tag/proprioception/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/sicong-liu/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/soft-origamic-actuators/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
@@ -304,11 +409,6 @@
   
   <url>
     <loc>/author/yuming-zhu/</loc>
-    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/zhonggui-fang/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -365,11 +465,6 @@
   <url>
     <loc>/experience/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication-type/1/</loc>
-    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
