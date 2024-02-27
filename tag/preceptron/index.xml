@@ -7,7 +7,7 @@
     <description>Preceptron</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Thu, 03 Sep 2020 20:30:09 +0800</lastBuildDate>
     <image>
-      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_3.png</url>
       <title>Preceptron</title>
       <link>/tag/preceptron/</link>
     </image>
@@ -24,7 +24,7 @@
 $$f(x) = sign(\omega \centerdot x+b)$$
 $$sign(x) =
 \begin{cases}
-+1 &amp;amp; \text{if } x \ge 0,\\&lt;br&gt;
++1 &amp;amp; \text{if } x \ge 0,\\
 -1 &amp;amp; \text{if } x &amp;lt; 0.
 \end{cases}$$
 where $\omega$ and $b$ are the weight and bias for the above function respectively. Through being trained by the give training data $T = \{ (x_0, y_0), (x_1, y_1), (x_2, y_2), \cdots, (x_N, y_N)\}$, where $x_i \in \mathcal{X} =  {{\mathbf{R}}^{n}}$ and $y_i \in \mathcal{Y}=\{-1, +1\}$, $i = 1, 2, \cdots, N$. The parameters $\omega$ and $b$ can be leanned through the mentioned data set.  The learned linear hyperplane can divide the training data into two parts labelling +1 and -1.  The schematic diagram is shown as follows.&lt;/p&gt;
@@ -54,10 +54,10 @@ where $\omega$ and $b$ are the weight and bias for the above function respective
 &lt;figure id=&#34;figure-the-schematic-diagram-of-perceptron&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_3.png&#34; data-caption=&#34;The schematic diagram of perceptron&#34;&gt;
 
 
-  &lt;img data-src=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
+  &lt;img data-src=&#34;/post/preceptron/preceptron_hu425ef45277cde0d0b8f5a13aa87ba3d6_18766_2000x2000_fit_lanczos_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;486&#34; height=&#34;419&#34;&gt;
 &lt;/a&gt;
 
 
@@ -72,15 +72,15 @@ where $\omega$ and $b$ are the weight and bias for the above function respective
 
 &lt;h3 id=&#34;perceptron-strategy&#34;&gt;Perceptron strategy&lt;/h3&gt;
 &lt;p&gt;In perceptron algorithm, the total distance to the hyperplane is defined to depict its cost function:
-$$L\left( \omega ,b \right)=-\sum\limits_{{{x}_{i}}\in M}{{{y}_{i}}\left( \omega \cdot {{x}_{i}}+b \right)}$$
+$$L\left( \omega ,b \right)=-\sum\limits_{{{x}&lt;em&gt;{i}}\in M}{{{y}&lt;/em&gt;{i}}\left( \omega \cdot {{x}_{i}}+b \right)}$$
 where $M$ is misclassfication data set.&lt;/p&gt;
 &lt;h3 id=&#34;perceptron-learning-algorithm&#34;&gt;Perceptron learning algorithm&lt;/h3&gt;
 &lt;p&gt;For the given training data set, the parameters $\omega$ and $b$ can be optimized by minimizing the cost function:
-$$\underset{\omega ,b}{\mathop{\min }},L\left( \omega ,b \right)=-\sum\limits_{{{x}_{i}}\in M}{{{y}_{i}}\left( \omega \cdot {{x}_{i}}+b \right)}$$
+$$\underset{\omega ,b}{\mathop{\min }},L\left( \omega ,b \right)=-\sum\limits_{{{x}&lt;em&gt;{i}}\in M}{{{y}&lt;/em&gt;{i}}\left( \omega \cdot {{x}&lt;em&gt;{i}}+b \right)}$$
 We can use stochastic gradient descent method to solve the above optimized problem. Take partial derivative with respect to $\omega$ and $b$, the iteration strategy can be obtained:
 $$\begin{align}
-&amp;amp; \omega \leftarrow \omega +\eta {{y}_{i}}{{x}_{i}} \&lt;br&gt;
-&amp;amp; b\leftarrow b+\eta {{y}_{i}} \&lt;br&gt;
+&amp;amp; \omega \leftarrow \omega +\eta {{y}&lt;/em&gt;{i}}{{x}&lt;em&gt;{i}} \
+&amp;amp; b\leftarrow b+\eta {{y}&lt;/em&gt;{i}} \
 \end{align}$$
 where $\eta$ is a learning rate hyperparameter set by user.&lt;/p&gt;
 &lt;p&gt;Based on the aforementioned discussion, the perceptron algorithm can be derived:
@@ -168,7 +168,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Results:&lt;/strong&gt;
-&lt;img src=&#34;preceptron.gif&#34; alt=&#34;Alt Text&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Alt Text&#34; src=&#34;/post/preceptron/preceptron.gif&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;

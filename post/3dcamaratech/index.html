@@ -233,8 +233,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hua52117042f226f6860de756cd71df0db_27832_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua52117042f226f6860de756cd71df0db_27832_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hua52117042f226f6860de756cd71df0db_27832_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua52117042f226f6860de756cd71df0db_27832_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="/post/3dcamaratech/">
 
@@ -304,7 +304,7 @@
     "name": "Yinyin",
     "logo": {
       "@type": "ImageObject",
-      "url": "/images/icon_hua52117042f226f6860de756cd71df0db_27832_192x192_fill_lanczos_center_2.png"
+      "url": "/images/icon_hua52117042f226f6860de756cd71df0db_27832_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "Recently, 3D cameras have been widely used in various computer vision applications, like robotics, autonomous driving. Leveraging the extra data provided by such sensors allows for better performance on tasks such as detection and recognition, pose estimation, 3D reconstruction, and so forth."
@@ -748,38 +748,38 @@
   <em>The structured light</em>
 </p>
 <h4 id="14-pros-and-cons">1.4. Pros and cons</h4>
-<p><img src="./pros_cons.PNG" alt="@ The comparisons for different types of techniques | center"></p>
+<p><img alt="@ The comparisons for different types of techniques | center" src="./pros_cons.PNG"></p>
 <h3 id="2-camera-calibaration">2. Camera calibaration</h3>
 <p>
 <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Camera calibration is a necessary step in 3D computer vision to extract metric information from 2D images</a>. Calibration aims to find the quantities internal to the cameras that affect the image process, including image center, focal length, lens distortion parameters. The precise internal camera parameters are of paramount importance for the 3D interpretation of images, reconstruction of world models, and robot interaction with the world.</p>
 <h4 id="21--pinhole-camera-model">2.1.  Pinhole camera model</h4>
 <p>
 <a href="https://en.wikipedia.org/wiki/Pinhole_camera_model" target="_blank" rel="noopener">The pinhole camera model is a model of an ideal camera, that describes the mathematical relationship between the real world 3D object&rsquo;s coordinates and its 2D projection on the image plane </a>. Its validity depends on the quality of the camera and, in general, decreases from the center of the image to the edges as lens distortion effects increase.
-<img src="./image_coords.png" alt="Alt text | center |600X0">
+<img alt="Alt text | center |600X0" src="./image_coords.png">
 
 <a href="http://www.cse.psu.edu/~rtc12/CSE486/" target="_blank" rel="noopener">As shown in the above figure</a>, if we want to understand the relation between the 3D objects and the corresponding 2D images, the mathematical model is needed to describe the relationship. In this post, we use $(\textbf U, \textbf V, \textbf W)$, $( \textbf X, \textbf Y, \textbf Z)$, $(x, y)$, and $(u, v)$ to depict the positions of an object in real-world space, camera space, film space, and pixel space respectively. Firstly, we will build a model to map objects from camera coordinates to film coordinates.
-<img src="./caTofilm.png" alt="Alt text | center | 600X0">
+<img alt="Alt text | center | 600X0" src="./caTofilm.png">
 As shown in the above figure, the $(x, y)$ in the film space can be derived from the point in camera space via similar triangles rule. $f$ is the focal length. It is worth to be mentioned that the focal length along the x-direction, y-direction can be different, and it can be depicted by $f_x$, and $f_y$. The origin of the image in film space is at its center, while the origin of the pixel space is at the top-left position. So the offsets are needed to transfer the points in film space to those in pixel points. $o_x$ and $o_y$ are called $x$ offset and $y$ offset respectively.
-<img src="./filmTopixel.png" alt="Alt text |center | 600X0">
+<img alt="Alt text |center | 600X0" src="./filmTopixel.png">
 The above two processes often are put together, which can be described by a $3\times3$ matrix $\mathbf K$. The parameters in $\mathbf K$ is the intrinsic parameters of the camera. It is different from different devices. It is recommended that these parameters should be known before you use a camera.
 The variance of data set $\mathbf{z_1}$</p>
 <p>$$\mathbf{K} = {\left[ \begin{matrix}
-f_x &amp; 0 &amp; o_{x}  \\<br>
-0 &amp; f_{y} &amp; {{o}_{y}}  \\<br>
-0 &amp; 0 &amp; 1  \\<br>
+f_x &amp; 0 &amp; o_{x}  \\
+0 &amp; f_{y} &amp; {{o}_{y}}  \\
+0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]}$$</p>
 <p>So the pixel coordiante value can be obtained by:
 $${{\left[ \begin{matrix}
-u &amp; v &amp; 1  \<br>
+u &amp; v &amp; 1  \
 \end{matrix} \right]}^{T}}=\mathbf{K}{{\left[ \begin{matrix}
-{X}/{Z}; &amp; {Y}/{Z}; &amp; 1  \<br>
+{X}/{Z}; &amp; {Y}/{Z}; &amp; 1  \
 \end{matrix} \right]}^{T}}.$$
 Mapping objects from real-world space to camera space could use a homogeneous transformation matrix $\mathbf T$, which is a common approach to describe the body transformation in 3D space.
 $$\mathbf T = \left[ \begin{matrix}
-{{r}_{11}} &amp; {{r}_{12}} &amp; {{r}_{13}} &amp; {{t}_{x}}  \\<br>
-{{r}_{21}} &amp; {{r}_{22}} &amp; {{r}_{23}} &amp; {{t}_{y}}  \\<br>
-{{r}_{31}} &amp; {{r}_{23}} &amp; {{r}_{33}} &amp; {{t}_{z}}  \\<br>
-0 &amp; 0 &amp; 0 &amp; 1  \\<br>
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{r}_{13}} &amp; {{t}_{x}}  \\
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{r}_{23}} &amp; {{t}_{y}}  \\
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{r}_{33}} &amp; {{t}_{z}}  \\
+0 &amp; 0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]$$
 By combining all the mentioned transform matrix, the objects in 3D real-world space can be transferred into the 2D image space, as shown in the following figure. The way in how to calibrate the internal and external parameters of the camera will be presented in the next subsection 3.</p>
 <!-- ![@Pinhole camera model | center | 700X0](./pinhole_model.png) -->
@@ -798,15 +798,15 @@ By combining all the mentioned transform matrix, the objects in 3D real-world sp
 <p>Some action cameras which have large FOV will cause a lot of positive radial distortion. The negative radial distortion is often caused by the lens being not aligned perfectly parallel to the imaging plane. It leads to the image look tilted, which is bad for us since some objects look further away than they are. Next, we will discuss how to avoid the radial distortion, and two couples of coefficients $k_i$, describing radial distortion and $p_i$, describing the tangential distortion. The worse the distortion, the more coefficients we need to accurately describe it. More details about these parameters were given in 
 <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#camera-calibration-and-3d-reconstruction" target="_blank" rel="noopener">OpenCV docs</a>. In the pinhole camera model, we use intrinsic matrix $\mathbf K$ to map object in camera coordinate to image in pixel coordinate. Expanding matrix $\mathbf K$, the following equations can be derived.
 $$\begin{align}
-&amp; x=X/Z \nonumber \\<br>
-&amp; y=Y/Z \nonumber \\<br>
-&amp; u={{f}_{x}}\cdot x+{{o}_{x}} \nonumber \\<br>
-&amp; v={{f}_{y}}\cdot y+{{o}_{y}} \nonumber  \\<br>
+&amp; x=X/Z \nonumber \\
+&amp; y=Y/Z \nonumber \\
+&amp; u={{f}_{x}}\cdot x+{{o}_{x}} \nonumber \\
+&amp; v={{f}_{y}}\cdot y+{{o}_{y}} \nonumber  \\
 \end{align}$$
 Due to the lens distortion in the real application of cameras, the distortion parameters should be added to the model. After getting point $(\textbf X, \textbf Y, \textbf Z)$ in camera space, the updated image pixel coordinates along $u$ direction and $v$ direction can be obtained:
-$${x}&lsquo;=x\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+2{{p}_{1}}xy+{{p}_{2}}$$</p>
-<p>$${y}&lsquo;=y\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+{{p}_{1}}({{r}^{2}}+2{{y}^{2}})+2{{p}_{2}}xy$$</p>
-<p>where ${{r}^{2}}={{x}^{2}}+{{y}^{2}}$, $u={{f}_{x}}\cdot {x}&lsquo;+{{o}_{x}}$ and $v={{f}_{y}}\cdot {y}&lsquo;+{{o}_{y}}$. Since we&rsquo;re primarily interested in efficiently removing the radial distortion, we&rsquo;ll be using <strong>Fitzgibbon&rsquo;s division</strong> model as opposed to <strong>Brown-Conrady&rsquo;s even-order polynomial model</strong>, since it requires fewer terms in cases of severe distortion. 
+$${x}&rsquo;=x\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+2{{p}_{1}}xy+{{p}_{2}}$$</p>
+<p>$${y}&rsquo;=y\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{1+{{k}_{4}}{{r}^{2}}+{{k}_{5}}{{r}^{4}}+{{k}_{6}}{{r}^{6}}}+{{p}_{1}}({{r}^{2}}+2{{y}^{2}})+2{{p}_{2}}xy$$</p>
+<p>where ${{r}^{2}}={{x}^{2}}+{{y}^{2}}$, $u={{f}_{x}}\cdot {x}&rsquo;+{{o}_{x}}$ and $v={{f}_{y}}\cdot {y}&rsquo;+{{o}_{y}}$. Since we&rsquo;re primarily interested in efficiently removing the radial distortion, we&rsquo;ll be using <strong>Fitzgibbon&rsquo;s division</strong> model as opposed to <strong>Brown-Conrady&rsquo;s even-order polynomial model</strong>, since it requires fewer terms in cases of severe distortion. 
 <a href="http://www.cs.ait.ac.th/~mdailey/papers/Bukhari-RadialDistortion.pdf" target="_blank" rel="noopener">It is also a bit easier to work with since inverting the single parameter division model requires solving one degree less polynomial than inverting the single-parameter polynomial model</a>.</p>
 <h4 id="23-a-flexible-new-technique-for-camera">2.3. A Flexible New Technique for Camera</h4>
 <p>In this subsection, we will talk about some popular camera calibration techniques. In terms of the calibrated object used in camera calibration, four major methods have been applied in different fields: calibration using <strong>3D calibration object, calibrating using the 2D planar pattern, calibration using the 1D object (line-based calibration), and self-calibration, which is no calibration objects</strong>. For the 3D method, calibration is performed by observing a calibration object whose geometry in 3D space is known with very good precision. The object often contains two or three orthogonal to each other, e.g. calibration cube, and it has a plane undergoing a precisely known translation. Although the 3D method is an expensive and more elaborate setup, it is more accurate and has a simple theory. The 2D plan-base calibration requires observation of a planar pattern shown at a few different orientations. Mostly, a popular planar pattern is a 
@@ -815,31 +815,31 @@ $${x}&lsquo;=x\frac{1+{{k}_{1}}{{r}^{2}}+{{k}_{2}}{{r}^{4}}+{{k}_{3}}{{r}^{6}}}{
 <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf" target="_blank" rel="noopener">Zhengyou Zhang</a>, which is the most popular 2D calibration approach.
 Firstly, setting the world coordinate system to the corner of the checkerboard, and axis z is perpendicular outward to the checkerboard. Due to all points lying in a plane, the z value of all points in the checkerboard is zero, namely $ W = 0$ . So the 3rd Colum of the extrinsic matrix will vanish, and the camera model becomes:
 $$\lambda \left[ \begin{matrix}
-u  \\<br>
-v  \\<br>
-1  \\<br>
+u  \\
+v  \\
+1  \\
 \end{matrix} \right]=\underbrace{\left[ \begin{matrix}
-{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
-0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
-0 &amp; 0 &amp; 1  \\<br>
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\
+0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]\left[ \begin{matrix}
-{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\<br>
-{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\<br>
-{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\<br>
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\
 \end{matrix} \right]}_{\mathbf{H}}\left[ \begin{matrix}
-U  \\<br>
-V  \\<br>
-1  \\<br>
+U  \\
+V  \\
+1  \\
 \end{matrix} \right], $$</p>
 <p>where $\mathbf H$ is the $3\times3$ matrix, containing 9 parameters to be addressed. As the third element in the left side vector, actually, it needs 8 equations to solve all unknown elements. For the checkerboard, at least 4 points are needed to be chosen.</p>
 <p>$$\mathbf{H}=\left( {{\mathbf{h}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{2}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{3}}} \right)\underbrace{\left[ \begin{matrix}
-{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
-0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
-0 &amp; 0 &amp; 1  \\<br>
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\
+0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]}_{\mathbf{K}}\underbrace{\left[ \begin{matrix}
-{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\<br>
-{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\<br>
-{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\<br>
+{{r}_{11}} &amp; {{r}_{12}} &amp; {{t}_{x}}  \\
+{{r}_{21}} &amp; {{r}_{22}} &amp; {{t}_{y}}  \\
+{{r}_{31}} &amp; {{r}_{23}} &amp; {{t}_{z}}  \\
 \end{matrix} \right]}_\mathbf{R}$$</p>
 <p>where $\mathbf R={\left[{{\mathbf{r}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{r}}_{\mathbf{2}}}\mathbf{,t} \right]}$.So $\mathbf H$ can be described by:</p>
 <p>$$\mathbf{H}=\left( {{\mathbf{h}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{2}}}\mathbf{,}{{\mathbf{h}}_{\mathbf{3}}} \right)=\mathbf{K}\left( {{\mathbf{r}}_{\mathbf{1}}}\mathbf{,}{{\mathbf{r}}_{\mathbf{2}}}\mathbf{,t} \right), $$</p>
@@ -852,9 +852,9 @@ $${{\mathbf{h}}_{\mathbf{1}}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}
 <p>$${{\mathbf{h}}_{\mathbf{1}}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}_{1}}-{{\mathbf{h}}_{2}}{{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}{{\mathbf{h}}_{2}}=0$$</p>
 <p>Defining $\mathbf{B}:={{\mathbf{K}}^{-T}}{{\mathbf{K}}^{-1}}$, which is symmetric and positive definite matrix. $\mathbf K$ can be calculated from $\mathbf B$ using Cholesky factorization. $\mathbf B$ can be depicted in the following:
 $$\mathbf{B}=\left[ \begin{matrix}
-{{b}_{11}} &amp; {{b}_{12}} &amp; {{b}_{13}}  \\<br>
-{{b}_{12}} &amp; {{b}_{22}} &amp; {{b}_{23}}  \\<br>
-{{b}_{13}} &amp; {{b}_{23}} &amp; {{b}_{33}}  \\<br>
+{{b}_{11}} &amp; {{b}_{12}} &amp; {{b}_{13}}  \\
+{{b}_{12}} &amp; {{b}_{22}} &amp; {{b}_{23}}  \\
+{{b}_{13}} &amp; {{b}_{23}} &amp; {{b}_{33}}  \\
 \end{matrix} \right], $$</p>
 <p>so we can define a vector $\mathbf b$ to represent $\mathbf B$ :</p>
 <p>$$\mathbf{b}={{\left[ {{b}_{11}},{{b}_{12}},{{b}_{13}},{{b}_{22}},{{b}_{23}},{{b}_{33}} \right]}^{T}}$$</p>
@@ -862,8 +862,8 @@ $$\mathbf{B}=\left[ \begin{matrix}
 $$\mathbf{v}_{ij}^{T}\mathbf{b}=0$$</p>
 <p>where ${{\mathbf{v}}_{ij}}={{\left[ {{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j1}},{{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j2}}+{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j1}},{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j2}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j1}}+{{\mathbf{h}}_{i1}}{{\mathbf{h}}_{j3}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j2}}+{{\mathbf{h}}_{i2}}{{\mathbf{h}}_{j3}},{{\mathbf{h}}_{i3}}{{\mathbf{h}}_{j3}} \right]}^{T}}$. So the updated type of constraint equations are
 $$\left[ \begin{matrix}
-\mathbf{v}_{12}^{T}  \\<br>
-\mathbf{v}_{11}^{T}-\mathbf{v}_{22}^{T}  \\<br>
+\mathbf{v}_{12}^{T}  \\
+\mathbf{v}_{11}^{T}-\mathbf{v}_{22}^{T}  \\
 \end{matrix} \right]\mathbf{b}=0$$</p>
 <p>To solve the above equation, at least 3 different images should be input. Owing to noise in the real measurement, the above equation can be solved in optimization methods by inputting more than 3 images. Solving $\mathbf b$ via minimizing the following equation:
 $$\mathbf{b}=\arg \underset{\mathbf{b}}{\mathop{\min }}\mathbf{v}^{T} \mathbf {b}$$</p>
@@ -902,14 +902,14 @@ while(){
 <p>
 <a href="https://en.wikipedia.org/wiki/Hand_eye_calibration_problem#:~:text=In%20robotics%20and%20mathematics%2C%20the,and%20the%20world%20coordinate%20system." target="_blank" rel="noopener">In robotics and mathematics, the hand eye calibration problem (also called the robot-sensor or robot-world calibration problem) is the problem of determining the transformation between a robot end-effector and a camera or between a robot base and the world coordinate system</a>.  It has been widely used in vision-based robot control also known as visual servoing, which uses visual information from the camera as feedback to plan and control.  ALl such application require accurate hand-eye calibration primarily to complement the accurate robotic arm pose with the sensor-based mearsurement of the observed environment into a more complete set of information. Hand–eye calibration requires accurate estimation of the homogenous transformation between the robot hand/end-effector and the optical frame of the camera affixed to the end effector. The
 problem can be formulated as $𝑨𝑿 = 𝑿𝑩$, where $𝑨$ and $𝑩$ are the robotic arm and camera posesbetween two successive time frames, respectively, and $𝑿$ is the unknown transform between the robot hand (end effector) and the camera. In this post, we introduced two types of hand-eye calibration: eye-to-hand way and eye-in-hand way, as shown as follows:
-<img src="./hand-eye.png" alt="@hand-eye clibration | center | 400X0 "></p>
+<img alt="@hand-eye clibration | center | 400X0 " src="./hand-eye.png"></p>
 <h4 id="31-eye-to-hand-intallment">3.1 Eye-to-hand intallment</h4>
-<p><img src="./eye_to_hand.png" alt="@Eye-to-hand way | center">
+<p><img alt="@Eye-to-hand way | center" src="./eye_to_hand.png">
 As shown in above figure, this is the eye-to-hand type installment, that is, the camera is installed in the fixed position from which the base of robotic arm has a constant relative position.</p>
 <blockquote>
-<p>{$\textbf B$} &ndash; The base coordinate system of robotic arm<br>
-{$\textbf E$} &ndash; The end-effector coordinate system<br>
-{$\textbf S$} &ndash; The checkerboarder coordinate system<br>
+<p>{$\textbf B$} &ndash; The base coordinate system of robotic arm <br>
+{$\textbf E$} &ndash; The end-effector coordinate system <br>
+{$\textbf S$} &ndash; The checkerboarder coordinate system <br>
 {$\textbf C$} &ndash; The camera coordinate system (generally the RGB sensor coordinate system)</p>
 </blockquote>
 <p>From  base coordinate ${\text B }$ to  camera coordinate ${\text C }$, the homogeneous tranformation matrix can be derived as follows:
@@ -919,7 +919,7 @@ $$T_{\text{BE}}^{2}{{\left( T_{\text{BE}}^{1} \right)}^{-1}}{{T}_{\text{BC}}}={{
 <p>We can define $\mathbf{A}=T_{\text{BE}}^{2}{{\left( T_{\text{BE}}^{1} \right)}^{-1}}$,  $\mathbf{B}={{\left( T_{\text{SC}}^{2} \right)}^{-1}}T_{\text{SC}}^{1}$ and $\mathbf{X}={{T}_{\text{BC}}}$, so the probelm becomes:
 $$\mathbf{AX}=\mathbf{XB}$$</p>
 <h4 id="32-eye-in-hand-intallment">3.2 Eye-in-hand intallment</h4>
-<p><img src="./eye_in_hand.png" alt="@Eye-in-hand way | center">
+<p><img alt="@Eye-in-hand way | center" src="./eye_in_hand.png">
 As shown in above figure, this is the eye-in-hand type installment, that is, the camera is installed in the fixed position from which the tool of robotic arm has a constant relative position.
 $${{T}_{\text{BS}}}=T_{\text{BE}}^{1}\cdot T_{\text{EC}}^{1}\cdot T_{\text{CS}}^{1}=T_{\text{BE}}^{2}\cdot T_{\text{EC}}^{2}\cdot T_{\text{CS}}^{2}$$
 As  the tranformation matrix $T_{\text{BS}}$ is constant, the following equation can be derived:
@@ -948,57 +948,57 @@ So the problem becomes how to solve the above equation, many previous works has 
 Homogeneous transformation matrix $T_{CW}$ and $T_{DW}$ can be obtained through the above calibration method, so the matrix $T_{CD}$ is
 $${{\text{T}}_{\text{CD}}}={{\text{T}}_{\text{CW}}}\text{T}_{\text{DW}}^{-1}$$
 <p>The alignned result is shown as follows.
-<img src="./alignment2.png" alt="@Alighment2 | center "></p>
+<img alt="@Alighment2 | center " src="./alignment2.png"></p>
 <h3 id="5-mapping-depth-image-to-point-cloud">5. Mapping depth image to point cloud</h3>
 <p>In the section, we will discuss on how to reconstruct the 3 dimensional point in the real-world space from the pixel images and the corresponding depth image (alighn the depth images  to the color images). Namely, after we already have the pixel point $u, v$ and depth value $\lambda$,  how we can obtain the related point cloud in thei real-world space, which is of importance in vision servoing of robotics.  In the section, we know that
 $$\left[ \begin{matrix}
-u  \\<br>
-v  \\<br>
-1  \\<br>
+u  \\
+v  \\
+1  \\
 \end{matrix} \right]=\left[ \begin{matrix}
-{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
-0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
-0 &amp; 0 &amp; 1  \\<br>
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\
+0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]\left[ \begin{matrix}
-x  \\<br>
-y  \\<br>
-1  \\<br>
+x  \\
+y  \\
+1  \\
 \end{matrix} \right]$$</p>
 <p>where,
 $$\begin{align}
-&amp; x=X/Z \nonumber\\<br>
-&amp; y=Y/Z \nonumber\\<br>
+&amp; x=X/Z \nonumber\\
+&amp; y=Y/Z \nonumber\\
 \end{align}$$</p>
 <p>As $\lambda = Z$, so
 $$ \left[ \begin{matrix}
-Zu  \\<br>
-Zv  \\<br>
-Z  \\<br>
+Zu  \\
+Zv  \\
+Z  \\
 \end{matrix} \right]=\left[ \begin{matrix}
-{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\<br>
-0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\<br>
-0 &amp; 0 &amp; 1  \\<br>
+{{f}_{x}} &amp; 0 &amp; {{o}_{x}}  \\
+0 &amp; {{f}_{y}} &amp; {{o}_{y}}  \\
+0 &amp; 0 &amp; 1  \\
 \end{matrix} \right]\left[ \begin{matrix}
-X  \\<br>
-Y  \\<br>
-Z \\<br>
+X  \\
+Y  \\
+Z \\
 \end{matrix} \right]$$</p>
 <p>For the points in camera space and real-world space:
 $$\left[ \begin{matrix}
-X  \\<br>
-Y  \\<br>
-Z  \\<br>
+X  \\
+Y  \\
+Z  \\
 \end{matrix} \right]=\left[ \mathbf{r},\mathbf{t} \right]\left[ \begin{matrix}
-U  \\<br>
-V  \\<br>
-W  \\<br>
-1  \\<br>
+U  \\
+V  \\
+W  \\
+1  \\
 \end{matrix} \right]$$</p>
 <p>and we can make the real-world coordinate system stay the same with the camera coordinated system, so the homogeneous transformation matrix $\left[ \mathbf{r},\mathbf{t} \right]$ become unit matrix. Put all above equation together, the 3D coordinate value from the $u, v$ and $\lambda$
 $$\begin{align}
-&amp; U={\lambda \left( u-{{o}_{x}} \right)}/{{{f}_{y}}}; \nonumber\\<br>
-&amp; V={\lambda \left( v-{{o}_{y}} \right)}/{{{f}_{y}}}; \nonumber\\<br>
-&amp; W=\lambda  \nonumber\\<br>
+&amp; U={\lambda \left( u-{{o}_{x}} \right)}/{{{f}_{y}}}; \nonumber\\
+&amp; V={\lambda \left( v-{{o}_{y}} \right)}/{{{f}_{y}}}; \nonumber\\
+&amp; W=\lambda  \nonumber\\
 \end{align}$$</p>
 <h3 id="references">References</h3>
 <ol>
@@ -1035,17 +1035,17 @@ $$\begin{align}
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/3d-camera/">3D camera</a>
+  <a class="badge badge-light" href="/tag/3d-camera/">3D Camera</a>
   
-  <a class="badge badge-light" href="/tag/bibocular-stereo-vision/">Bibocular stereo vision</a>
+  <a class="badge badge-light" href="/tag/bibocular-stereo-vision/">Bibocular Stereo Vision</a>
   
-  <a class="badge badge-light" href="/tag/time-of-flight/">Time of flight</a>
+  <a class="badge badge-light" href="/tag/time-of-flight/">Time of Flight</a>
   
-  <a class="badge badge-light" href="/tag/structured-light/">Structured light</a>
+  <a class="badge badge-light" href="/tag/structured-light/">Structured Light</a>
   
-  <a class="badge badge-light" href="/tag/camera-calibration/">Camera calibration</a>
+  <a class="badge badge-light" href="/tag/camera-calibration/">Camera Calibration</a>
   
-  <a class="badge badge-light" href="/tag/hand-eye-calibration/">Hand-eye calibration</a>
+  <a class="badge badge-light" href="/tag/hand-eye-calibration/">Hand-Eye Calibration</a>
   
 </div>
 
@@ -1165,7 +1165,7 @@ $$\begin{align}
     <div class="media author-card content-widget-hr">
       
         
-        <img class="avatar mr-3 avatar-circle" src="/author/yinyin-su/avatar_hu8c7d007082ea7670e0d1b10d1367c27e_1280177_270x270_fill_lanczos_center_2.png" alt="Yinyin SU">
+        <img class="avatar mr-3 avatar-circle" src="/author/yinyin-su/avatar_hu8c7d007082ea7670e0d1b10d1367c27e_1280177_270x270_fill_lanczos_center_3.png" alt="Yinyin SU">
       
 
       <div class="media-body">
@@ -1447,7 +1447,7 @@ $$\begin{align}
     
     
     
-    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+    <script src="/js/academic.min.23966d19f6915d56260b05a4b1937395.js"></script>
 
     
 

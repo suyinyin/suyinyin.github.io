@@ -1,558 +1,375 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/publication-type/2/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/authors/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/dong-liu/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/author/james-lam/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/perception/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/sensors/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/soft-robots/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/journal-article-8/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/xiaojiao-chen/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/yinyin-su/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/zheng-wang/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/zhonggui-fang/</loc>
+    <lastmod>2024-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/anlun-huang/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/foam/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/journal-article-9/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/hongqiang-wang/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/jiajie-guo/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/jian-s.-dai/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/juan-yi/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/kinematics/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/sicong-liu/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/soft-arm/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/author/yongxi-cao/</loc>
+    <lastmod>2024-01-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/author/jing-li/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/kinematic-model/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/liangliang-wang/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/pressure-information/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/proprioception/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/receptor/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/receptor-failure/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/runzhi-zhang/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/soft-pneumatic-chamber/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-6/</loc>
     <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/xiaojiao-chen/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/yinyin-su/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/zheng-wang/</loc>
-    <lastmod>2023-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/juan-yi/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/multifunctionality/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-7/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/sicong-liu/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/soft-robots/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/yige-wu/</loc>
     <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/zhonggui-fang/</loc>
-    <lastmod>2023-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication-type/1/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/conference-paper-2/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/chaoyang-song/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/dehao-duanmu/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/variable-stiffness/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/wearable/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/yujia-liu/</loc>
     <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/inverse-kinematics/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-5/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/modeling/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/soft-manipulators/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/sparse-searching/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/wenping-wang/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/ball-tracking/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/control/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/deep-learning/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/face-recognition/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/mirogravity/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/objective-recognition/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/pressure-control/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/robot/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/sj10/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/smart-phone-safety/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/soft_robotic_arm/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/soft-robot/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/soft_robotic_face/</loc>
-    <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/soft-robotic-face/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/project/soft_robotic_face/</loc>
+    <lastmod>2021-02-10T20:20:01+08:00</lastmod>
+  </url><url>
     <loc>/tag/space-fluid/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/space-scientifics/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/project/tg2/</loc>
     <lastmod>2021-02-10T20:20:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/3d-camera/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/bibocular-stereo-vision/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/camera-calibration/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/hand-eye-calibration/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/structured-light/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/3dcamaratech/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/time-of-flight/</loc>
     <lastmod>2020-12-18T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/t-sne/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/machine-learning/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/pca/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/t-sne/</loc>
     <lastmod>2020-10-22T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/preceptron/</loc>
     <lastmod>2020-09-03T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/preceptron/</loc>
     <lastmod>2020-09-03T20:30:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/ros/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/post/someusefulcommandinros/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/ubuntu/</loc>
     <lastmod>2020-08-11T15:34:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-1/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/hailin-huang/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/hexiang-wang/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/soft-origamic-actuators/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/wenpei-zhu/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/xiaochen-sun/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/yuming-zhu/</loc>
     <lastmod>2020-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/di-wu/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/jia-wang/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/jianwu-he/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/li-duan/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/microgravity-fluid/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/qi-kang/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/shijian-10/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-3/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/wenrui-hu/</loc>
     <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/contact/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/experience/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/abderrahmane-kheddar/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/bayesian-optimization/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/gaussian-process/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/conference-paper-1/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/yuquan-wang/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/chunfeng-lao/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/huacheng-song/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/jingjing-zhang/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tag/microgravity-washing-machine/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-2/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/peishi-lyu/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/sheng-xu/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/ling-liu/</loc>
     <lastmod>2015-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/mingzhu-hu/</loc>
     <lastmod>2015-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/publication/journal-article-4/</loc>
     <lastmod>2015-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/author/yongqiang-li/</loc>
     <lastmod>2015-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/talk/</loc>
   </url>
-  
 </urlset>

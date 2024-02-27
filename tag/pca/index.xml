@@ -7,7 +7,7 @@
     <description>PCA</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Thu, 22 Oct 2020 20:30:09 +0800</lastBuildDate>
     <image>
-      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_3.png</url>
       <title>PCA</title>
       <link>/tag/pca/</link>
     </image>
@@ -32,7 +32,7 @@
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;and their attributes were shown in the below figure.
-&lt;img src=&#34;./DimensionReduction.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Alt text&#34; src=&#34;./DimensionReduction.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1-pca&#34;&gt;1. PCA&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Principal Component Analysis (PCA)&lt;/strong&gt;  is a  
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Principal_component_analysis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;process of  computing principal components using  the first few principal component and ignoring the rest&lt;/a&gt;. The goals of PCA are  to&lt;/p&gt;
@@ -45,13 +45,13 @@
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The PCA can be defined commonly by two methods, resulting in the same algorithme. As shown in the following figure, principal component analysis seeks a space of lower dimensionality, known as the principal subspace and denoted by the magenta line, such that the orthogonal projection of the data points (red dots) onto this subspace maximizes the variance of the projected points (green dots). An alternative definition of PCA is based on minimizing the sum-of-squares of the projection errors, indicated by the blue lines.
-&lt;img src=&#34;./PCA2.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Alt text&#34; src=&#34;./PCA2.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;11-maxiunum-variance-formulation&#34;&gt;1.1 Maxiunum variance formulation&lt;/h4&gt;
 &lt;p&gt;Consider a data set of observations $\left\{\mathbf{x}_{n}\right\}$
 where $n = 1, \cdots, N$ and the dimensionality of $\mathbf{x}_{n}$  is $D$. The PCA can project the data on to lower dimensional space with dimensionality $M &amp;lt; D$  while maximizing the variance of the projected data.
 We define unit vector ${{w}_{1}}$, which is column vector,  as the first principal direction and each data point $\mathbf{x}_{n}$ is then projected onto a scalar value ${{z}_{1}^n} = \mathbf{{w}_{1}^{T}}{{{x}}_{n}}$.  Based on the above definition, we preject all data points onto $\mathbf{w_1}$ direction, maximizing the variance along $\mathbf{w_1}$ direction,
 $$\max Var\left( {{\mathbf{z}}_{1}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{1}}-{{{\mathbf{\bar{z}}}}_{1}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{1}} \right||}_{2}}=1, $$
-&lt;img src=&#34;./PCA.png&#34; alt=&#34;Alt text&#34;&gt;
+&lt;img alt=&#34;Alt text&#34; src=&#34;./PCA.png&#34;&gt;
 where $\mathbf{z}_{1}$ is $[z_1^{1}, z_2^{1}, \cdots, z_N^{1}]$, and ${{{\mathbf{\bar{z}}}}_{1}}$ is sample set mean, given by ${{\mathbf{\bar{z}}}_{1}}=\frac{1}{N}\sum\limits_{i=1}^{N}{z_{i}^{1}}$. The above formulation is also used in other principal direction like $\mathbf{w_2}$, so the variance of data set  $\mathbf{z_2}$ can be derived by
 $$\max Var\left( {{\mathbf{z}}_{2}} \right)=\frac{1}{N}\sum\limits_{1}^{N}{{{\left( {{\mathbf{z}}_{2}}-{{{\mathbf{\bar{z}}}}_{2}} \right)}^{2}}},{{\left|| {{\mathbf{w}}_{2}} \right||}_{2}}=1$$
 As a result, the low-dimensional data points
@@ -59,16 +59,16 @@ $$\mathbf{z}=W\mathbf{x}, $$&lt;/p&gt;
 &lt;p&gt;where $W$ is  $\left[ \begin{matrix} {{\mathbf{w}}_{1}} &amp;amp; {{\mathbf{w}}_{2}} &amp;amp; {{\mathbf{w}}_{3}} &amp;amp; \cdots  \end{matrix} \right]$, and it is a orthogonal matrix.
 The variance of data set $\mathbf{z_1}$ can be derived&lt;/p&gt;
 &lt;p&gt;\begin{align}
-Var\left( {{{\mathbf{{z}}}}_{1}} \right) &amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( z_{i}^{1}-{{{\bar{z}}}^{1}} \right)}}^{2}} \nonumber \\&lt;br&gt;
-&amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( \mathbf{w}_{1}^{\text{T}}x_{i}^{1}-\mathbf{w}_{1}^{\text{T}}{{{\bar{x}}}^{1}} \right)}}^{2}}  \nonumber\\&lt;br&gt;
-&amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}}^{2}}=\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)} \nonumber\\&lt;br&gt;
-&amp;amp; =\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}^{\text{T}}} \nonumber\\&lt;br&gt;
-&amp;amp; =\mathbf{w}_{1}^{\text{T}}\left[ \frac{1}{N}\sum\limits_{i=1}^{N}{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}^{\text{T}}} \right]{{\mathbf{w}}_{1}} \nonumber\\&lt;br&gt;
-&amp;amp; = \mathbf{w}_{1}^{\text{T}} cov\left( \mathbf x\right) \mathbf{w}_{1}\nonumber\\&lt;br&gt;
+Var\left( {{{\mathbf{{z}}}}_{1}} \right) &amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( z_{i}^{1}-{{{\bar{z}}}^{1}} \right)}}^{2}} \nonumber \\
+&amp;amp; =\frac{1}{N}{{\sum\limits_{i=1}^{N}{\left( \mathbf{w}_{1}^{\text{T}}x_{i}^{1}-\mathbf{w}&lt;em&gt;{1}^{\text{T}}{{{\bar{x}}}^{1}} \right)}}^{2}}  \nonumber\\
+&amp;amp; =\frac{1}{N}{{\sum\limits&lt;/em&gt;{i=1}^{N}{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}}^{2}}=\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)} \nonumber\\
+&amp;amp; =\frac{1}{N}\sum\limits_{i=1}^{N}{\mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left[ \mathbf{w}_{1}^{\text{T}}\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right) \right]}^{\text{T}}} \nonumber\\
+&amp;amp; =\mathbf{w}_{1}^{\text{T}}\left[ \frac{1}{N}\sum\limits_{i=1}^{N}{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}{{\left( x_{i}^{1}-{{{\bar{x}}}^{1}} \right)}^{\text{T}}} \right]{{\mathbf{w}}&lt;em&gt;{1}} \nonumber\\
+&amp;amp; = \mathbf{w}_{1}^{\text{T}} cov\left( \mathbf x\right) \mathbf{w}&lt;/em&gt;{1}\nonumber\\
 \end{align}&lt;/p&gt;
 &lt;p&gt;where $S = cov\left( \mathbf x\right)$ is covariance matrix of data set $\left\{\mathbf{x}_{n}\right\}$, and it is a sysmetric and semidefinite matrix. Eventually, if we want to obtain the principal vector $\mathbf{w_1}$, the optimization equation is&lt;/p&gt;
 &lt;p&gt;\begin{align}
-\underset{{{\mathbf{w}}_{1}}}{\mathop{\max }},\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}},\\&lt;br&gt;
+\underset{{{\mathbf{w}}_{1}}}{\mathop{\max }},\mathbf{w}_{1}^{\text{T}}S{{\mathbf{w}}_{1}},\\
 s.t.\quad \mathbf{w}_{1}^{\text{T}}{{\mathbf{w}}_{1}} = 1.
 \end{align}&lt;/p&gt;
 &lt;p&gt;Using the Langrange multiplier,
@@ -90,24 +90,24 @@ Hence, the ${{\mathbf{w}}_{1}}$ and $\alpha$ are the eigenvector and the corresp
 &lt;h4 id=&#34;21-mathematics-model&#34;&gt;2.1 Mathematics model&lt;/h4&gt;
 &lt;h5 id=&#34;step-1-define-similarity-in-high-dimensional-space&#34;&gt;Step 1: Define similarity in high-dimensional space&lt;/h5&gt;
 &lt;p&gt;t-SNE uses Stochastic Neighbour Embedding (SNE) method to convert the high-dimensional Euclidean distances between data points into conditional probablities that represent their similiarities.  The conditional probability ${{p}_{j|i}}$  is defined to represent the similarity, $x_i$ would choose $x_j$ as its neighhour if neighours are chosen in proportion to their probablity density under a Guassian with center at $x_i$.  The nearer the data points are, the higher value of  ${{p}_{j|i}}$  is. Mathematically, ${{p}_{j|i}}$  can be defined by
-$${\displaystyle p_{j\mid i}={\frac {\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{j}\rVert ^{2}/2\sigma _{i}^{2})}{\sum _{k\neq i}\exp(-\lVert \mathbf {x} _{i}-\mathbf {x} _{k}\rVert ^{2}/2\sigma _{i}^{2})}}}, $$
-where $\sigma_i$ is the variance of the Guassian distribution with the mean being $x_i$. Morever $p_{ij} $is defined by
-$${\displaystyle p_{ij}={\frac {p_{j\mid i}+p_{i\mid j}}{2N}}}$$
-where   $p_{ii} = 0$ and $p_{ij} = p_{ji}$.&lt;/p&gt;
+$${\displaystyle p_{j\mid i}={\frac {\exp(-\lVert \mathbf {x} &lt;em&gt;{i}-\mathbf {x} &lt;em&gt;{j}\rVert ^{2}/2\sigma &lt;em&gt;{i}^{2})}{\sum &lt;em&gt;{k\neq i}\exp(-\lVert \mathbf {x} &lt;em&gt;{i}-\mathbf {x} &lt;em&gt;{k}\rVert ^{2}/2\sigma &lt;em&gt;{i}^{2})}}}, $$
+where $\sigma_i$ is the variance of the Guassian distribution with the mean being $x_i$. Morever $p&lt;/em&gt;{ij} $is defined by
+$${\displaystyle p&lt;/em&gt;{ij}={\frac {p&lt;/em&gt;{j\mid i}+p&lt;/em&gt;{i\mid j}}{2N}}}$$
+where   $p&lt;/em&gt;{ii} = 0$ and $p&lt;/em&gt;{ij} = p&lt;/em&gt;{ji}$.&lt;/p&gt;
 &lt;h5 id=&#34;step-2-define-similarity-in-low-dimensional-space&#34;&gt;Step 2: Define similarity in low-dimensional space&lt;/h5&gt;
 &lt;p&gt;For the low-dimensional counterparts $y_i$ and $y_j$ of the high-dimensional data points $x_i$ and $x_j$. It is possible to define a similar conditional probability, donoted by $q_{ij}$
-$${\displaystyle q_{ij}={\frac {(1+\lVert \mathbf {y} _{i}-\mathbf {y} _{j}\rVert ^{2})^{-1}}{\sum _{k}\sum _{l\neq k}(1+\lVert \mathbf {y} _{k}-\mathbf {y} _{l}\rVert ^{2})^{-1}}}}, $$
-where $q_{ii} = 0$.&lt;/p&gt;
+$${\displaystyle q_{ij}={\frac {(1+\lVert \mathbf {y} _{i}-\mathbf {y} _{j}\rVert ^{2})^{-1}}{\sum _{k}\sum _{l\neq k}(1+\lVert \mathbf {y} _{k}-\mathbf {y} &lt;em&gt;{l}\rVert ^{2})^{-1}}}}, $$
+where $q&lt;/em&gt;{ii} = 0$.&lt;/p&gt;
 &lt;h5 id=&#34;step-3-define-cost-function-to-compute-q_ij&#34;&gt;Step 3: Define cost function to compute $q_{ij}$&lt;/h5&gt;
 &lt;p&gt;If the map points $y_i$ and $y_j$ correctly model the similarity between the high-dimensional datapoints $x_i$ and $x_j$, the conditional probabilities $p_{j|i}$ and $q_{j|i}$ will be equal. Motivated by this observation, SNE aims to find a low-dimensional data representation that minimizes the mismatch between $p_{j|i}$ and $q_{j|i}$.  A natural measure of the faithfulness with which $q_{j|i}$ models $p_{j|i}$ is the 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kullback-Leibler divergence&lt;/a&gt;  (which is in this case equal to the cross-entropy up to an additive constant). SNE minimizes the sum of Kullback-Leibler divergences over all datapoints using a gradient descent method. The cost function C is given by
-$$C= \sum_{}{\displaystyle \mathrm {KL} \left(P\parallel Q\right)=\sum _{i\neq j}p_{ij}\log {\frac {p_{ij}}{q_{ij}}}}$$
+$$C= \sum_{}{\displaystyle \mathrm {KL} \left(P\parallel Q\right)=\sum &lt;em&gt;{i\neq j}p&lt;/em&gt;{ij}\log {\frac {p_{ij}}{q_{ij}}}}$$
 in which $P$ represents the conditional probability distribution over all other datapoints given datapoint $x$, and $Q$ represents the conditional probability distribution over all other map points given map point $y$. The defination of $p_{ij}$ and $q_{ij}$ solves the 
 &lt;a href=&#34;https://medium.com/@layog/i-do-not-understand-t-sne-part-2-b2f997d177e3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;crowding problem&lt;/a&gt; for SNE from Laurens van der Maaten in 
 &lt;a href=&#34;https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visualizing Data using t-SNE&lt;/a&gt;.
 The gradient of the Kullback-Leibler divergence $C$ is derived (the detailed derived procedure was presented in 
 &lt;a href=&#34;https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visualizing Data using t-SNE&lt;/a&gt;)
-$$\frac{\delta C}{\delta {{y}_{i}}}=4\sum\limits_{j}{\left( {{p}_{ij}}-{{q}_{ij}} \right)}\left( {{y}_{i}}-{{y}_{j}} \right){{\left( 1+{{\left| {{y}_{i}}-{{y}_{j}} \right|}^{2}} \right)}^{-1}}$$&lt;/p&gt;
+$$\frac{\delta C}{\delta {{y}&lt;em&gt;{i}}}=4\sum\limits&lt;/em&gt;{j}{\left( {{p}&lt;em&gt;{ij}}-{{q}&lt;/em&gt;{ij}} \right)}\left( {{y}&lt;em&gt;{i}}-{{y}&lt;/em&gt;{j}} \right){{\left( 1+{{\left| {{y}&lt;em&gt;{i}}-{{y}&lt;/em&gt;{j}} \right|}^{2}} \right)}^{-1}}$$&lt;/p&gt;
 &lt;h4 id=&#34;22-implementing-pca-in-python3&#34;&gt;2.2 Implementing PCA in python3&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;## Inherited from personal page of Laurens van der Maaten
 ## https://lvdmaaten.github.io/tsne/
@@ -301,7 +301,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As can be seen in the following figure, the visualized high-dimensional 
 &lt;a href=&#34;https://lvdmaaten.github.io/tsne/code/tsne_python.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mnist dataset&lt;/a&gt; is shown in the lower 2-dimensional  space.
-&lt;img src=&#34;./t-SNE.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;Alt text&#34; src=&#34;./t-SNE.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;23-how-to-give-the-hyper-parameters&#34;&gt;2.3 How to give the hyper parameters&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -316,7 +316,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 &lt;ul&gt;
 &lt;li&gt;The PCA is a linear algorithm which is not able to interpret complex ploynomial relationship between features. By contrast, t-SNE is actived based on probability distributions on neighbourhood graph to understand the structure with the data;&lt;/li&gt;
 &lt;li&gt;The linear dimension reduction algorithm (PCA) concentrates on placing dissimilar data points far apart in a lower dismension representation, while the nonlinear algorithm (t-SNE) places the similar datapoints closely together in lower dimesional space. Hence, as can be seen in the following figure, PCA can only capture linear structures in the features. The t-SNE algorithm works in a very different way and focuses to preserve the local distances of the high-dimensional data in some mapping to low-dimensional data.
-&lt;img src=&#34;./PCA_t-SNE.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/li&gt;
+&lt;img alt=&#34;Alt text&#34; src=&#34;./PCA_t-SNE.png&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
@@ -359,7 +359,7 @@ ax[1].add_artist(legend2)
 plt.savefig(&#39;PCA_t-SNE.png&#39;)
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./PCAVSt-SNE_python.png&#34; alt=&#34;Alt text&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Alt text&#34; src=&#34;./PCAVSt-SNE_python.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;

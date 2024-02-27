@@ -1,16 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Soft robots | Yinyin</title>
+    <title>Soft Robots | Yinyin</title>
     <link>/tag/soft-robots/</link>
       <atom:link href="/tag/soft-robots/index.xml" rel="self" type="application/rss+xml" />
-    <description>Soft robots</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Wed, 26 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <description>Soft Robots</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © Yinyin SU. All rights reserved.</copyright><lastBuildDate>Fri, 19 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_2.png</url>
-      <title>Soft robots</title>
+      <url>/images/icon_hua52117042f226f6860de756cd71df0db_27832_512x512_fill_lanczos_center_3.png</url>
+      <title>Soft Robots</title>
       <link>/tag/soft-robots/</link>
     </image>
+    
+    <item>
+      <title>Spatial Position–Force Perception for a Soft Parallel Joint via Pressure-Deformation Self-Sensing</title>
+      <link>/publication/journal-article-8/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article-8/</guid>
+      <description>&lt;!-- 
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/publication/journal-article-8/featured_hu93a4ba5ddd4b6f71b2eaadba242062cf_2915084_2000x2000_fit_lanczos_3.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+
+
+  &lt;img data-src=&#34;/publication/journal-article-8/featured_hu93a4ba5ddd4b6f71b2eaadba242062cf_2915084_2000x2000_fit_lanczos_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;4054&#34; height=&#34;2345&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figure &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    The file structure of workplace
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+ --&gt;
+&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+ --&gt;
+&lt;!-- Supplementary notes can be added here, including [code and math](https://sourcethemes.com/academic/docs/writing-markdown-latex/). --&gt;
+</description>
+    </item>
     
     <item>
       <title>Omnidirectional compliance on cross-linked actuator coordination enables simultaneous multi-functions of soft modular robots</title>
@@ -43,10 +107,10 @@
 &lt;figure id=&#34;figure-the-file-structure-of-workplace&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;/publication/journal-article-7/featured_hue10762bad36f54c9af671463956b21dc_1312236_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/publication/journal-article-7/featured_hue10762bad36f54c9af671463956b21dc_1312236_2000x2000_fit_lanczos_3.png&#34; data-caption=&#34;The file structure of workplace&#34;&gt;
 
 
-  &lt;img data-src=&#34;/publication/journal-article-7/featured_hue10762bad36f54c9af671463956b21dc_1312236_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1764&#34; height=&#34;1358&#34;&gt;
+  &lt;img data-src=&#34;/publication/journal-article-7/featured_hue10762bad36f54c9af671463956b21dc_1312236_2000x2000_fit_lanczos_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1764&#34; height=&#34;1358&#34;&gt;
 &lt;/a&gt;
 
 
